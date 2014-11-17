@@ -1,0 +1,33 @@
+CXX_FLAGS = -Wall --debug --std=c++0x -I./include/
+CC_FLAGS = -Wall --debug  -I./include/
+LD_FLAGS =  -lpthread -lm -L./lib/ -Wl,-rpath=../lib,-rpath=./lib
+CXX = g++
+CC = gcc
+#STATIC =-static
+
+OUTPUT = bin/hogebomen
+
+all: $(OUTPUT) $(OUTPUT)2
+
+lib/main.o: src/main.cc
+	$(CXX) -c src/main.cc -o lib/main.o $(CXX_FLAGS)
+	
+lib/main2.o: src/main2.cc
+	$(CXX) -c src/main2.cc -o lib/main2.o $(CXX_FLAGS)
+	
+lib/ExpressionTree.o: src/ExpressionTree.cc
+	$(CXX) -c src/ExpressionTree.cc -o lib/ExpressionTree.o $(CXX_FLAGS)
+	
+lib/ExpressionAtom.o: src/ExpressionAtom.cc
+	$(CXX) -c src/ExpressionAtom.cc -o lib/ExpressionAtom.o $(CXX_FLAGS)
+	
+$(OUTPUT): lib/main.o lib/ExpressionTree.o lib/ExpressionAtom.o
+	$(CXX) $(STATIC) lib/main.o lib/ExpressionTree.o lib/ExpressionAtom.o -o $(OUTPUT) $(LD_FLAGS)
+	
+$(OUTPUT)2: lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o
+	$(CXX) $(STATIC) lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o -o $(OUTPUT)2 $(LD_FLAGS)
+	
+clean: 
+	rm -f lib/*.o
+	rm -f $(OUTPUT)
+

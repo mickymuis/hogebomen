@@ -1,0 +1,7 @@
+digraph Derivative{
+a 
+a [label="foo"];
+b [label="poop"];
+
+-> b;
+}

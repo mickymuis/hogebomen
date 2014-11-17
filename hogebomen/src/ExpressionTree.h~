@@ -1,0 +1,185 @@
+/**
+ * ExpressionTree: 
+ *
+ * @author Micky Faas (s1407937)
+ * @author Lisette de Schipper (s1396250)
+ * @file ExpressionTree.h
+ * @date 10-10-2014
+ **/
+
+#ifndef EXPRESSIONTREE_H
+#define EXPRESSIONTREE_H
+
+#include "Tree.h"
+#include "ExpressionAtom.h"
+#include <fstream>
+#include <string>
+#include <exception>
+#include <stdexcept>
+#include <sstream>
+#include <cmath>
+#include <map>
+
+using namespace std;
+
+class ParserException : public exception
+{
+    public:   
+       ParserException( const string &str ) : s( str ) {}
+       ~ParserException() throw () {}
+       const char* what() const throw() { return s.c_str(); }
+       
+    private:
+       string s;
+};
+
+class ExpressionTree : public Tree<ExpressionAtom>
+{
+    public:
+        ExpressionTree( ) : Tree<ExpressionAtom>() { }
+        ExpressionTree( const string& str ) : Tree<ExpressionAtom>() {
+            fromString( str );
+        }
+        
+        /**
+        * @function  tokenize()
+        * @abstract  
+        * @param     a string expression
+        * @return    a list of ExpressionAtom's
+        * @pre       it needs to be a correct space-separated string
+        * @post      
+        **/ 
+        static list<ExpressionAtom> tokenize( const string& str );
+  
+       /**
+        * @function  fromString()
+        * @abstract  converts a given string to an ExpressionTree
+        * @param     a string expression
+        * @return    
+        * @pre       it needs to be a correct string, it won't check it's validity
+        * @post      The given expression will be converted to an ExpressionTree
+        **/
+        void fromString( const string& expression );
+
+       /**
+        * @function  differentiate()
+        * @abstract  activates the other differentiate function and returns the
+        *            derivative in the form of a tree
+        * @param     string varName, the variable
+        * @return    the derivative of the original function in the form of a tree
+        * @pre       There needs to be a tree
+        * @post      Derivatree has been changed by the private differentiate( ) function.
+        **/        
+        ExpressionTree differentiate( string varName );
+        
+       /**
+        * @function  simplify()
+        * @abstract  Performs mathematical simplification on the expression
+        * @return    
+        * @pre       
+        * @post      Upon simplification, nodes may be deleted.
+        *            references and iterators may become invalid
+        **/
+        void simplify( );
+        
+       /**
+        * @function  evaluate()
+        * @abstract  Evaluates the tree as far as possible given a variable and its mapping
+        * @return    A new ExpressionTree containing the evaluation (may be a single node)
+        * @param     varName, variable name to match (e.g, 'x')
+        * @param     expr, expression to put in place of varName
+        * @pre       
+        * @post      No changes are made
+        **/
+        ExpressionTree evaluate( string varName, ExpressionAtom expr ) const;
+        
+       /**
+        * @function  evaluate()
+        * @abstract  Evaluates the tree as far as possible using a given mapping
+        * @return    A new ExpressionTree containing the evaluation (may be a single node)
+        * @param     varmap, list of varName/expr pairs
+        * @pre       
+        * @post      No changes are made
+        **/
+        ExpressionTree evaluate( const map<string,ExpressionAtom>& varmap ) const;
+        
+       /**
+        * @function  mapVariable()
+        * @abstract  Replaces a variable by an expression
+        * @return    
+        * @param     varName, variable name to match (e.g, 'x')
+        * @param     expr, expression to put in place of varName
+        * @pre       
+        * @post      Expression may change, references and iterators
+        *            remain valid after this function.
+        **/
+        void mapVariable( string varName, ExpressionAtom expr );
+        
+       /**
+        * @function  mapVariables()
+        * @abstract  Same as mapVariable( ) for a set of variables/expressions
+        * @return    
+        * @param     varmap, list of varName/expr pairs
+        * @pre       
+        * @post      Expression may change, references and iterators
+        *            remain valid after this function.
+        **/
+        void mapVariables( const map<string,ExpressionAtom>& varmap );
+        
+        void generateInOrder( ostream& out ) const {
+            generateInOrderRecursive( m_root, out );
+        }
+       
+    private:
+       /**
+        * @function  differentiate()
+        * @abstract  differentiates ExpressionTree and places the derivative in
+        *            the tree assigned to the last variable
+        * @param     n, the node we need to start differentiating from
+        *            varName, variable name to match (e.g, 'x')
+        *            derivative, the node we want to differentiate from
+        *            ExpressionTree &derivatree: the tree we want to differentiate to
+        * @return    the derivative of the original function in the form of a tree
+        * @pre       There needs to be a tree
+        * @post      The tree has been changed, now it shows the derivative of ExpressionTree.
+        **/  
+        void differentiate( node_t * n, string varName,
+                            node_t * derivative,
+                            ExpressionTree &derivatree );
+        void differentiateExponent( node_t * n, string varName, 
+                                    node_t * derivative, 
+                                    ExpressionTree &derivatree );
+        void differentiateDivision( node_t * n, string varName,
+                                    node_t * derivative,
+                                    ExpressionTree &derivatree );
+        void differentiateProduct( node_t * n, string varName,
+                                   node_t * derivative,
+                                   ExpressionTree &derivatree );
+        void differentiateFunction( node_t * n, string varName,
+                                    node_t * derivative,
+                                    ExpressionTree &derivatree );
+        void differentiateAddition( node_t * n, string varName,
+                                    node_t * derivative,
+                                    ExpressionTree &derivatree );
+        
+       /**
+        * @function  simplify()
+        * @abstract  Performs mathematical simplification on the expression
+        * @param     root, root of the subtree to simplify
+        * @return    New node in place of the passed value/node for root
+        * @pre       
+        * @post      Upon simplification, nodes may be deleted.
+        *            references and iterators may become invalid
+        **/        
+        node_t *simplifyRecursive( node_t* root );
+        
+        void generateInOrderRecursive( node_t *root, ostream& buffer ) const;
+        
+    public:
+        static bool compare( const float &f1, const float &f2, float &&error =0.00001f ) {
+            return ( fabs( f1-f2 ) <= error );
+        }
+        
+};
+#endif
+
