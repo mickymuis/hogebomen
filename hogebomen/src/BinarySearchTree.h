@@ -22,33 +22,25 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         BinarySearchTree( const BinarySearchTree& cpy ) : S( cpy ) { }
         
         virtual node_t *pushBack( const INFO_T& info ) {
-            node_t *n =new node_t( info );
+            node_t *n =new node_t( );
+            n->info() =info;
             
             if( !S::m_root )
                 S::m_root =n;
             else {
-                node_t *parent =static_cast<node_t*>( S::m_root );
+                node_t *parent =0;
+                node_t *sub =static_cast<node_t*>( S::m_root );
                 do {
-                    if( n < parent ) {
-                        if( !parent->leftChild( ) )
-                            break;
-                        if( n < static_cast<node_t*>( parent->leftChild( ) ) )
-                            parent =static_cast<node_t*>( parent->leftChild( ) );
-                        else { // parent->leftChild( ) has to move
-                        
-                        }    
+                    if( *n < *sub ) {
+                        parent =sub;
+                        sub =static_cast<node_t*>( parent->leftChild( ) );
                     }
                     else {
-                        if( !parent->rightChild( ) )
-                            break;
-                        if( n > static_cast<node_t*>( parent->rightChild( ) ) )
-                            parent =static_cast<node_t*>( parent->rightChild( ) );
-                        else { // parent->rightChild( ) has to move
-                        
-                        }
+                        parent =sub;
+                        sub =static_cast<node_t*>( parent->rightChild( ) );
                     }
-                } while( parent );
-                if( n < parent )
+                } while( sub );
+                if( *n < *parent )
                     parent->setLeftChild( n );
                 else
                     parent->setRightChild( n );
@@ -58,23 +50,98 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         }
         
         virtual node_t* insert( const INFO_T& info,
-                            node_t* parent =0,
+                            TreeNode<INFO_T>* parent =0,
                             bool preferRight =false, 
                             int replaceBehavior =S::ABORT_ON_EXISTING ) {
             return pushBack( info );
-            // De rest kunnen we gewoon negeren?
+            // We just ignore the rest for now
         }
         
         virtual node_t* replace( const INFO_T& info, 
-                             node_t* node =0, 
+                             TreeNode<INFO_T>* node =0, 
                              bool alignRight =false, 
                              int replaceBehavior =S::DELETE_EXISTING ) {
+            node_t *newnode;
+            if( !node )
+                node =S::m_root;
+            if( !node )
+                return pushBack( info );
+            
+            bool swap =false;
+            // We can either just swap the new node with the old and remove
+            // the old, or we can remove the old and add the new node via
+            // pushBack(). This depends on the value of info
+            if( !node->hasChildren( ) ) {
+                swap =true; 
+            }
+            else if( !(node->leftChild( ) 
+                    && node->leftChild( )->info( ) > info )
+                    && !(node->rightChild( ) 
+                    && node->rightChild( )->info( ) < info ) ) {
+                swap =true;
+            }
+            if( swap ) {
+                newnode =new node_t( info );
+                if( node == S::m_root )
+                    S::m_root =newnode;
+                node->swapWith( newnode );
+                delete node;
+            } else {
+                remove( node );
+                newnode =pushBack( info );
+                   
+            }
+            return newnode;
         }
         
-        virtual void remove( node_t *n ) {
+        virtual void remove( TreeNode<INFO_T> *node ) {
+            node_t *n =static_cast<node_t*>( node );
+            
+            while( n->isFull( ) ) {
+                // the difficult case
+                // we could take either left of right here
+                TreeNode<INFO_T> *temp; 
+                temp =n->leftChild( );
+                while( temp->rightChild( ) ) {
+                    temp =temp->rightChild( );
+                }
+                if( n == S::m_root )
+                    S::m_root =temp;
+                n->swapWith( temp );
+            }
+
+            
+            // Assume the above is fixed
+            while( n->hasChildren( ) ) {
+                if( n->leftChild( ) ) {
+                    if( n == S::m_root )
+                        S::m_root =n->leftChild( );
+                    n->swapWith( n->leftChild( ) );
+                }
+                else {
+                    if( n == S::m_root )
+                        S::m_root =n->rightChild( );
+                    n->swapWith( n->rightChild( ) );
+                }
+            }
+
+            if( n->parent( ) && n->parent( )->leftChild( ) == n )
+                static_cast<node_t*>( n->parent( ) )->setLeftChild( 0 );
+            else if( n->parent( ) && n->parent( )->rightChild( ) == n )
+                static_cast<node_t*>( n->parent( ) )->setRightChild( 0 );
+            delete n;
         }
         
-        virtual node_t* find( node_t* haystack, const INFO_T& needle ) {
+        virtual TreeNode<INFO_T>* find( TreeNode<INFO_T>* haystack, const INFO_T& needle ) {
+            if( !haystack )
+                haystack =S::m_root;
+            while( haystack && haystack->info( ) != needle ) {
+                if( haystack->info( ) > needle )
+                    haystack =haystack->leftChild( );
+                else
+                    haystack =haystack->rightChild( );
+            }
+            return haystack;
         }
     private:
 

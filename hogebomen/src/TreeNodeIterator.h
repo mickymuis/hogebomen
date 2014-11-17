@@ -53,10 +53,10 @@ template <class INFO_T> class TreeNodeIterator
     protected:
     
        /**
-        * @function  next( ) (pure virtual)
+        * @function  next( ) //(pure virtual)
         * @abstract  Implement this function to implement your own iterator
         */
-        virtual bool next( ) =0;
+        virtual bool next( ){ return false; }// =0;
         node_t *p;
 };
 

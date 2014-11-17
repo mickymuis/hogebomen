@@ -40,13 +40,28 @@ int main ( int argc, char **argv ) {
     
     BinarySearchTree<int> bst;
     
-    bst.pushBack( 10 );
-    bst.pushBack( 15 );
-    bst.pushBack( 5 );
-    bst.pushBack( 25 );
-    bst.pushBack( 1 );
+    auto root =bst.pushBack( 10 );
+    auto a =bst.pushBack( 5 );
+    auto c =bst.pushBack( 15 );
     
-    printTree<int>( bst, 3 );
+    bst.pushBack( 25 );
+    auto b =bst.pushBack( 1 );
+    bst.pushBack( -1 );
+    bst.pushBack( 11 );
+    bst.pushBack( 12 );
+    
+    printTree<int>( bst, 5 );
+    
+    //a->swapWith( b );
+    bst.remove( bst.find( 0, 15 ) );
+    bst.replace( -2, bst.find( 0, 5 ) );
+    
+    
+    printTree<int>( bst, 5 );
+    
+    bst.remove( root );
+    
+    printTree<int>( bst, 5 );
     
     return 0;
 }

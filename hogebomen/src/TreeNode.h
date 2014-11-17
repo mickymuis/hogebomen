@@ -84,6 +84,60 @@ template <class INFO_T> class TreeNode
         TreeNode<INFO_T> *rightChild( ) const { return m_rchild; }
         
         /**
+        * @function  swapWith( )
+        * @abstract  Swaps this node with another node in the tree
+        * @param     n, the node to swap this one with
+        * @pre       both this node and n must be in the same parent tree
+        * @post      n will have the parent and children of this node
+        *            and vice verse. Both nodes retain their data.
+        **/
+        void swapWith( TreeNode<INFO_T>* n ) {
+            bool this_wasLeftChild =false, n_wasLeftChild =false;
+            if( parent( ) && parent( )->leftChild( ) == this )
+                this_wasLeftChild =true;
+            if( n->parent( ) && n->parent( )->leftChild( ) == n ) 
+                n_wasLeftChild =true;
+            
+            // Swap the family info
+            TreeNode<INFO_T>* newParent =
+                ( n->parent( ) == this ) ? n : n->parent( );
+            TreeNode<INFO_T>* newLeft =
+                ( n->leftChild( ) == this ) ? n :n->leftChild( );
+            TreeNode<INFO_T>* newRight =
+                 ( n->rightChild( ) == this ) ? n :n->rightChild( );
+            
+            n->setParent( parent( ) == n ? this : parent( ) );
+            n->setLeftChild( leftChild( ) == n ? this : leftChild( ) );
+            n->setRightChild( rightChild( ) == n ? this : rightChild( ) );
+            
+            setParent( newParent );
+            setLeftChild( newLeft );
+            setRightChild( newRight );
+            
+            // Restore applicable pointers
+            if( n->leftChild( ) )
+                n->leftChild( )->setParent( n );
+            if( n->rightChild( ) )
+                n->rightChild( )->setParent( n );
+            if( leftChild( ) )
+                leftChild( )->setParent( this );
+            if( rightChild( ) )
+                rightChild( )->setParent( this );
+            if( n->parent( ) ) {
+                if( this_wasLeftChild )
+                    n->parent( )->setLeftChild( n );
+                else
+                    n->parent( )->setRightChild( n );
+            }
+            if( parent( ) ) {
+                if( n_wasLeftChild )
+                    parent( )->setLeftChild( this );
+                else
+                    parent( )->setRightChild( this );
+            }
+        }
+        
+        /**
         * @function  sibling( )
         * @abstract  returns the address of the sibling
         * @return    the address to the sibling or zero if there is no sibling
