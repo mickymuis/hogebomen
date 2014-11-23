@@ -320,7 +320,7 @@ template <class INFO_T> class Tree
         
        /**
         * @function  remove( )
-        * @abstract  removes and deleltes node or subtree
+        * @abstract  removes and deletes node or subtree
         * @param     n, node or subtree to be removed and deleted    
         * @post      after remove(), n points to an invalid address
         **/
@@ -402,13 +402,11 @@ template <class INFO_T> class Tree
         
        /**
         * @function  contains( )
-        * @abstract  ret
+        * @abstract  determines if a certain content (needle) is found
         * @param     haystack, the root of the (sub)tree we want to look in
         *            null if we want to start at the root of the tree
         * @param     needle, the needle in our haystack
-        * @return    a pointer to the first occurrence of needle
-        * @post      there may be multiple occurrences of needle, we only return 
-        *            one. A null-pointer is returned if no needle is found
+        * @return    true if needle is found
         **/
         bool contains( node_t* haystack, const INFO_T& needle ) {
             return find( haystack, needle );
@@ -465,6 +463,8 @@ template <class INFO_T> class Tree
         *            dest
         **/        
         void copyFromNode( node_t *source, node_t *dest, bool left ) {
+            if (!source)
+                return;
             node_t *acorn =new node_t( dest );
             if(left) {
                 if( dest->leftChild( ))
@@ -487,7 +487,6 @@ template <class INFO_T> class Tree
             }
             return *this;
         }
-        
                         
     protected:
        /**

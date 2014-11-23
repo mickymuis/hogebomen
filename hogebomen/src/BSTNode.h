@@ -37,8 +37,7 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
         **/
       	BSTNode( BSTNode<INFO_T>* parent =0 )
             : S( (S)parent ) { }
-        
-        
+
         bool operator <( const BSTNode<INFO_T> &rhs ) {
             return S::info() < rhs.info();
         }

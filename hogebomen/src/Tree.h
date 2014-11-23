@@ -320,7 +320,7 @@ template <class INFO_T> class Tree
         
        /**
         * @function  remove( )
-        * @abstract  removes and deleltes node or subtree
+        * @abstract  removes and deletes node or subtree
         * @param     n, node or subtree to be removed and deleted    
         * @post      after remove(), n points to an invalid address
         **/
@@ -463,6 +463,8 @@ template <class INFO_T> class Tree
         *            dest
         **/        
         void copyFromNode( node_t *source, node_t *dest, bool left ) {
+            if (!source)
+                return;
             node_t *acorn =new node_t( dest );
             if(left) {
                 if( dest->leftChild( ))
@@ -485,7 +487,6 @@ template <class INFO_T> class Tree
             }
             return *this;
         }
-        
                         
     protected:
        /**

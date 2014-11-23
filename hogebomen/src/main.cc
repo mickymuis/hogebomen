@@ -10,6 +10,7 @@
 #include <iostream>
 #include "BinarySearchTree.h"
 #include "Tree.h"
+#include "AVLTree.h"
 #include <string>
 
 using namespace std;
@@ -62,6 +63,19 @@ int main ( int argc, char **argv ) {
     bst.remove( root );
     
     printTree<int>( bst, 5 );
-    
+
+    // Test AVLTree //
+
+    AVLTree<int> test;
+    test.pushBack( 5 );     
+    auto d = test.pushBack( 10 );
+    test.pushBack(2);
+    test.pushBack(7);
+    printTree<int>( test, 4 );
+    auto f = d;
+    cout << test.updateBalanceFactorsInsert( f );
+//    test.rotate( d );
+    printTree<int>( test, 4 );    
+
     return 0;
 }

@@ -37,7 +37,10 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
         **/
       	BSTNode( BSTNode<INFO_T>* parent =0 )
             : S( (S)parent ) { }
-        
+
+        BSTNode<INFO_T> *parent( ) const { return static_cast<BSTNode<INFO_T>>(S::parent( )); }
+        BSTNode<INFO_T> *leftChild( ) const { return static_cast<BSTNode<INFO_T>>(S::leftChild( )); }
+        BSTNode<INFO_T> *rightChild( ) const { return static_cast<BSTNode<INFO_T>>(S::rightChild( )); }
         
         bool operator <( const BSTNode<INFO_T> &rhs ) {
             return S::info() < rhs.info();
@@ -55,7 +58,7 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
             return S::info() >= rhs.info();
         }
     protected:
-        friend class BinarySearchTree;
+        friend class BinarySearchTree<INFO_T>;
 };
 
 #endif

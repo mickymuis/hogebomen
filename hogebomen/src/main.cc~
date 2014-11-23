@@ -9,6 +9,8 @@
 
 #include <iostream>
 #include "BinarySearchTree.h"
+#include "Tree.h"
+#include "AVLTree.h"
 #include <string>
 
 using namespace std;
@@ -39,13 +41,41 @@ int main ( int argc, char **argv ) {
     
     BinarySearchTree<int> bst;
     
-    bst.pushBack( 10 );
-    bst.pushBack( 15 );
-    bst.pushBack( 5 );
+    auto root =bst.pushBack( 10 );
+    auto a =bst.pushBack( 5 );
+    auto c =bst.pushBack( 15 );
+    
     bst.pushBack( 25 );
-    bst.pushBack( 1 );
+    auto b =bst.pushBack( 1 );
+    bst.pushBack( -1 );
+    bst.pushBack( 11 );
+    bst.pushBack( 12 );
     
-    printTree<int>( bst );
+    printTree<int>( bst, 5 );
     
+    //a->swapWith( b );
+    bst.remove( bst.find( 0, 15 ) );
+    bst.replace( -2, bst.find( 0, 5 ) );
+    
+    
+    printTree<int>( bst, 5 );
+    
+    bst.remove( root );
+    
+    printTree<int>( bst, 5 );
+
+    // Test AVLTree //
+
+    AVLTree<int> test;
+    test.pushBack( 5 );     
+    auto d = test.pushBack( 10 );
+    test.pushBack(2);
+    test.pushBack(7);
+    printTree<int>( test, 4 );
+    auto f = d;
+    cout << test.updateBalanceFactorsInsert( &f );
+//    test.rotate( d );
+    printTree<int>( test, 4 );    
+
     return 0;
 }
