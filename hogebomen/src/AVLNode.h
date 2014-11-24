@@ -46,6 +46,22 @@ template <class INFO_T> class AVLNode : public BSTNode<INFO_T>
             balanceFactor = 0;
         }
 
+        bool operator <( const AVLNode<INFO_T> &rhs ) {
+            return S::info() < rhs.info();
+        }
+        
+        bool operator <=( const AVLNode<INFO_T> &rhs ) {
+            return S::info() <= rhs.info();
+        }
+        
+        bool operator >( const AVLNode<INFO_T> &rhs ) {
+            return S::info() > rhs.info();
+        }
+        
+        bool operator >=( const AVLNode<INFO_T> &rhs ) {
+            return S::info() >= rhs.info();
+        }
+
     protected:
         friend class AVLTree<INFO_T>;
 };

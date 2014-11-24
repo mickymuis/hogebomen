@@ -73,7 +73,8 @@ int main ( int argc, char **argv ) {
     test.pushBack(7);
     printTree<int>( test, 4 );
     auto f = d;
-    cout << test.updateBalanceFactorsInsert( f );
+    test.rotate( d );
+//    cout << test.updateBalanceFactorsInsert( f );
 //    test.rotate( d );
     printTree<int>( test, 4 );    
 

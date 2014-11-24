@@ -46,30 +46,6 @@ template <class INFO_T> class AVLNode : public BSTNode<INFO_T>
             balanceFactor = 0;
         }
 
-        virtual node_t *pushBack( const INFO_T& info ) {
-            node_t *n =new node_t( info, 0 );
-            if( !m_root ) { // Empty tree, simplest case
-                m_root =n;
-            }
-            else { // Leaf node, there are two different scenarios
-                int max =getRowCountRecursive( m_root, 0 );
-                node_t *parent;
-                for( int i =1; i <= max; ++i ) {
-                
-                    parent =getFirstEmptySlot( i );
-                    if( parent ) {
-                        if( !parent->leftChild( ) )
-                            parent->setLeftChild( n );
-                        else if( !parent->rightChild( ) )
-                            parent->setRightChild( n );
-                        n->setParent( parent );
-                        break;
-                    }
-                }
-            }
-            return n;
-        }
-
     protected:
         friend class AVLTree<INFO_T>;
 };
