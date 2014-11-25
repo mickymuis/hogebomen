@@ -143,6 +143,7 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
             }
             return haystack;
         }
+
     private:
 
 };

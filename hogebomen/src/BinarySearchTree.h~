@@ -144,10 +144,19 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
             return haystack;
         }
 
-        BSTNode<INFO_T>& operator=( const BSTNode<INFO_T>& node ) {
-            cout << "TEST!!!" << endl;
+        void rotateLeft( node_t * node ){
+            if( this->root( ) == node )
+                S::m_root = node->rotateLeft( );
+            else
+                node->rotateLeft( );
         }
 
+        void rotateRight( node_t * node ){
+            if( this->root( ) == node )
+                S::m_root = node->rotateRight( );
+            else
+                node->rotateRight( );
+        }
     private:
 
 };

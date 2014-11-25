@@ -41,14 +41,17 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
         // Idea: rotate this node left and return the node that comes in its place
         BSTNode *rotateLeft( ) {
         
-            if( !rightChild( ) ) // Cannot rotate
+            if( !this->rightChild( ) ) // Cannot rotate
                 return this;
-                
-            bool isLeftChild =parent( ) && this == parent( )->leftChild( );
-                
-            BSTNode *newTop =rightChild( );
-            BSTNode *newRight =newTop->leftChild( );
-            BSTNode *topParent =parent( );
+  
+            bool isLeftChild =this->parent( ) && this == this->parent( )->leftChild( );
+            
+            // new root of tree
+            BSTNode *newTop =static_cast<BSTNode *>(this->rightChild( ));
+            // new rightchild of the node that is rotated
+            BSTNode *newRight =static_cast<BSTNode *>(newTop->leftChild( ));
+            // the parent under which all of the magic is happening
+            BSTNode *topParent =static_cast<BSTNode *>(this->parent( ));
             
             // We become left-child of our right-child
             // newTop takes our place with our parent
@@ -57,23 +60,49 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
                 topParent->setLeftChild( newTop );
             else if( topParent )
                 topParent->setRightChild( newTop );
-                
+
             newTop->setLeftChild( this );
-            setParent( newTop );
-            
+            this->setParent( newTop );
+ 
             // We take the left-child of newTop as our right-child         
-            setRightChild( newRight );
+            this->setRightChild( newRight );
             if( newRight )
                 newRight->setParent( this );
-                
-            // We're done?
             
             return newTop;
         }
         
         // Idea: rotate this node right and return the node that comes in its place
         BSTNode *rotateRight( ) {
-        
+            if( !this->leftChild( ) ) // Cannot rotate
+                return this;
+  
+            bool isRightChild =this->parent( ) && this == this->parent( )->rightChild( );
+            
+            // new root of tree
+            BSTNode *newTop =static_cast<BSTNode *>(this->leftChild( ));
+            // new leftchild of the node that is rotated
+            BSTNode *newLeft =static_cast<BSTNode *>(newTop->rightChild( ));
+            // the parent under which all of the magic is happening
+            BSTNode *topParent =static_cast<BSTNode *>(this->parent( ));
+            
+            // We become left-child of our right-child
+            // newTop takes our place with our parent
+            newTop->setParent( topParent );
+            if( isRightChild && topParent )
+                topParent->setRightChild( newTop );
+            else if( topParent )
+                topParent->setLeftChild( newTop );
+
+            newTop->setRightChild( this );
+            this->setParent( newTop );
+ 
+            // We take the left-child of newTop as our right-child         
+            this->setLeftChild( newLeft );
+            if( newLeft )
+                newLeft->setParent( this );
+            
+            return newTop;
         }
 
         bool operator <( const BSTNode<INFO_T> &rhs ) {

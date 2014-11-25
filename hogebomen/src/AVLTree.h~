@@ -21,147 +21,92 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         AVLTree( ) : S( ) { }
         AVLTree( const AVLTree& cpy ) : S( cpy ) { }
 
-        bool updateBalanceFactorsInsert( AVLNode<INFO_T>* node ){
-            AVLNode<INFO_T> Q( node );
-            AVLNode<INFO_T> * P( static_cast<node_t *>( node->parent( ) )  );
+        node_t *insert( const INFO_T& info ) {
+            node_t * node =static_cast<node_t *>( S::pushBack( info ) );
 
+            if( updateBalanceFactorsInsert( node ) ) {
+                rebalance( node );
+            }
+
+            cout << "balanceFactor root " << static_cast<node_t *>( this->root( ) )->balanceFactor << endl;
+
+            return node;
+        }
+
+        node_t * rebalance(node_t * node ) {
+            if( !node->parent( ) || !node->parent( )->parent( ) )
+                return node;
+
+            node_t * parent =static_cast<node_t *>( node->parent( ) );
+            node_t * grandparent =static_cast<node_t *>( parent->parent( ) );
+
+            if( grandparent->leftChild( ) == parent ) {
+                if( parent->leftChild( ) == node )
+                    this->rotateRight( grandparent );
+                else {
+                    this->rotateLeft( parent );
+                    this->rotateRight( grandparent );
+                }
+            }
+            else {
+                if( parent->rightChild( ) == node )
+                    this->rotateLeft( grandparent );
+                else {
+                    this->rotateRight( parent );
+                    this->rotateLeft( grandparent );
+                }
+            }
+            return parent;
+        }
+
+        bool updateBalanceFactorsInsert( AVLNode<INFO_T>* node ){
+            AVLNode<INFO_T> Q =node;
+            AVLNode<INFO_T> * P =static_cast<node_t *>( node->parent( ) );
+
+            if( !P )
+                return false;
+
+            // rightsubtree - leftsubtree = balance factor
             if( P->leftChild( ) == &Q )
                 P->balanceFactor--;
             else
                 P->balanceFactor++;
 
             while( P != this->root( ) && P->balanceFactor != 2 && P->balanceFactor != -2) {
-                Q = P;
-                P = static_cast<node_t *>( P->parent( ) );
-
-                if (Q.balanceFactor == 0)
-                    return false;
+                Q =P;
+                P =static_cast<node_t *>( P->parent( ) );
 
                 if (P->leftChild( ) == &Q)
-                    if( P->leftChild( ) == &Q )
-                        P->balanceFactor--;
-                    else
-                        P->balanceFactor++;
+                    P->balanceFactor--;
+                else
+                    P->balanceFactor++;
             }
+
             // return if we need to rebalance (true) and if so, from which node.
-            node = P;
+            node =P;
             return (P->balanceFactor == 2 || P->balanceFactor == -2);
+
+        }
+
+        node_t *remove( node_t * node ) {
+            if ( !node->hasChildren( ) ) {
+                updateBalanceFactorsDelete( static_cast<node_t *>( node->parent( ) ) );
+                S::remove( node );
+            }
         }
 
         bool updateBalanceFactorsDelete( AVLNode<INFO_T>* node ){
-            AVLNode<INFO_T> Q;
-            AVLNode<INFO_T> P( node );
+            AVLNode<INFO_T> * Q =node;
+
             while( Q != this->root( ) && Q->balanceFactor != -2) {
-                Q = P;                
                 Q->balanceFactor--;
-                P = static_cast<node_t *>( Q->parent( ) );
+                Q =static_cast<node_t *>( Q->parent( ) );
             }
+            Q->balanceFactor--;
             // return if we need to rebalance (true) and if so, from which node.
             node = Q;
             return (Q->balanceFactor == 2 || Q->balanceFactor == -2);
         }
-
-		void rotate( AVLNode<INFO_T> node ) {
-
-            AVLTree<INFO_T> * temporaryTree = new SelfOrganizingTree;
-            AVLNode<INFO_T> temp(temporaryTree->pushBack(node));
-// TO DO: need to add an insert function that accepts nodes instead of just labels    
-            // if it's a left child, we do a right rotation
-            if( &node == node.parent( )->leftChild( ) ) {
-                temporaryTree->copyFromNode( node.leftChild( ), temporaryTree->root( ), true );
-                temp = temporaryTree->insert( root( ), temp, false);
-                temporaryTree->copyFromNode( root( )->rightChild( ),temp, false);
-                temporaryTree->copyFromNode( node->rightChild( ), temp, true);
-            }
-            // if it's a right child, we do a left rotation
-            else {
-                temporaryTree->copyFromNode( node.rightChild( ), temporaryTree->root( ), false );
-                temp = temporaryTree->insert( root( ), temp, true);
-                temporaryTree->copyFromNode( node->leftChild( ) ,temp, false);
-                temporaryTree->copyFromNode( root()->leftChild( ), temp, true); */
-            }
-//            this = temporaryTree;
-		}
-
-       /**
-        * @function  insert( )
-        * @abstract  inserts node or subtree under a parent or creates an empty 
-        *            root node
-        * @param     info, contents of the new node
-        * @param     parent, parent node of the new node. When zero, the root is
-        *            assumed
-        * @param     alignRight, insert() checks on which side of the parent
-        *            node the new node can be inserted. By default, it checks 
-        *            the left side first.
-        *            To change this behavior, set preferRight =true.
-        * @param     replaceBehavior, action if parent already has two children. 
-        *            One of:
-        *            ABORT_ON_EXISTING - abort and return zero
-        *            MOVE_EXISTING - make the parent's child a child of the new
-        *                            node, satisfies preferRight
-        *            DELETE_EXISTING - remove one of the children of parent 
-        *                              completely also satisfies preferRight
-        * @return    pointer to the inserted TreeNode, if insertion was
-        *            successfull
-        * @pre       If the tree is empty, a root node will be created with info
-        *            as it contents
-        * @pre       The instance pointed to by parent should be part of the 
-        *            called instance of Tree
-        * @post      Return zero if no node was created. Ownership is assumed on
-        *            the new node.
-        *            When DELETE_EXISTING is specified, the entire subtree on 
-        *            preferred side may be deleted first.
-        **/     
-        virtual node_t* insert( const INFO_T& info,
-                        node_t* parent =0,
-                        bool preferRight =false, 
-                        int replaceBehavior =ABORT_ON_EXISTING ) {
-            if( !parent )
-                parent =m_root;
-                
-            if( !parent )
-                return pushBack( info );
-            
-            node_t *node =0;
-            
-            if( !parent->leftChild( )
-                  && ( !preferRight || ( preferRight &&
-                       parent->rightChild( ) ) ) ) {
-                node =new node_t( info, parent );
-                parent->setLeftChild( node );
-                node->setParent( parent );
-            
-            } else if( !parent->rightChild( ) ) {
-                node =new node_t( info, parent );
-                parent->setRightChild( node );
-                node->setParent( parent );
-                
-            } else if( replaceBehavior == MOVE_EXISTING ) {
-                node =new node_t( info, parent );
-                if( preferRight ) {
-                    node->setRightChild( parent->rightChild( ) );
-                    node->rightChild( )->setParent( node );
-                    parent->setRightChild( node );
-                } else {
-                    node->setLeftChild( parent->leftChild( ) );
-                    node->leftChild( )->setParent( node );
-                    parent->setLeftChild( node );
-                }
-                
-            } else if( replaceBehavior == DELETE_EXISTING ) {
-                node =new node_t( info, parent );
-                if( preferRight ) {
-                    deleteRecursive( parent->rightChild( ) );
-                    parent->setRightChild( node );
-                } else {
-                    deleteRecursive( parent->leftChild( ) );
-                    parent->setLeftChild( node );
-                }
-                
-            }
-            return node;
-        }
-
 
         virtual node_t *pushBack( const INFO_T& info ) {
             node_t *n =new node_t( );
