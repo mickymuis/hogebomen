@@ -53,9 +53,9 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
             // We become left-child of our right-child
             // newTop takes our place with our parent
             newTop->setParent( topParent );
-            if( isLeftChild )
+            if( isLeftChild && topParent )
                 topParent->setLeftChild( newTop );
-            else
+            else if( topParent )
                 topParent->setRightChild( newTop );
                 
             newTop->setLeftChild( this );
