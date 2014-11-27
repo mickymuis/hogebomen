@@ -83,13 +83,8 @@ int main ( int argc, char **argv ) {
     cout << "Knoop 5 toevoegen! " << endl; 
     test.insert(5);
     printTree<int>( test, 5 );
-    cout << "Knoop 5 toevoegen! " << endl; 
+    cout << "Knoop 5 nog een keer toevoegen! " << endl; 
     test.insert(5);
     printTree<int>( test, 5 );
-    cout << "maximum node: " << test.max( )->info( ) << endl;
-
-/*8    cout << "Removing 4: " << endl; 
-    test.remove(d);
-    printTree<int>( test, 5 );    */
     return 0;
 }

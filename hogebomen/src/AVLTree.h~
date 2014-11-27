@@ -39,7 +39,6 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         *               put in the right place. A label may not appear twice in
         *               a tree.
         * @param        info - the label of the node
-        * @pre          There has to be a tree
         * @return       the node we inserted
         * @post         The tree now contains a node with 'info'
         **/
@@ -58,15 +57,15 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         *               from the bottom up to make sure the AVL properties are
         *               still intact.
         * @param        node - the node we're going to rebalance
-        * @pre          There has to be a tree
+        * @return       the node we just rebalanced (or not, depending on the
+        *               balancefactor)
         * @post         The tree is now perfectly balanced.
         **/
-        void *rebalance( node_t * node ) {
+        node_t *rebalance( node_t * node ) {
             // this is only necessary because the node that we just made isn't 
             // an AVLNODE and doesn't have a height yet :(.
             node->updateHeight( );
             node_t *temp = node;
-
             while( temp->parent( ) ) {
                 temp =static_cast<node_t *>( temp->parent( ) );
                 temp->updateHeight( );
@@ -79,7 +78,7 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
                             this->rotateRight(
                             static_cast<node_t *>( temp->rightChild( ) ) );
                     }
-                    this->rotateLeft( temp );    
+                    temp =this->rotateLeft( temp );    
                 }
                 // left subtree too deep
                 else if( temp->balanceFactor( ) == -2 ) {
@@ -89,9 +88,10 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
                             this->rotateLeft(
                             static_cast<node_t *>( temp->leftChild( ) ) );
                     }
-                    this->rotateRight( temp );             
+                    temp =this->rotateRight( temp );             
                 }
             }
+            return temp;
         }
 
        /**
@@ -101,7 +101,6 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         * @param        node - the node we're going to rotate left
         * @return       we return the node that is now at the top of this
         *               particular subtree.
-        * @pre          There has to be a tree
         * @post         The node is rotated to the left and the heights are up
         *               to date.
         **/        
@@ -120,7 +119,6 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         * @param        node - the node we're going to rotate right
         * @return       we return the node that is now at the top of this
         *               particular subtree.
-        * @pre          There has to be a tree
         * @post         The node is rotated to the right and the heights are up
         *               to date.
         **/  

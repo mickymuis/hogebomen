@@ -57,14 +57,15 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         *               from the bottom up to make sure the AVL properties are
         *               still intact.
         * @param        node - the node we're going to rebalance
+        * @return       the node we just rebalanced (or not, depending on the
+        *               balancefactor)
         * @post         The tree is now perfectly balanced.
         **/
-        void *rebalance( node_t * node ) {
+        node_t *rebalance( node_t * node ) {
             // this is only necessary because the node that we just made isn't 
             // an AVLNODE and doesn't have a height yet :(.
             node->updateHeight( );
             node_t *temp = node;
-
             while( temp->parent( ) ) {
                 temp =static_cast<node_t *>( temp->parent( ) );
                 temp->updateHeight( );
@@ -77,7 +78,7 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
                             this->rotateRight(
                             static_cast<node_t *>( temp->rightChild( ) ) );
                     }
-                    this->rotateLeft( temp );    
+                    temp =this->rotateLeft( temp );    
                 }
                 // left subtree too deep
                 else if( temp->balanceFactor( ) == -2 ) {
@@ -87,9 +88,10 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
                             this->rotateLeft(
                             static_cast<node_t *>( temp->leftChild( ) ) );
                     }
-                    this->rotateRight( temp );             
+                    temp =this->rotateRight( temp );             
                 }
             }
+            return temp;
         }
 
        /**
