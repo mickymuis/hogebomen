@@ -23,14 +23,14 @@ template <class INFO_T> class SelfOrganizingTree : public BinarySearchTree<INFO_
         **/      	
         SelfOrganizingTree( ) : S( ) { }
 
-        node_t *rotateLeft( node_t * node ){
+        virtual node_t *rotateLeft( node_t * node ){
             if( this->root( ) == node )
                 return static_cast<node_t *>( S::m_root = node->rotateLeft( ) );
             else
                 return node->rotateLeft( );
         }
 
-        node_t *rotateRight( node_t * node ){
+        virtual node_t *rotateRight( node_t * node ){
             if( this->root( ) == node )
                 return static_cast<node_t *>( S::m_root = node->rotateRight( ) );
             else

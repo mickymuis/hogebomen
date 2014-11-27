@@ -39,7 +39,7 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
             : S( (S)parent ) { }
         
         // Idea: rotate this node left and return the node that comes in its place
-        BSTNode *rotateLeft( ) {
+        virtual BSTNode *rotateLeft( ) {
         
             if( !this->rightChild( ) ) // Cannot rotate
                 return this;
@@ -73,15 +73,15 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
         }
         
         // Idea: rotate this node right and return the node that comes in its place
-        BSTNode *rotateRight( ) {
+        virtual BSTNode *rotateRight( ) {
             if( !this->leftChild( ) ) // Cannot rotate
                 return this;
   
             bool isRightChild =this->parent( ) && this == this->parent( )->rightChild( );
             
             // new root of tree
-            BSTNode *newTop =static_cast<BSTNode *>(this->rightChild( ));
-            // new rightchild of the node that is rotated
+            BSTNode *newTop =static_cast<BSTNode *>(this->leftChild( ));
+            // new leftchild of the node that is rotated
             BSTNode *newLeft =static_cast<BSTNode *>(newTop->rightChild( ));
             // the parent under which all of the magic is happening
             BSTNode *topParent =static_cast<BSTNode *>(this->parent( ));

@@ -67,23 +67,27 @@ int main ( int argc, char **argv ) {
     // Test AVLTree //
 
     AVLTree<int> test;
-    test.insert(2);
+    auto d =test.insert(2);
     cout << " knoop 4 toevoegen! " << endl;
     test.insert(4);
     printTree<int>( test, 5 );
     cout << " knoop 8 toevoegen! " << endl;
-    auto d =test.insert(8);
+    test.insert(8);
     printTree<int>( test, 5 );
-    cout << " knoop 7 toevoegen! " << endl;
-    test.insert(7);
     cout << "Knoop 7 toevoegen! " << endl;
+    test.insert(7);
     printTree<int>( test, 5 );
-    test.insert(6);
     cout << "Knoop 6 toevoegen! " << endl; 
+    test.insert(6);
     printTree<int>( test, 5 );
-    test.insert(5);
     cout << "Knoop 5 toevoegen! " << endl; 
+    test.insert(5);
     printTree<int>( test, 5 );
+    cout << "Knoop 5 toevoegen! " << endl; 
+    test.insert(5);
+    printTree<int>( test, 5 );
+    cout << "maximum node: " << test.max( )->info( ) << endl;
+
 /*8    cout << "Removing 4: " << endl; 
     test.remove(d);
     printTree<int>( test, 5 );    */

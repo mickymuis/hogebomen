@@ -4,7 +4,7 @@
  * @author  Micky Faas (s1407937)
  * @author  Lisette de Schipper (s1396250)
  * @file    AVLTree.h
- * @date    3-11-2014
+ * @date    9-12-2014
  **/
 
 #ifndef AVLTREE_H
@@ -17,125 +17,120 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
     public:
         typedef AVLNode<INFO_T> node_t;
         typedef SelfOrganizingTree<INFO_T> S; // super class
-        
+
+       /**
+        * @function     AVLTree( )
+        * @abstract     constructor
+        * @post         An AVLTree is created
+        **/
         AVLTree( ) : S( ) { }
+
+       /**
+        * @function     AVLTree( )
+        * @abstract     constructor
+        * @param        cpy
+        * @post         An AVLTree is created
+        **/
         AVLTree( const AVLTree& cpy ) : S( cpy ) { }
 
+       /**
+        * @function     insert( )
+        * @abstract     A node with label 'info' is inserted into the tree and
+        *               put in the right place. A label may not appear twice in
+        *               a tree.
+        * @param        info - the label of the node
+        * @pre          There has to be a tree
+        * @return       the node we inserted
+        * @post         The tree now contains a node with 'info'
+        **/
         node_t *insert( const INFO_T& info ) {
-            node_t * node =static_cast<node_t *>( S::pushBack( info ) );
-
-            if( updateBalanceFactorsInsert( node ) ) {
-                rebalance( node );
-            }
-
-            cout << "balanceFactor root " << static_cast<node_t *>( this->root( ) )->balanceFactor << endl;
-
+            node_t *node = new node_t;
+            if( S::find( this->root( ), info ) )
+                return node;
+            node =static_cast<node_t *>( S::pushBack( info ) );
+            rebalance( node );
             return node;
         }
 
-        node_t * rebalance(node_t * node ) {
-            if( !node->parent( ) || !node->parent( )->parent( ) )
-                return node;
+       /**
+        * @function     rebalance( )
+        * @abstract     The tree is rebalanced. We do the necessary rotations
+        *               from the bottom up to make sure the AVL properties are
+        *               still intact.
+        * @param        node - the node we're going to rebalance
+        * @pre          There has to be a tree
+        * @post         The tree is now perfectly balanced.
+        **/
+        void *rebalance( node_t * node ) {
+            // this is only necessary because the node that we just made isn't 
+            // an AVLNODE and doesn't have a height yet :(.
+            node->updateHeight( );
+            node_t *temp = node;
 
-            node_t * parent =static_cast<node_t *>( node->parent( ) );
-            node_t * grandparent =static_cast<node_t *>( parent->parent( ) );
+            while( temp->parent( ) ) {
+                temp =static_cast<node_t *>( temp->parent( ) );
+                temp->updateHeight( );
 
-            if( grandparent->leftChild( ) == parent ) {
-                if( parent->leftChild( ) == node )
-                    this->rotateRight( grandparent );
-                else {
-                    this->rotateLeft( parent );
-                    this->rotateRight( grandparent );
+                // right subtree too deep
+                if( temp->balanceFactor( ) == 2 ) {
+                    if( temp->rightChild( ) ) {
+                        if( static_cast<node_t *>( temp->rightChild( ) )
+                            ->balanceFactor( ) < 0 )
+                            this->rotateRight(
+                            static_cast<node_t *>( temp->rightChild( ) ) );
+                    }
+                    this->rotateLeft( temp );    
+                }
+                // left subtree too deep
+                else if( temp->balanceFactor( ) == -2 ) {
+                    if( temp->leftChild( ) ) {
+                        if( static_cast<node_t *>( temp->leftChild( ) )->
+                            balanceFactor( ) > 0 )
+                            this->rotateLeft(
+                            static_cast<node_t *>( temp->leftChild( ) ) );
+                    }
+                    this->rotateRight( temp );             
                 }
             }
-            else {
-                if( parent->rightChild( ) == node )
-                    this->rotateLeft( grandparent );
-                else {
-                    this->rotateRight( parent );
-                    this->rotateLeft( grandparent );
-                }
-            }
-            return parent;
         }
 
-        bool updateBalanceFactorsInsert( AVLNode<INFO_T>* node ){
-            AVLNode<INFO_T> Q =node;
-            AVLNode<INFO_T> * P =static_cast<node_t *>( node->parent( ) );
-
-            if( !P )
-                return false;
-
-            // rightsubtree - leftsubtree = balance factor
-            if( P->leftChild( ) == &Q )
-                P->balanceFactor--;
-            else
-                P->balanceFactor++;
-
-            while( P != this->root( ) && P->balanceFactor != 2 && P->balanceFactor != -2) {
-                Q =P;
-                P =static_cast<node_t *>( P->parent( ) );
-
-                if (P->leftChild( ) == &Q)
-                    P->balanceFactor--;
-                else
-                    P->balanceFactor++;
-            }
-
-            // return if we need to rebalance (true) and if so, from which node.
-            node =P;
-            return (P->balanceFactor == 2 || P->balanceFactor == -2);
-
+       /**
+        * @function     rotateLeft( )
+        * @abstract     We rotate a node left and make sure all the internal
+        *               heights of the nodes are up to date.
+        * @param        node - the node we're going to rotate left
+        * @return       we return the node that is now at the top of this
+        *               particular subtree.
+        * @pre          There has to be a tree
+        * @post         The node is rotated to the left and the heights are up
+        *               to date.
+        **/        
+        node_t *rotateLeft( node_t * node ){
+            node_t *temp = static_cast<node_t *>( S::rotateLeft( node ) );
+            temp->updateHeight( );
+            if( temp->leftChild( ) )
+                static_cast<node_t *>( temp->leftChild( ) )->updateHeight( );
+            return temp;
         }
 
-        node_t *remove( node_t * node ) {
-            if ( !node->hasChildren( ) ) {
-                updateBalanceFactorsDelete( static_cast<node_t *>( node->parent( ) ) );
-                S::remove( node );
-            }
+       /**
+        * @function     rotateRight( )
+        * @abstract     We rotate a node right and make sure all the internal
+        *               heights of the nodes are up to date.
+        * @param        node - the node we're going to rotate right
+        * @return       we return the node that is now at the top of this
+        *               particular subtree.
+        * @pre          There has to be a tree
+        * @post         The node is rotated to the right and the heights are up
+        *               to date.
+        **/  
+        node_t *rotateRight( node_t * node ){
+            node_t *temp = static_cast<node_t *>( S::rotateRight( node ) );
+            temp->updateHeight( );
+            if( temp->rightChild( ) )
+                static_cast<node_t *>( temp->rightChild( ) )->updateHeight( );
+            return temp;
         }
-
-        bool updateBalanceFactorsDelete( AVLNode<INFO_T>* node ){
-            AVLNode<INFO_T> * Q =node;
-
-            while( Q != this->root( ) && Q->balanceFactor != -2) {
-                Q->balanceFactor--;
-                Q =static_cast<node_t *>( Q->parent( ) );
-            }
-            Q->balanceFactor--;
-            // return if we need to rebalance (true) and if so, from which node.
-            node = Q;
-            return (Q->balanceFactor == 2 || Q->balanceFactor == -2);
-        }
-
-        virtual node_t *pushBack( const INFO_T& info ) {
-            node_t *n =new node_t( );
-            n->info() =info;
-            
-            if( !S::m_root )
-                S::m_root =n;
-            else {
-                node_t *parent =0;
-                node_t *sub =static_cast<node_t*>( S::m_root );
-                do {
-                    if( *n < *sub ) {
-                        parent =sub;
-                        sub =static_cast<node_t*>( parent->leftChild( ) );
-                    }
-                    else {
-                        parent =sub;
-                        sub =static_cast<node_t*>( parent->rightChild( ) );
-                    }
-                } while( sub );
-                if( *n < *parent )
-                    parent->setLeftChild( n );
-                else
-                    parent->setRightChild( n );
-                n->setParent( parent );
-            }       
-            return n;
-        }
-        
 
     private:
 

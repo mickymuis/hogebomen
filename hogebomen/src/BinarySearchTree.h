@@ -144,6 +144,58 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
             return haystack;
         }
 
+       /**
+        * @function     min( )
+        * @abstract     Returns the node with the least value in a binary search
+        *               tree. This is achieved through recursion.
+        * @param        node - the node from which we start looking
+        * @return       Eventually, at the end of the recursion, we return the
+        *               adress of the node with the smallest value.
+        * @post         The node with the smallest value is returned.
+        **/ 
+        node_t *min( node_t *node ) {
+            return node->leftChild( ) ?
+                   min(static_cast<node_t *>( node->leftChild( ) ) ) : node;
+        }
+
+       /**
+        * @function     min( )
+        * @abstract     We call the function mentioned above and then
+        *               return the node with the least value in a binary search
+        *               tree.
+        * @return       We return the adress of the node with the smallest value.
+        * @post         The node with the smallest value is returned.
+        **/ 
+        node_t *min( ) {
+            return min( static_cast<node_t *>( this->root( ) ) );
+        }
+
+       /**
+        * @function     max( )
+        * @abstract     Returns the node with the highest value in a binary 
+        *               search tree. This is achieved through recursion.
+        * @param        node - the node from which we start looking
+        * @return       Eventually, at the end of the recursion, we return the
+        *               adress of the node with the highest value.
+        * @post         The node with the highest value is returned.
+        **/ 
+        node_t *max( node_t *node ) {
+            return node->rightChild( ) ?
+                   max(static_cast<node_t *>( node->rightChild( ) ) ) : node;
+        }
+
+       /**
+        * @function     max( )
+        * @abstract     We call the function mentioned above and then
+        *               return the node with the highest value in a binary 
+        *               search tree.
+        * @return       We return the adress of the node with the highest value.
+        * @post         The node with the highest value is returned.
+        **/ 
+        node_t *max( ) {
+            return max( static_cast<node_t *>( this->root( ) ) );
+        }
+
     private:
 
 };
