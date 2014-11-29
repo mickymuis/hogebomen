@@ -136,6 +136,49 @@ template <class INFO_T> class TreeNode
                     parent( )->setRightChild( this );
             }
         }
+
+        /**
+        * @function  replace( )
+        * @abstract  Replaces the node with another node in the tree
+        * @param     n, the node we replace the node with, this one gets deleted
+        * @pre       both this node and n must be in the same parent tree
+        * @post      The node will be replaced and n will be deleted.
+        **/
+        void replace( TreeNode<INFO_T>* n ) {
+            bool n_wasLeftChild =false;
+
+            if( n->parent( ) && n->parent( )->leftChild( ) == n ) 
+                n_wasLeftChild =true;
+            
+            // Swap the family info
+            TreeNode<INFO_T>* newParent =
+                ( n->parent( ) == this ) ? n : n->parent( );
+            TreeNode<INFO_T>* newLeft =
+                ( n->leftChild( ) == this ) ? n :n->leftChild( );
+            TreeNode<INFO_T>* newRight =
+                 ( n->rightChild( ) == this ) ? n :n->rightChild( );
+
+            setParent( newParent );
+            setLeftChild( newLeft );
+            setRightChild( newRight );
+            m_info = n->m_info;
+            
+            // Restore applicable pointers
+            if( leftChild( ) )
+                leftChild( )->setParent( this );
+            if( rightChild( ) )
+                rightChild( )->setParent( this );
+
+            if( parent( ) ) {
+                if( n_wasLeftChild )
+                    parent( )->setLeftChild( this );
+                else
+                    parent( )->setRightChild( this );
+            }
+            delete n;
+        }
+
+
         
         /**
         * @function  sibling( )

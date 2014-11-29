@@ -153,9 +153,9 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         *               adress of the node with the smallest value.
         * @post         The node with the smallest value is returned.
         **/ 
-        node_t *min( node_t *node ) {
+        node_t* min( node_t* node ) {
             return node->leftChild( ) ?
-                   min(static_cast<node_t *>( node->leftChild( ) ) ) : node;
+                   min(static_cast<node_t*>( node->leftChild( ) ) ) : node;
         }
 
        /**
@@ -166,8 +166,8 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         * @return       We return the adress of the node with the smallest value.
         * @post         The node with the smallest value is returned.
         **/ 
-        node_t *min( ) {
-            return min( static_cast<node_t *>( this->root( ) ) );
+        node_t* min( ) {
+            return min( static_cast<node_t*>( this->root( ) ) );
         }
 
        /**
@@ -179,9 +179,9 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         *               adress of the node with the highest value.
         * @post         The node with the highest value is returned.
         **/ 
-        node_t *max( node_t *node ) {
+        node_t* max( node_t* node ) {
             return node->rightChild( ) ?
-                   max(static_cast<node_t *>( node->rightChild( ) ) ) : node;
+                   max(static_cast<node_t*>( node->rightChild( ) ) ) : node;
         }
 
        /**
@@ -192,8 +192,8 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         * @return       We return the adress of the node with the highest value.
         * @post         The node with the highest value is returned.
         **/ 
-        node_t *max( ) {
-            return max( static_cast<node_t *>( this->root( ) ) );
+        node_t*max( ) {
+            return max( static_cast<node_t*>( this->root( ) ) );
         }
 
     private:
