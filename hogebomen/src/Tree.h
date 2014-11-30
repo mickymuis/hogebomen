@@ -16,6 +16,8 @@
 
 using namespace std;
 
+template <class INFO_T> class SplayTree;
+
 template <class INFO_T> class Tree
 {
     public:
@@ -589,6 +591,7 @@ template <class INFO_T> class Tree
         
         friend class TreeNodeIterator_pre<INFO_T>;
         friend class TreeNodeIterator_in<INFO_T>;
+        friend class SplayTree<INFO_T>;
         TreeNode<INFO_T> *m_root;
         
     private:

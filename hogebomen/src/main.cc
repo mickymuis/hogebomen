@@ -11,6 +11,7 @@
 #include "BinarySearchTree.h"
 #include "Tree.h"
 #include "AVLTree.h"
+#include "SplayTree.h"
 #include <string>
 
 using namespace std;
@@ -39,31 +40,33 @@ template<class T> void printTree( Tree<T> tree, int rows ) {
 
 int main ( int argc, char **argv ) {
     
-    BinarySearchTree<int> bst;
+    SplayTree<int> bst;
     
     auto root =bst.pushBack( 10 );
     auto a =bst.pushBack( 5 );
-    auto c =bst.pushBack( 15 );
+    bst.pushBack( 15 );
     
     bst.pushBack( 25 );
     auto b =bst.pushBack( 1 );
     bst.pushBack( -1 );
-    bst.pushBack( 11 );
+    auto c =bst.pushBack( 11 );
     bst.pushBack( 12 );
     
-    printTree<int>( bst, 5 );
+    //printTree<int>( bst, 5 );
     
     //a->swapWith( b );
-    bst.remove( bst.find( 0, 15 ) );
-    bst.replace( -2, bst.find( 0, 5 ) );
+    //bst.remove( bst.find( 0, 15 ) );
+    //bst.replace( -2, bst.find( 0, 5 ) );
     
     
     printTree<int>( bst, 5 );
     
-    bst.remove( root );
+    //bst.remove( root );
+    
+    bst.splay( c );
     
     printTree<int>( bst, 5 );
-
+    
     // Test AVLTree //
 
     AVLTree<int> test;
