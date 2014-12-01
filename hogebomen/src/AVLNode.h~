@@ -62,8 +62,10 @@ template <class INFO_T> class AVLNode : public BSTNode<INFO_T>
         * @post         The node now has the right height.
         **/
         void updateHeight( ) {
-            int lHeight =static_cast<AVLNode *>( this->leftChild( ) )->getHeight( );
-            int rHeight =static_cast<AVLNode *>( this->rightChild( ) )->getHeight( );
+            int lHeight =static_cast<AVLNode *>( this->leftChild( ) )
+                         ->getHeight( );
+            int rHeight =static_cast<AVLNode *>( this->rightChild( ) )
+                         ->getHeight( );
 
             this->height =( 1 + ( ( lHeight > rHeight ) ? lHeight : rHeight ) );
         }

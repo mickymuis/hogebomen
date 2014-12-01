@@ -144,7 +144,7 @@ template <class INFO_T> class TreeNode
         * @pre       both this node and n must be in the same parent tree
         * @post      The node will be replaced and n will be deleted.
         **/
-        void replace( TreeNode<INFO_T>* n ) {
+        virtual void replace( TreeNode<INFO_T>* n ) {
             bool n_wasLeftChild =false;
 
             if( n->parent( ) && n->parent( )->leftChild( ) == n ) 
@@ -161,6 +161,7 @@ template <class INFO_T> class TreeNode
             setParent( newParent );
             setLeftChild( newLeft );
             setRightChild( newRight );
+            m_info =n->m_info;
             
             // Restore applicable pointers
             if( leftChild( ) )

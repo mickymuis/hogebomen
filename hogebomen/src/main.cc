@@ -12,6 +12,7 @@
 #include "Tree.h"
 #include "AVLTree.h"
 #include "SplayTree.h"
+#include "Treap.h"
 #include <string>
 
 using namespace std;
@@ -82,6 +83,20 @@ int main ( int argc, char **argv ) {
     cout << d->info( ) << " verwijderen: " << endl; 
     test.remove( d );
     printTree<int>( test, 5 );
+
+    // Test Treap //
+
+    cout << "Treap" << endl;
+
+    Treap<int> testTreap;
+    testTreap.insert(2);
+    testTreap.insert(3);
+    auto e =testTreap.insert(4);
+    testTreap.insert(5);
+    printTree<int>( testTreap, 5 );
+    testTreap.remove(e);
+    printTree<int>( testTreap, 5 );
+
 
     return 0;
 }

@@ -96,10 +96,11 @@ template <class INFO_T> class AVLNode : public BSTNode<INFO_T>
             return S::info() >= rhs.info();
         }
 
-        int height;
-
     protected:
         friend class AVLTree<INFO_T>;
+
+    private:
+        int height;
 };
 
 
