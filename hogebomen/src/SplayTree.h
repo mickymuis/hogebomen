@@ -31,8 +31,8 @@ template <class INFO_T> class SplayTree : public SelfOrganizingTree<INFO_T> {
                 LEFT =0x1, RIGHT =0x2,
                 PLEFT =0x4, PRIGHT =0x8 };
         
-            // Can't splay the root
-            if( S::m_root == node )
+            // Can't splay the root (or null)
+            if( !node || S::m_root == node )
                 return;
                 
             node_t *p =static_cast<node_t*>( node->parent( ) );
@@ -49,10 +49,6 @@ template <class INFO_T> class SplayTree : public SelfOrganizingTree<INFO_T> {
                 // Node's grandparent
                 node_t* g =static_cast<node_t*>( p->parent( ) );
                 
-                bool isRoot =false;
-                if( g == S::m_root )
-                    isRoot =true;
-                
                 if( g->leftChild( ) == p )
                     mode |= PRIGHT;
                 else
@@ -64,43 +60,41 @@ template <class INFO_T> class SplayTree : public SelfOrganizingTree<INFO_T> {
                     // first rotate g-p then p-node
                     
                     if( mode & PLEFT )
-                        g->rotateLeft( );
+                        this->rotateLeft( g );
                     else
-                        g->rotateRight( );
+                        this->rotateRight( g );
                     
                     if( mode & LEFT )
-                        p->rotateLeft( );
+                        this->rotateLeft( p );
                     else
-                        p->rotateRight( );
+                        this->rotateRight( p );
                 }
                 else {
                     // the 'zig-zag' step
                     // first rotate p-node then g-p
                     
                     if( mode & LEFT )
-                        p->rotateLeft( );
+                        this->rotateLeft( p );
                     else
-                        p->rotateRight( );
+                        this->rotateRight( p );
                     
                     if( mode & PLEFT )
-                        g->rotateLeft( );
+                        this->rotateLeft( g );
                     else
-                        g->rotateRight( );
+                        this->rotateRight( g );
                 }
                 
                 // perhaps we're done already...
-                if( isRoot ) {
-                    S::m_root =node;
+                if( node == this->root( ) )
                     return;
-                }
             }
             
             // The 'zig-step': parent of node is the root
             
             if( p->leftChild( ) == node )
-                S::m_root =p->rotateRight( );
+                this->rotateRight( p );
             else
-                S::m_root =p->rotateLeft( );
+                this->rotateLeft( p );
         }
 };
 

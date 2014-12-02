@@ -40,33 +40,77 @@ template<class T> void printTree( Tree<T> tree, int rows ) {
 }
 
 int main ( int argc, char **argv ) {
+
+    /* BST hieronder */
+
+    cout << "BST:" << endl;
+    BinarySearchTree<int> bst;
     
-    SplayTree<int> bst;
-    
-    auto root =bst.pushBack( 10 );
-    auto a =bst.pushBack( 5 );
+   /* auto root =bst.pushBack( 10 );
+    bst.pushBack( 5 );
     bst.pushBack( 15 );
     
     bst.pushBack( 25 );
-    auto b =bst.pushBack( 1 );
+    bst.pushBack( 1 );
     bst.pushBack( -1 );
-    auto c =bst.pushBack( 11 );
-    bst.pushBack( 12 );
+    bst.pushBack( 11 );
+    bst.pushBack( 12 );*/
+    
+    Tree<int>* bstP =&bst; // Dit werkt gewoon :-)
+    
+    auto root =bstP->pushBack( 10 );
+    bstP->pushBack( 5 );
+    bstP->pushBack( 15 );
+    
+    bstP->pushBack( 25 );
+    bstP->pushBack( 1 );
+    bstP->pushBack( -1 );
+    bstP->pushBack( 11 );
+    bstP->pushBack( 12 );
     
     //printTree<int>( bst, 5 );
     
-    //a->swapWith( b );
+    
     //bst.remove( bst.find( 0, 15 ) );
     //bst.replace( -2, bst.find( 0, 5 ) );
     
     
     printTree<int>( bst, 5 );
     
-    //bst.remove( root );
-    
-    bst.splay( c );
+    bst.remove( root );
+
     
     printTree<int>( bst, 5 );
+
+    /* Splay Trees hieronder */
+    
+    cout << "Splay Boom:" << endl;
+    SplayTree<int> splay;
+    
+    splay.pushBack( 10 );
+    auto a =splay.pushBack( 5 );
+    splay.pushBack( 15 );
+    
+    splay.pushBack( 25 );
+    auto b =splay.pushBack( 1 );
+    splay.pushBack( -1 );
+    auto c =splay.pushBack( 11 );
+    splay.pushBack( 12 );
+    
+    //printTree<int>( splay, 5 );
+    
+    //a->swapWith( b );
+    //splay.remove( splay.find( 0, 15 ) );
+    //splay.replace( -2, splay.find( 0, 5 ) );
+    
+    
+    printTree<int>( splay, 5 );
+    
+    //splay.remove( root );
+    
+    splay.splay( c );
+    
+    printTree<int>( splay, 5 );
     
     // Test AVLTree //
 
