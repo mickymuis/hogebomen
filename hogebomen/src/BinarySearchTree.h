@@ -21,6 +21,8 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         BinarySearchTree( ) : S( ) { }
         BinarySearchTree( const BinarySearchTree& cpy ) : S( cpy ) { }
         
+        virtual ~BinarySearchTree( ) { }
+        
        /**
         * @function  pushBack( )
         * @abstract  reimplemented virtual function from Tree<>

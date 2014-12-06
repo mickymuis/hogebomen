@@ -174,5 +174,7 @@ int main ( int argc, char **argv ) {
           
     fhaystack.close( );
     fneedles.close( );
+    delete tree;
+    
     return 0;   
 }
