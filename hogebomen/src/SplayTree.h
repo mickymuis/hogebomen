@@ -110,7 +110,7 @@ template <class INFO_T> class SplayTree : public SelfOrganizingTree<INFO_T> {
         
             // Can't splay the root (or null)
             if( !node || S::m_root == node )
-                return 0;
+                return node;
                 
             node_t *p =static_cast<node_t*>( node->parent( ) );
             int mode;
@@ -164,6 +164,8 @@ template <class INFO_T> class SplayTree : public SelfOrganizingTree<INFO_T> {
                 // perhaps we're done already...
                 if( node == this->root( ) )
                     return node;
+                else
+                    p =static_cast<node_t*>( node->parent( ) );
             }
             
             // The 'zig-step': parent of node is the root

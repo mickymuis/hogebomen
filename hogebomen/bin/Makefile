@@ -5,9 +5,12 @@ CXX = g++
 CC = gcc
 #STATIC =-static
 
-OUTPUT = bin/hogebomen
+OUTPUT = bin/hogebomen 
 
-all: $(OUTPUT) $(OUTPUT)2
+all: $(OUTPUT) bin/hooiberg
+
+lib/hooiberg.o: src/hooiberg.cc
+	$(CXX) -c src/hooiberg.cc -o lib/hooiberg.o $(CXX_FLAGS)
 
 lib/main.o: src/main.cc
 	$(CXX) -c src/main.cc -o lib/main.o $(CXX_FLAGS)
@@ -24,9 +27,12 @@ lib/ExpressionAtom.o: src/ExpressionAtom.cc
 $(OUTPUT): lib/main.o lib/ExpressionTree.o lib/ExpressionAtom.o
 	$(CXX) $(STATIC) lib/main.o lib/ExpressionTree.o lib/ExpressionAtom.o -o $(OUTPUT) $(LD_FLAGS)
 	
-$(OUTPUT)2: lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o
-	$(CXX) $(STATIC) lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o -o $(OUTPUT)2 $(LD_FLAGS)
+#$(OUTPUT)2: lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o
+#	$(CXX) $(STATIC) lib/main2.o lib/ExpressionTree.o lib/ExpressionAtom.o -o $(OUTPUT)2 $(LD_FLAGS)
 	
+bin/hooiberg: lib/hooiberg.o lib/ExpressionTree.o lib/ExpressionAtom.o
+	$(CXX) $(STATIC) lib/hooiberg.o lib/ExpressionTree.o lib/ExpressionAtom.o -o bin/hooiberg $(LD_FLAGS)
+
 clean: 
 	rm -f lib/*.o
 	rm -f $(OUTPUT)

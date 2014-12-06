@@ -44,7 +44,7 @@ template <class INFO_T> class Treap : public SelfOrganizingTree<INFO_T> {
             node_t* node =new node_t;
             if( S::find( this->root( ), info ) )
                 return node;
-            node =static_cast<node_t* >( S::pushBack( info ) );            
+            node =static_cast<node_t* >( S::insert( info ) );            
             node->priority =rand( ) % 100 + 1;
             rebalance( node );
             return node;
