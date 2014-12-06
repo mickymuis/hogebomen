@@ -6,6 +6,5 @@ geel
 violet
 wit met streepjes
 turqoise
-groen
 olijf
 kleurloos

@@ -171,6 +171,11 @@ int main ( int argc, char **argv ) {
                             (std::chrono::system_clock::now() - start);
                             
     cout << "Searched the haystack in " << duration.count() << "ms" << endl;
+    
+    // Test pre-order
+    //for( auto word : *tree ) {
+    //    cout << word << '\n';
+    //}
           
     fhaystack.close( );
     fneedles.close( );

@@ -1,0 +1,275 @@
+Hooiberg gedraaid met een *ongesorteerde* Nederlandse woordenlijst van 164.000+ woorden.
+Gedicht bevat 62 woorden. Gedraaid voor bst, splay, avl en treap
+
+./bin/hooiberg bst nederlands_unsorted.txt gedicht.txt
+Filled the binary search tree in 274ms
+Found `eenhoorn' in 22 steps.
+Found `op' in 16 steps.
+Found `mijn' in 23 steps.
+Found `kop' in 27 steps.
+Didn't find `steekt'
+Found `fier' in 24 steps.
+Found `naar' in 16 steps.
+Found `voor' in 23 steps.
+Found `waaraan' in 19 steps.
+Found `ik' in 13 steps.
+Found `mijn' in 23 steps.
+Found `naam' in 16 steps.
+Didn't find `ontleen'
+Found `een' in 16 steps.
+Found `hoorn' in 17 steps.
+Found `van' in 19 steps.
+Found `zuiver' in 16 steps.
+Found `wit' in 22 steps.
+Found `ivoor' in 28 steps.
+Found `daarvan' in 21 steps.
+Found `heb' in 17 steps.
+Found `ik' in 13 steps.
+Found `er' in 19 steps.
+Found `één' in 6 steps.
+Found `mijn' in 23 steps.
+Found `tranen' in 18 steps.
+Found `helen' in 16 steps.
+Found `wonden' in 24 steps.
+Found `en' in 24 steps.
+Found `mijn' in 23 steps.
+Found `bloed' in 28 steps.
+Didn't find `is'
+Found `medicijn' in 22 steps.
+Found `als' in 26 steps.
+Found `zij' in 22 steps.
+Found `mij' in 24 steps.
+Found `pakken' in 17 steps.
+Found `konden' in 23 steps.
+Found `zouden' in 16 steps.
+Found `zij' in 22 steps.
+Found `onsterfelijk' in 31 steps.
+Found `zijn' in 23 steps.
+Found `al' in 20 steps.
+Didn't find `eeuwen'
+Found `om' in 18 steps.
+Found `die' in 19 steps.
+Found `reden' in 15 steps.
+Didn't find `jaagt'
+Found `de' in 19 steps.
+Found `mens' in 15 steps.
+Found `mij' in 24 steps.
+Found `na' in 18 steps.
+Found `tot' in 19 steps.
+Found `de' in 19 steps.
+Found `dag' in 17 steps.
+Found `dat' in 16 steps.
+Found `hij' in 19 steps.
+Found `beseft' in 19 steps.
+Found `dat' in 16 steps.
+Found `ik' in 13 steps.
+Found `niet' in 22 steps.
+Didn't find `besta'
+Total search depth:   1106
+Number of matches:    56
+Average search depth: 19
+Searched the haystack in 0ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg splay nederlands_unsorted.txt gedicht.txt
+Filled the binary search tree in 622ms
+Found `eenhoorn' in 21 steps.
+Found `op' in 18 steps.
+Found `mijn' in 21 steps.
+Found `kop' in 23 steps.
+Didn't find `steekt'
+Found `fier' in 19 steps.
+Found `naar' in 18 steps.
+Found `voor' in 23 steps.
+Found `waaraan' in 19 steps.
+Found `ik' in 21 steps.
+Found `mijn' in 4 steps.
+Found `naam' in 14 steps.
+Didn't find `ontleen'
+Found `een' in 24 steps.
+Found `hoorn' in 21 steps.
+Found `van' in 27 steps.
+Found `zuiver' in 21 steps.
+Found `wit' in 19 steps.
+Found `ivoor' in 24 steps.
+Found `daarvan' in 23 steps.
+Found `heb' in 21 steps.
+Found `ik' in 3 steps.
+Found `er' in 17 steps.
+Found `één' in 18 steps.
+Found `mijn' in 5 steps.
+Found `tranen' in 25 steps.
+Found `helen' in 20 steps.
+Found `wonden' in 19 steps.
+Found `en' in 20 steps.
+Found `mijn' in 4 steps.
+Found `bloed' in 21 steps.
+Didn't find `is'
+Found `medicijn' in 30 steps.
+Found `als' in 27 steps.
+Found `zij' in 30 steps.
+Found `mij' in 10 steps.
+Found `pakken' in 24 steps.
+Found `konden' in 26 steps.
+Found `zouden' in 16 steps.
+Found `zij' in 2 steps.
+Found `onsterfelijk' in 14 steps.
+Found `zijn' in 11 steps.
+Found `al' in 20 steps.
+Didn't find `eeuwen'
+Found `om' in 21 steps.
+Found `die' in 23 steps.
+Found `reden' in 27 steps.
+Didn't find `jaagt'
+Found `de' in 14 steps.
+Found `mens' in 19 steps.
+Found `mij' in 4 steps.
+Found `na' in 21 steps.
+Found `tot' in 17 steps.
+Found `de' in 4 steps.
+Found `dag' in 11 steps.
+Found `dat' in 16 steps.
+Found `hij' in 23 steps.
+Found `beseft' in 24 steps.
+Found `dat' in 1 steps.
+Found `ik' in 5 steps.
+Found `niet' in 24 steps.
+Didn't find `besta'
+Total search depth:   997
+Number of matches:    56
+Average search depth: 17
+Searched the haystack in 0ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg avl nederlands_unsorted.txt gedicht.txt
+Filled the binary search tree in 645ms
+Found `eenhoorn' in 17 steps.
+Found `op' in 15 steps.
+Found `mijn' in 16 steps.
+Found `kop' in 14 steps.
+Didn't find `steekt'
+Found `fier' in 18 steps.
+Found `naar' in 14 steps.
+Found `voor' in 19 steps.
+Found `waaraan' in 17 steps.
+Found `ik' in 15 steps.
+Found `mijn' in 16 steps.
+Found `naam' in 15 steps.
+Didn't find `ontleen'
+Found `een' in 13 steps.
+Found `hoorn' in 11 steps.
+Found `van' in 16 steps.
+Found `zuiver' in 13 steps.
+Found `wit' in 17 steps.
+Found `ivoor' in 17 steps.
+Found `daarvan' in 17 steps.
+Found `heb' in 14 steps.
+Found `ik' in 15 steps.
+Found `er' in 16 steps.
+Found `één' in 18 steps.
+Found `mijn' in 16 steps.
+Found `tranen' in 16 steps.
+Found `helen' in 15 steps.
+Found `wonden' in 16 steps.
+Found `en' in 18 steps.
+Found `mijn' in 16 steps.
+Found `bloed' in 13 steps.
+Didn't find `is'
+Found `medicijn' in 16 steps.
+Found `als' in 16 steps.
+Found `zij' in 16 steps.
+Found `mij' in 16 steps.
+Found `pakken' in 15 steps.
+Found `konden' in 17 steps.
+Found `zouden' in 14 steps.
+Found `zij' in 16 steps.
+Found `onsterfelijk' in 17 steps.
+Found `zijn' in 17 steps.
+Found `al' in 16 steps.
+Didn't find `eeuwen'
+Found `om' in 17 steps.
+Found `die' in 17 steps.
+Found `reden' in 13 steps.
+Didn't find `jaagt'
+Found `de' in 18 steps.
+Found `mens' in 15 steps.
+Found `mij' in 16 steps.
+Found `na' in 14 steps.
+Found `tot' in 15 steps.
+Found `de' in 18 steps.
+Found `dag' in 14 steps.
+Found `dat' in 15 steps.
+Found `hij' in 16 steps.
+Found `beseft' in 17 steps.
+Found `dat' in 15 steps.
+Found `ik' in 15 steps.
+Found `niet' in 16 steps.
+Didn't find `besta'
+Total search depth:   880
+Number of matches:    56
+Average search depth: 15
+Searched the haystack in 0ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg treap nederlands_unsorted.txt gedicht.txt
+Filled the binary search tree in 755ms
+Found `eenhoorn' in 33 steps.
+Found `op' in 74 steps.
+Found `mijn' in 31 steps.
+Found `kop' in 26 steps.
+Didn't find `steekt'
+Found `fier' in 34 steps.
+Found `naar' in 22 steps.
+Found `voor' in 52 steps.
+Found `waaraan' in 71 steps.
+Found `ik' in 10 steps.
+Found `mijn' in 31 steps.
+Found `naam' in 24 steps.
+Didn't find `ontleen'
+Found `een' in 26 steps.
+Found `hoorn' in 34 steps.
+Found `van' in 21 steps.
+Found `zuiver' in 32 steps.
+Found `wit' in 65 steps.
+Found `ivoor' in 57 steps.
+Found `daarvan' in 24 steps.
+Found `heb' in 31 steps.
+Found `ik' in 10 steps.
+Found `er' in 38 steps.
+Found `één' in 6 steps.
+Found `mijn' in 31 steps.
+Found `tranen' in 46 steps.
+Found `helen' in 12 steps.
+Found `wonden' in 65 steps.
+Found `en' in 33 steps.
+Found `mijn' in 31 steps.
+Found `bloed' in 70 steps.
+Didn't find `is'
+Found `medicijn' in 35 steps.
+Found `als' in 43 steps.
+Found `zij' in 29 steps.
+Found `mij' in 32 steps.
+Found `pakken' in 27 steps.
+Found `konden' in 16 steps.
+Found `zouden' in 33 steps.
+Found `zij' in 29 steps.
+Found `onsterfelijk' in 75 steps.
+Found `zijn' in 32 steps.
+Found `al' in 24 steps.
+Didn't find `eeuwen'
+Found `om' in 52 steps.
+Found `die' in 49 steps.
+Found `reden' in 40 steps.
+Didn't find `jaagt'
+Found `de' in 21 steps.
+Found `mens' in 35 steps.
+Found `mij' in 32 steps.
+Found `na' in 24 steps.
+Found `tot' in 19 steps.
+Found `de' in 21 steps.
+Found `dag' in 20 steps.
+Found `dat' in 24 steps.
+Found `hij' in 21 steps.
+Found `beseft' in 44 steps.
+Found `dat' in 24 steps.
+Found `ik' in 10 steps.
+Found `niet' in 37 steps.
+Didn't find `besta'
+Total search depth:   1888
+Number of matches:    56
+Average search depth: 33
+Searched the haystack in 0ms
