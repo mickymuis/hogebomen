@@ -42,7 +42,10 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         * @return       the node we inserted
         * @post         The tree now contains a node with 'info'
         **/
-        node_t* insert( const INFO_T& info ) {
+        node_t* insert( const INFO_T& info,
+                        TreeNode<INFO_T>* parent =0, // Ignored
+                        bool preferRight =false,     // Ignored
+                        int replaceBehavior =0 ) { // Ignored
             node_t* node =new node_t;
             if( S::find( this->root( ), info ) )
                 return node;

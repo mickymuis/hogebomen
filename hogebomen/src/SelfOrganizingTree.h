@@ -23,6 +23,17 @@ template <class INFO_T> class SelfOrganizingTree : public BinarySearchTree<INFO_
         **/      	
         SelfOrganizingTree( ) : S( ) { }
 
+       /**
+        * @function  rotateLeft( ) and rotateRight( )
+        * @abstract  Performs a rotation with the given node as root of the
+        *            rotating subtree, either left of right.
+        *            The tree's root pointer will be updated if neccesary.
+        * @param     node, the node to rotate
+        * @pre       The node must be a node in this tree
+        * @post      The node may be be the new root of the tree
+        *            No nodes will be invalided and no new memory is
+        *            allocated. Iterators may become invalid.
+        **/
         virtual node_t *rotateLeft( node_t * node ){
             if( this->root( ) == node )
                 return static_cast<node_t *>( S::m_root = node->rotateLeft( ) );
