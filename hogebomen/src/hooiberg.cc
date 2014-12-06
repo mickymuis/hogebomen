@@ -17,6 +17,11 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <chrono>
+
+// Only works on *nix operating systems
+// Needed for precision timing
+#include <sys/time.h>
 
 using namespace std;
 
@@ -144,15 +149,29 @@ int main ( int argc, char **argv ) {
             break;
     }
     
+
+    // Define a start point to time measurement
+    auto start = std::chrono::system_clock::now();
+
+    
     if( !fillTree( tree, fhaystack ) ) {
         cerr << "Could not read the haystack." << endl;
         return -1;          
     }
     
-    findAll( needles, tree );
-       
-    //printTree<string>(*tree, 6);
+    // Determine the duration of the code block
+    auto duration =std::chrono::duration_cast<std::chrono::milliseconds> 
+                            (std::chrono::system_clock::now() - start);
     
+    cout << "Filled the binary search tree in " << duration.count() << "ms" << endl;
+    
+    start = std::chrono::system_clock::now();  
+    findAll( needles, tree );
+    duration =std::chrono::duration_cast<std::chrono::milliseconds> 
+                            (std::chrono::system_clock::now() - start);
+                            
+    cout << "Searched the haystack in " << duration.count() << "ms" << endl;
+          
     fhaystack.close( );
     fneedles.close( );
     return 0;   
