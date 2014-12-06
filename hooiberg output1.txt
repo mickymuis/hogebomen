@@ -1,0 +1,68 @@
+Output van: ./bin/hooiberg bst nederlands.txt gedicht.txt
+Tijd: niet opgenomen, ongeveer 10 min.
+
+Found `eenhoorn' in 31313 steps.
+Found `op' in 79930 steps.
+Found `mijn' in 69952 steps.
+Found `kop' in 59080 steps.
+Didn't find `steekt'
+Found `fier' in 34842 steps.
+Found `naar' in 72625 steps.
+Found `voor' in 124903 steps.
+Found `waaraan' in 127014 steps.
+Found `ik' in 49209 steps.
+Found `mijn' in 69952 steps.
+Found `naam' in 72588 steps.
+Didn't find `ontleen'
+Found `een' in 31206 steps.
+Found `hoorn' in 47604 steps.
+Found `van' in 117612 steps.
+Found `zuiver' in 134781 steps.
+Found `wit' in 131084 steps.
+Found `ivoor' in 52128 steps.
+Found `daarvan' in 24875 steps.
+Found `heb' in 44891 steps.
+Found `ik' in 49209 steps.
+Found `er' in 32763 steps.
+Found `één' in 135402 steps.
+Found `mijn' in 69952 steps.
+Found `tranen' in 113750 steps.
+Found `helen' in 45277 steps.
+Found `wonden' in 131331 steps.
+Found `en' in 32365 steps.
+Found `mijn' in 69952 steps.
+Found `bloed' in 16572 steps.
+Didn't find `is'
+Found `medicijn' in 68211 steps.
+Found `als' in 6514 steps.
+Found `zij' in 133677 steps.
+Found `mij' in 69942 steps.
+Found `pakken' in 83268 steps.
+Found `konden' in 58686 steps.
+Found `zouden' in 134569 steps.
+Found `zij' in 133677 steps.
+Found `onsterfelijk' in 78380 steps.
+Found `zijn' in 133729 steps.
+Found `al' in 6109 steps.
+Didn't find `eeuwen'
+Found `om' in 75840 steps.
+Found `die' in 27017 steps.
+Found `reden' in 92384 steps.
+Didn't find `jaagt'
+Found `de' in 25502 steps.
+Found `mens' in 69024 steps.
+Found `mij' in 69942 steps.
+Found `na' in 72519 steps.
+Found `tot' in 113390 steps.
+Found `de' in 25502 steps.
+Found `dag' in 24911 steps.
+Found `dat' in 25415 steps.
+Found `hij' in 46293 steps.
+Found `beseft' in 13475 steps.
+Found `dat' in 25415 steps.
+Found `ik' in 49209 steps.
+Found `niet' in 74110 steps.
+Didn't find `besta'
+Total search depth:   3808872
+Number of matches:    56
+Average search depth: 68015
