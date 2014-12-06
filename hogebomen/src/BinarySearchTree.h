@@ -184,15 +184,31 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         **/
         virtual TreeNode<INFO_T>* find( TreeNode<INFO_T>* haystack, 
                                         const INFO_T& needle ) {
+            m_searchStepCounter =0;
+            
             if( !haystack )
                 haystack =S::m_root;
             while( haystack && haystack->info( ) != needle ) {
+                m_searchStepCounter++;
                 if( haystack->info( ) > needle )
                     haystack =haystack->leftChild( );
                 else
                     haystack =haystack->rightChild( );
             }
+            if( !haystack )
+                m_searchStepCounter =-1;
             return haystack;
+        }
+        
+       /**
+        * @function  lastSearchStepCount( )
+        * @abstract  gives the amount of steps needed to complete the most
+        *            recent call to find( )
+        * @return    positive amount of steps on a defined search result,
+        *            -1 on no search result
+        */
+        virtual int lastSearchStepCount( ) const {
+            return m_searchStepCounter;
         }
 
        /**
@@ -247,8 +263,8 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
             return max( static_cast<node_t*>( this->root( ) ) );
         }
 
-    private:
-
+    protected:
+        int m_searchStepCounter;
 };
 
 #endif

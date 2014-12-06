@@ -76,7 +76,8 @@ bool fillTree( BinarySearchTree<string>* tree, std::ifstream &file ) {
 void findAll( std::vector<string> &list, BinarySearchTree<string>* tree ) {
     for( auto needle : list ) {
         if( tree->find( 0, needle ) )
-            std::cout << "Found `" << needle << '\'' << std::endl;
+            std::cout << "Found `" << needle << '\'' 
+            << " in " << tree->lastSearchStepCount( ) << " steps." << std::endl;
         else
             std::cout << "Didn't find `" << needle << '\'' << std::endl;
     }
