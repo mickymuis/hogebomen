@@ -79,21 +79,25 @@ bool fillTree( BinarySearchTree<string>* tree, std::ifstream &file ) {
 }
 
 void findAll( std::vector<string> &list, BinarySearchTree<string>* tree ) {
-    int steps =0, found =0;
+    int steps =0, found =0, notfound =0;
     for( auto needle : list ) {
         if( tree->find( 0, needle ) ) {
             found++;
             steps +=tree->lastSearchStepCount( );
-            std::cout << "Found `" << needle << '\'' 
-            << " in " << tree->lastSearchStepCount( ) << " steps." << std::endl;
+            if( found < 51 )
+                std::cout << "Found `" << needle << '\'' 
+                << " in " << tree->lastSearchStepCount( ) << " steps." << std::endl;
         }
-        else
+        else if( ++notfound < 51 )
             std::cout << "Didn't find `" << needle << '\'' << std::endl;
     }
+    if( found > 50 )
+        std::cout << found - 50 << " more results not shown here." << std::endl;
     if( found )    
-        cout << "Total search depth:   " << steps << endl
-             << "Number of matches:    " << found << endl
-             << "Average search depth: " << steps/found << endl;
+        cout << "Total search depth:          " << steps << endl
+             << "Number of matches:           " << found << endl
+             << "Number of misses:            " << notfound << endl
+             << "Average search depth (hits): " << steps/found << endl;
 } 
 
 int main ( int argc, char **argv ) {

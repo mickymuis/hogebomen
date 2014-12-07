@@ -1,0 +1,235 @@
+Resultaten van het zoeken van alle strings in de boom in dezelfde random volgorde.
+
+./bin/hooiberg bst nederlands_unsorted.txt nederlands_unsorted.txt 
+Filled the binary search tree in 271ms
+Found `urine-incontinentie' in 0 steps.
+Found `indicatieproces' in 1 steps.
+Found `smeerolietank' in 2 steps.
+Found `ombuigingsplannen' in 3 steps.
+Found `levensvreugd' in 4 steps.
+Found `fluwijn' in 2 steps.
+Found `missiepriester' in 5 steps.
+Found `recreatiegemeente' in 4 steps.
+Found `programmacoördinator' in 5 steps.
+Found `deelnamekaart' in 3 steps.
+Found `tapdans' in 3 steps.
+Found `afbijtmiddel' in 4 steps.
+Found `overgangstoestand' in 6 steps.
+Found `organisatiebelang' in 7 steps.
+Found `wapenorder' in 1 steps.
+Found `tolboom' in 4 steps.
+Found `zondag' in 2 steps.
+Found `tegenbegroting' in 5 steps.
+Found `parallelcirkel' in 7 steps.
+Found `ruimtetoerisme' in 5 steps.
+Found `pedologie' in 8 steps.
+Found `achterblijfster' in 5 steps.
+Found `kerndraad' in 5 steps.
+Found `levensproject' in 6 steps.
+Found `leerperiode' in 7 steps.
+Found `beslissingsprogramma' in 5 steps.
+Found `testen' in 6 steps.
+Found `trainingsvlucht' in 5 steps.
+Found `beeldtaal' in 6 steps.
+Found `ijsval' in 3 steps.
+Found `verjaardagsbezoek' in 2 steps.
+Found `kokken' in 8 steps.
+Found `uitdruppen' in 6 steps.
+Found `verdiepen' in 3 steps.
+Found `schoolervaring' in 6 steps.
+Found `arbeidskeuze' in 7 steps.
+Found `straks' in 4 steps.
+Found `afrader' in 8 steps.
+Found `postacademisch' in 9 steps.
+Found `netwerkbijeenkomst' in 6 steps.
+Found `masterdiploma' in 6 steps.
+Found `vliegenkop' in 3 steps.
+Found `bedrijfskader' in 8 steps.
+Found `loodmijn' in 7 steps.
+Found `corrigeren' in 6 steps.
+Found `stootband' in 5 steps.
+Found `katoenproductie' in 6 steps.
+Found `inkomensachteruitgang' in 7 steps.
+Found `behendigheidswedstrijd' in 7 steps.
+Found `darmsap' in 7 steps.
+164263 more results not shown here.
+Total search depth:          3369405
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 20
+Searched the haystack in 257ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg avl nederlands_unsorted.txt nederlands_unsorted.txt 
+Filled the binary search tree in 605ms
+Found `urine-incontinentie' in 9 steps.
+Found `indicatieproces' in 2 steps.
+Found `smeerolietank' in 3 steps.
+Found `ombuigingsplannen' in 5 steps.
+Found `levensvreugd' in 0 steps.
+Found `fluwijn' in 1 steps.
+Found `missiepriester' in 8 steps.
+Found `recreatiegemeente' in 1 steps.
+Found `programmacoördinator' in 5 steps.
+Found `deelnamekaart' in 7 steps.
+Found `tapdans' in 6 steps.
+Found `afbijtmiddel' in 4 steps.
+Found `overgangstoestand' in 4 steps.
+Found `organisatiebelang' in 11 steps.
+Found `wapenorder' in 7 steps.
+Found `tolboom' in 8 steps.
+Found `zondag' in 8 steps.
+Found `tegenbegroting' in 16 steps.
+Found `parallelcirkel' in 14 steps.
+Found `ruimtetoerisme' in 4 steps.
+Found `pedologie' in 3 steps.
+Found `achterblijfster' in 6 steps.
+Found `kerndraad' in 4 steps.
+Found `levensproject' in 10 steps.
+Found `leerperiode' in 6 steps.
+Found `beslissingsprogramma' in 4 steps.
+Found `testen' in 2 steps.
+Found `trainingsvlucht' in 14 steps.
+Found `beeldtaal' in 5 steps.
+Found `ijsval' in 7 steps.
+Found `verjaardagsbezoek' in 9 steps.
+Found `kokken' in 9 steps.
+Found `uitdruppen' in 4 steps.
+Found `verdiepen' in 17 steps.
+Found `schoolervaring' in 5 steps.
+Found `arbeidskeuze' in 3 steps.
+Found `straks' in 9 steps.
+Found `afrader' in 11 steps.
+Found `postacademisch' in 4 steps.
+Found `netwerkbijeenkomst' in 4 steps.
+Found `masterdiploma' in 10 steps.
+Found `vliegenkop' in 16 steps.
+Found `bedrijfskader' in 14 steps.
+Found `loodmijn' in 8 steps.
+Found `corrigeren' in 3 steps.
+Found `stootband' in 6 steps.
+Found `katoenproductie' in 8 steps.
+Found `inkomensachteruitgang' in 10 steps.
+Found `behendigheidswedstrijd' in 7 steps.
+Found `darmsap' in 8 steps.
+164263 more results not shown here.
+Total search depth:          2576171
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 15
+Searched the haystack in 219ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg splay nederlands_unsorted.txt nederlands_unsorted.txt 
+Filled the binary search tree in 623ms
+Found `urine-incontinentie' in 23 steps.
+Found `indicatieproces' in 29 steps.
+Found `smeerolietank' in 23 steps.
+Found `ombuigingsplannen' in 18 steps.
+Found `levensvreugd' in 26 steps.
+Found `fluwijn' in 22 steps.
+Found `missiepriester' in 27 steps.
+Found `recreatiegemeente' in 31 steps.
+Found `programmacoördinator' in 29 steps.
+Found `deelnamekaart' in 23 steps.
+Found `tapdans' in 28 steps.
+Found `afbijtmiddel' in 21 steps.
+Found `overgangstoestand' in 25 steps.
+Found `organisatiebelang' in 27 steps.
+Found `wapenorder' in 18 steps.
+Found `tolboom' in 27 steps.
+Found `zondag' in 15 steps.
+Found `tegenbegroting' in 16 steps.
+Found `parallelcirkel' in 21 steps.
+Found `ruimtetoerisme' in 27 steps.
+Found `pedologie' in 15 steps.
+Found `achterblijfster' in 15 steps.
+Found `kerndraad' in 41 steps.
+Found `levensproject' in 24 steps.
+Found `leerperiode' in 16 steps.
+Found `beslissingsprogramma' in 24 steps.
+Found `testen' in 25 steps.
+Found `trainingsvlucht' in 16 steps.
+Found `beeldtaal' in 22 steps.
+Found `ijsval' in 26 steps.
+Found `verjaardagsbezoek' in 30 steps.
+Found `kokken' in 24 steps.
+Found `uitdruppen' in 21 steps.
+Found `verdiepen' in 25 steps.
+Found `schoolervaring' in 23 steps.
+Found `arbeidskeuze' in 20 steps.
+Found `straks' in 29 steps.
+Found `afrader' in 21 steps.
+Found `postacademisch' in 26 steps.
+Found `netwerkbijeenkomst' in 34 steps.
+Found `masterdiploma' in 28 steps.
+Found `vliegenkop' in 34 steps.
+Found `bedrijfskader' in 20 steps.
+Found `loodmijn' in 28 steps.
+Found `corrigeren' in 25 steps.
+Found `stootband' in 21 steps.
+Found `katoenproductie' in 22 steps.
+Found `inkomensachteruitgang' in 16 steps.
+Found `behendigheidswedstrijd' in 20 steps.
+Found `darmsap' in 28 steps.
+164263 more results not shown here.
+Total search depth:          3922834
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 23
+Searched the haystack in 739ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg treap nederlands_unsorted.txt nederlands_unsorted.txt 
+Filled the binary search tree in 715ms
+Found `urine-incontinentie' in 2 steps.
+Found `indicatieproces' in 1 steps.
+Found `smeerolietank' in 8 steps.
+Found `ombuigingsplannen' in 28 steps.
+Found `levensvreugd' in 10 steps.
+Found `fluwijn' in 0 steps.
+Found `missiepriester' in 11 steps.
+Found `recreatiegemeente' in 14 steps.
+Found `programmacoördinator' in 16 steps.
+Found `deelnamekaart' in 12 steps.
+Found `tapdans' in 7 steps.
+Found `afbijtmiddel' in 1 steps.
+Found `overgangstoestand' in 74 steps.
+Found `organisatiebelang' in 54 steps.
+Found `wapenorder' in 72 steps.
+Found `tolboom' in 5 steps.
+Found `zondag' in 8 steps.
+Found `tegenbegroting' in 6 steps.
+Found `parallelcirkel' in 56 steps.
+Found `ruimtetoerisme' in 13 steps.
+Found `pedologie' in 55 steps.
+Found `achterblijfster' in 14 steps.
+Found `kerndraad' in 9 steps.
+Found `levensproject' in 12 steps.
+Found `leerperiode' in 11 steps.
+Found `beslissingsprogramma' in 2 steps.
+Found `testen' in 9 steps.
+Found `trainingsvlucht' in 4 steps.
+Found `beeldtaal' in 4 steps.
+Found `ijsval' in 20 steps.
+Found `verjaardagsbezoek' in 9 steps.
+Found `kokken' in 29 steps.
+Found `uitdruppen' in 3 steps.
+Found `verdiepen' in 11 steps.
+Found `schoolervaring' in 12 steps.
+Found `arbeidskeuze' in 3 steps.
+Found `straks' in 48 steps.
+Found `afrader' in 23 steps.
+Found `postacademisch' in 59 steps.
+Found `netwerkbijeenkomst' in 17 steps.
+Found `masterdiploma' in 19 steps.
+Found `vliegenkop' in 10 steps.
+Found `bedrijfskader' in 5 steps.
+Found `loodmijn' in 14 steps.
+Found `corrigeren' in 3 steps.
+Found `stootband' in 24 steps.
+Found `katoenproductie' in 13 steps.
+Found `inkomensachteruitgang' in 11 steps.
+Found `behendigheidswedstrijd' in 5 steps.
+Found `darmsap' in 4 steps.
+164263 more results not shown here.
+Total search depth:          6346425
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 38
+Searched the haystack in 467ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> 

@@ -1,0 +1,241 @@
+Resultaten van het zoeken van alle strings in de boom in alfabetische volgorde.
+
+BST:
+
+Filled the binary search tree in 272ms
+Found `'s anderendaags' in 14 steps.
+Found `'s avonds' in 13 steps.
+Found `'s middags' in 17 steps.
+Found `'s nachts' in 18 steps.
+Found `'s ochtends' in 16 steps.
+Found `'s-Gravenhage' in 15 steps.
+Found `'s-Hertogenbosch' in 17 steps.
+Found `06-nummer' in 19 steps.
+Found `1 aprilgek' in 20 steps.
+Found `1 aprilgrap' in 18 steps.
+Found `1 aprilmop' in 17 steps.
+Found `5 meiherdenking' in 20 steps.
+Found `5 meiviering' in 17 steps.
+Found `8 uurjournaal' in 23 steps.
+Found `80-jarige' in 21 steps.
+Found `A-biljet' in 20 steps.
+Found `A-bom' in 19 steps.
+Found `A-kant' in 21 steps.
+Found `A-merk' in 20 steps.
+Found `A-omroep' in 21 steps.
+Found `A-status' in 23 steps.
+Found `A4-formaat' in 24 steps.
+Found `AAW-voorziening' in 24 steps.
+Found `ABC-eilanden' in 23 steps.
+Found `ABC-wapens' in 22 steps.
+Found `ADHD' in 16 steps.
+Found `ADHD-kind' in 18 steps.
+Found `ADSL' in 19 steps.
+Found `ADSL-aansluiting' in 17 steps.
+Found `AMvB' in 20 steps.
+Found `AOV' in 15 steps.
+Found `AOV-uitkering' in 18 steps.
+Found `AOW' in 17 steps.
+Found `AOW'er' in 14 steps.
+Found `AOW-premie' in 19 steps.
+Found `AOW-uitkering' in 18 steps.
+Found `AROB' in 20 steps.
+Found `ASFA' in 16 steps.
+Found `ATB' in 17 steps.
+Found `AWACS-vliegtuig' in 16 steps.
+Found `AWBZ-premie' in 18 steps.
+Found `AWW-premie' in 19 steps.
+Found `AWW-uitkering' in 18 steps.
+Found `Aarlen' in 19 steps.
+Found `Aarlenaar' in 20 steps.
+Found `Aarlens' in 22 steps.
+Found `Aboriginal' in 21 steps.
+Found `Aboriginals' in 22 steps.
+Found `Aborigines' in 20 steps.
+Found `Absurdistan' in 19 steps.
+164263 more results not shown here.
+Total search depth:          3369405
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 20
+Searched the haystack in 230ms
+
+AVL:
+
+Filled the binary search tree in 605ms
+Found `'s anderendaags' in 15 steps.
+Found `'s avonds' in 14 steps.
+Found `'s middags' in 16 steps.
+Found `'s nachts' in 15 steps.
+Found `'s ochtends' in 16 steps.
+Found `'s-Gravenhage' in 13 steps.
+Found `'s-Hertogenbosch' in 17 steps.
+Found `06-nummer' in 17 steps.
+Found `1 aprilgek' in 16 steps.
+Found `1 aprilgrap' in 17 steps.
+Found `1 aprilmop' in 14 steps.
+Found `5 meiherdenking' in 16 steps.
+Found `5 meiviering' in 14 steps.
+Found `8 uurjournaal' in 16 steps.
+Found `80-jarige' in 14 steps.
+Found `A-biljet' in 15 steps.
+Found `A-bom' in 14 steps.
+Found `A-kant' in 16 steps.
+Found `A-merk' in 15 steps.
+Found `A-omroep' in 16 steps.
+Found `A-status' in 16 steps.
+Found `A4-formaat' in 17 steps.
+Found `AAW-voorziening' in 17 steps.
+Found `ABC-eilanden' in 16 steps.
+Found `ABC-wapens' in 15 steps.
+Found `ADHD' in 11 steps.
+Found `ADHD-kind' in 17 steps.
+Found `ADSL' in 16 steps.
+Found `ADSL-aansluiting' in 17 steps.
+Found `AMvB' in 14 steps.
+Found `AOV' in 15 steps.
+Found `AOV-uitkering' in 16 steps.
+Found `AOW' in 17 steps.
+Found `AOW'er' in 13 steps.
+Found `AOW-premie' in 16 steps.
+Found `AOW-uitkering' in 15 steps.
+Found `AROB' in 17 steps.
+Found `ASFA' in 15 steps.
+Found `ATB' in 12 steps.
+Found `AWACS-vliegtuig' in 15 steps.
+Found `AWBZ-premie' in 16 steps.
+Found `AWW-premie' in 16 steps.
+Found `AWW-uitkering' in 15 steps.
+Found `Aarlen' in 14 steps.
+Found `Aarlenaar' in 15 steps.
+Found `Aarlens' in 17 steps.
+Found `Aboriginal' in 16 steps.
+Found `Aboriginals' in 15 steps.
+Found `Aborigines' in 16 steps.
+Found `Absurdistan' in 14 steps.
+164263 more results not shown here.
+Total search depth:          2576171
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 15
+Searched the haystack in 202ms
+
+Splay:
+
+Filled the binary search tree in 619ms
+Found `'s anderendaags' in 18 steps.
+Found `'s avonds' in 10 steps.
+Found `'s middags' in 5 steps.
+Found `'s nachts' in 3 steps.
+Found `'s ochtends' in 4 steps.
+Found `'s-Gravenhage' in 3 steps.
+Found `'s-Hertogenbosch' in 1 steps.
+Found `06-nummer' in 5 steps.
+Found `1 aprilgek' in 2 steps.
+Found `1 aprilgrap' in 5 steps.
+Found `1 aprilmop' in 2 steps.
+Found `5 meiherdenking' in 15 steps.
+Found `5 meiviering' in 8 steps.
+Found `8 uurjournaal' in 15 steps.
+Found `80-jarige' in 7 steps.
+Found `A-biljet' in 7 steps.
+Found `A-bom' in 3 steps.
+Found `A-kant' in 1 steps.
+Found `A-merk' in 4 steps.
+Found `A-omroep' in 2 steps.
+Found `A-status' in 1 steps.
+Found `A4-formaat' in 2 steps.
+Found `AAW-voorziening' in 3 steps.
+Found `ABC-eilanden' in 1 steps.
+Found `ABC-wapens' in 2 steps.
+Found `ADHD' in 6 steps.
+Found `ADHD-kind' in 3 steps.
+Found `ADSL' in 1 steps.
+Found `ADSL-aansluiting' in 3 steps.
+Found `AMvB' in 6 steps.
+Found `AOV' in 5 steps.
+Found `AOV-uitkering' in 3 steps.
+Found `AOW' in 3 steps.
+Found `AOW'er' in 4 steps.
+Found `AOW-premie' in 2 steps.
+Found `AOW-uitkering' in 3 steps.
+Found `AROB' in 2 steps.
+Found `ASFA' in 5 steps.
+Found `ATB' in 3 steps.
+Found `AWACS-vliegtuig' in 5 steps.
+Found `AWBZ-premie' in 1 steps.
+Found `AWW-premie' in 6 steps.
+Found `AWW-uitkering' in 6 steps.
+Found `Aarlen' in 4 steps.
+Found `Aarlenaar' in 2 steps.
+Found `Aarlens' in 2 steps.
+Found `Aboriginal' in 5 steps.
+Found `Aboriginals' in 2 steps.
+Found `Aborigines' in 3 steps.
+Found `Absurdistan' in 2 steps.
+164263 more results not shown here.
+Total search depth:          1053334
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 6
+Searched the haystack in 244ms
+
+Treap:
+
+Filled the binary search tree in 1039ms
+Found `'s anderendaags' in 49 steps.
+Found `'s avonds' in 47 steps.
+Found `'s middags' in 48 steps.
+Found `'s nachts' in 49 steps.
+Found `'s ochtends' in 50 steps.
+Found `'s-Gravenhage' in 46 steps.
+Found `'s-Hertogenbosch' in 45 steps.
+Found `06-nummer' in 48 steps.
+Found `1 aprilgek' in 47 steps.
+Found `1 aprilgrap' in 46 steps.
+Found `1 aprilmop' in 45 steps.
+Found `5 meiherdenking' in 49 steps.
+Found `5 meiviering' in 50 steps.
+Found `8 uurjournaal' in 71 steps.
+Found `80-jarige' in 69 steps.
+Found `A-biljet' in 70 steps.
+Found `A-bom' in 65 steps.
+Found `A-kant' in 68 steps.
+Found `A-merk' in 67 steps.
+Found `A-omroep' in 66 steps.
+Found `A-status' in 68 steps.
+Found `A4-formaat' in 70 steps.
+Found `AAW-voorziening' in 71 steps.
+Found `ABC-eilanden' in 68 steps.
+Found `ABC-wapens' in 66 steps.
+Found `ADHD' in 56 steps.
+Found `ADHD-kind' in 55 steps.
+Found `ADSL' in 54 steps.
+Found `ADSL-aansluiting' in 53 steps.
+Found `AMvB' in 54 steps.
+Found `AOV' in 51 steps.
+Found `AOV-uitkering' in 53 steps.
+Found `AOW' in 52 steps.
+Found `AOW'er' in 50 steps.
+Found `AOW-premie' in 52 steps.
+Found `AOW-uitkering' in 51 steps.
+Found `AROB' in 53 steps.
+Found `ASFA' in 49 steps.
+Found `ATB' in 51 steps.
+Found `AWACS-vliegtuig' in 47 steps.
+Found `AWBZ-premie' in 49 steps.
+Found `AWW-premie' in 51 steps.
+Found `AWW-uitkering' in 52 steps.
+Found `Aarlen' in 50 steps.
+Found `Aarlenaar' in 49 steps.
+Found `Aarlens' in 51 steps.
+Found `Aboriginal' in 52 steps.
+Found `Aboriginals' in 50 steps.
+Found `Aborigines' in 49 steps.
+Found `Absurdistan' in 48 steps.
+164263 more results not shown here.
+Total search depth:          10689280
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 65
+Searched the haystack in 580ms

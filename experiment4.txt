@@ -1,0 +1,235 @@
+Resultaten van het zoeken van alle strings in de boom in andere random volgorde.
+
+./bin/hooiberg bst nederlands_unsorted.txt nederlands_unsorted2.txt 
+Filled the binary search tree in 288ms
+Found `oorlogsgruwelen' in 26 steps.
+Found `nationaal' in 18 steps.
+Found `huistiran' in 18 steps.
+Found `gaullisme' in 19 steps.
+Found `kerkpad' in 13 steps.
+Found `handspiegel' in 14 steps.
+Found `meetbereik' in 27 steps.
+Found `nasluipen' in 20 steps.
+Found `braambes' in 26 steps.
+Found `zeewaterpeil' in 17 steps.
+Found `responsietijd' in 18 steps.
+Found `licentiaatsverhandeling' in 15 steps.
+Found `tafelvoetbalspel' in 19 steps.
+Found `papperig' in 13 steps.
+Found `ontroeren' in 27 steps.
+Found `verstaatsing' in 15 steps.
+Found `schouwburg' in 20 steps.
+Found `bloemenrijk' in 23 steps.
+Found `generatiepact' in 24 steps.
+Found `theeworstje' in 25 steps.
+Found `helmbeplanting' in 23 steps.
+Found `botermerk' in 23 steps.
+Found `knokkel' in 22 steps.
+Found `parlementarisme' in 26 steps.
+Found `deuteron' in 13 steps.
+Found `voorklep' in 14 steps.
+Found `bodemexploitatie' in 22 steps.
+Found `pedoseksueel' in 20 steps.
+Found `verliesjaar' in 17 steps.
+Found `uitlaatgas' in 13 steps.
+Found `wegsnijden' in 17 steps.
+Found `castingbureau' in 25 steps.
+Found `olieland' in 17 steps.
+Found `geluidbeleid' in 24 steps.
+Found `knoflookteen' in 25 steps.
+Found `dundoek' in 24 steps.
+Found `kauwvlak' in 21 steps.
+Found `ordelievend' in 20 steps.
+Found `telefoonbehandeling' in 19 steps.
+Found `V' in 18 steps.
+Found `videokunstenares' in 17 steps.
+Found `evenwichtig' in 21 steps.
+Found `ratingbureau' in 21 steps.
+Found `instructiedag' in 27 steps.
+Found `prijsregeling' in 21 steps.
+Found `overwinteraar' in 28 steps.
+Found `verzamelterm' in 21 steps.
+Found `Costa Ricaans' in 22 steps.
+Found `paardenvolk' in 22 steps.
+Found `vulkanoloog' in 15 steps.
+164263 more results not shown here.
+Total search depth:          3369405
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 20
+Searched the haystack in 285ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg avl nederlands_unsorted.txt nederlands_unsorted2.txt 
+Filled the binary search tree in 603ms
+Found `oorlogsgruwelen' in 16 steps.
+Found `nationaal' in 15 steps.
+Found `huistiran' in 15 steps.
+Found `gaullisme' in 15 steps.
+Found `kerkpad' in 18 steps.
+Found `handspiegel' in 10 steps.
+Found `meetbereik' in 13 steps.
+Found `nasluipen' in 15 steps.
+Found `braambes' in 17 steps.
+Found `zeewaterpeil' in 17 steps.
+Found `responsietijd' in 17 steps.
+Found `licentiaatsverhandeling' in 15 steps.
+Found `tafelvoetbalspel' in 15 steps.
+Found `papperig' in 12 steps.
+Found `ontroeren' in 18 steps.
+Found `verstaatsing' in 13 steps.
+Found `schouwburg' in 15 steps.
+Found `bloemenrijk' in 10 steps.
+Found `generatiepact' in 17 steps.
+Found `theeworstje' in 16 steps.
+Found `helmbeplanting' in 15 steps.
+Found `botermerk' in 17 steps.
+Found `knokkel' in 17 steps.
+Found `parlementarisme' in 15 steps.
+Found `deuteron' in 17 steps.
+Found `voorklep' in 17 steps.
+Found `bodemexploitatie' in 16 steps.
+Found `pedoseksueel' in 16 steps.
+Found `verliesjaar' in 18 steps.
+Found `uitlaatgas' in 18 steps.
+Found `wegsnijden' in 15 steps.
+Found `castingbureau' in 15 steps.
+Found `olieland' in 16 steps.
+Found `geluidbeleid' in 14 steps.
+Found `knoflookteen' in 17 steps.
+Found `dundoek' in 16 steps.
+Found `kauwvlak' in 15 steps.
+Found `ordelievend' in 16 steps.
+Found `telefoonbehandeling' in 17 steps.
+Found `V' in 17 steps.
+Found `videokunstenares' in 16 steps.
+Found `evenwichtig' in 18 steps.
+Found `ratingbureau' in 17 steps.
+Found `instructiedag' in 17 steps.
+Found `prijsregeling' in 16 steps.
+Found `overwinteraar' in 17 steps.
+Found `verzamelterm' in 18 steps.
+Found `Costa Ricaans' in 17 steps.
+Found `paardenvolk' in 15 steps.
+Found `vulkanoloog' in 18 steps.
+164263 more results not shown here.
+Total search depth:          2576171
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 15
+Searched the haystack in 238ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg splay nederlands_unsorted.txt nederlands_unsorted2.txt 
+Filled the binary search tree in 623ms
+Found `oorlogsgruwelen' in 26 steps.
+Found `nationaal' in 18 steps.
+Found `huistiran' in 32 steps.
+Found `gaullisme' in 21 steps.
+Found `kerkpad' in 20 steps.
+Found `handspiegel' in 20 steps.
+Found `meetbereik' in 31 steps.
+Found `nasluipen' in 10 steps.
+Found `braambes' in 28 steps.
+Found `zeewaterpeil' in 25 steps.
+Found `responsietijd' in 20 steps.
+Found `licentiaatsverhandeling' in 29 steps.
+Found `tafelvoetbalspel' in 18 steps.
+Found `papperig' in 22 steps.
+Found `ontroeren' in 20 steps.
+Found `verstaatsing' in 35 steps.
+Found `schouwburg' in 15 steps.
+Found `bloemenrijk' in 21 steps.
+Found `generatiepact' in 25 steps.
+Found `theeworstje' in 14 steps.
+Found `helmbeplanting' in 26 steps.
+Found `botermerk' in 25 steps.
+Found `knokkel' in 12 steps.
+Found `parlementarisme' in 20 steps.
+Found `deuteron' in 26 steps.
+Found `voorklep' in 27 steps.
+Found `bodemexploitatie' in 18 steps.
+Found `pedoseksueel' in 18 steps.
+Found `verliesjaar' in 25 steps.
+Found `uitlaatgas' in 17 steps.
+Found `wegsnijden' in 22 steps.
+Found `castingbureau' in 26 steps.
+Found `olieland' in 30 steps.
+Found `geluidbeleid' in 25 steps.
+Found `knoflookteen' in 9 steps.
+Found `dundoek' in 20 steps.
+Found `kauwvlak' in 24 steps.
+Found `ordelievend' in 23 steps.
+Found `telefoonbehandeling' in 21 steps.
+Found `V' in 25 steps.
+Found `videokunstenares' in 27 steps.
+Found `evenwichtig' in 27 steps.
+Found `ratingbureau' in 26 steps.
+Found `instructiedag' in 22 steps.
+Found `prijsregeling' in 25 steps.
+Found `overwinteraar' in 14 steps.
+Found `verzamelterm' in 20 steps.
+Found `Costa Ricaans' in 22 steps.
+Found `paardenvolk' in 17 steps.
+Found `vulkanoloog' in 29 steps.
+164263 more results not shown here.
+Total search depth:          3840812
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 23
+Searched the haystack in 729ms
+micky@linux-wo66:~/code/hogebomen/hogebomen> ./bin/hooiberg treap nederlands_unsorted.txt nederlands_unsorted2.txt 
+Filled the binary search tree in 805ms
+Found `oorlogsgruwelen' in 63 steps.
+Found `nationaal' in 42 steps.
+Found `huistiran' in 64 steps.
+Found `gaullisme' in 44 steps.
+Found `kerkpad' in 41 steps.
+Found `handspiegel' in 38 steps.
+Found `meetbereik' in 60 steps.
+Found `nasluipen' in 34 steps.
+Found `braambes' in 69 steps.
+Found `zeewaterpeil' in 33 steps.
+Found `responsietijd' in 39 steps.
+Found `licentiaatsverhandeling' in 35 steps.
+Found `tafelvoetbalspel' in 25 steps.
+Found `papperig' in 27 steps.
+Found `ontroeren' in 57 steps.
+Found `verstaatsing' in 60 steps.
+Found `schouwburg' in 53 steps.
+Found `bloemenrijk' in 113 steps.
+Found `generatiepact' in 77 steps.
+Found `theeworstje' in 51 steps.
+Found `helmbeplanting' in 49 steps.
+Found `botermerk' in 35 steps.
+Found `knokkel' in 40 steps.
+Found `parlementarisme' in 42 steps.
+Found `deuteron' in 38 steps.
+Found `voorklep' in 30 steps.
+Found `bodemexploitatie' in 84 steps.
+Found `pedoseksueel' in 37 steps.
+Found `verliesjaar' in 52 steps.
+Found `uitlaatgas' in 16 steps.
+Found `wegsnijden' in 39 steps.
+Found `castingbureau' in 47 steps.
+Found `olieland' in 42 steps.
+Found `geluidbeleid' in 65 steps.
+Found `knoflookteen' in 42 steps.
+Found `dundoek' in 53 steps.
+Found `kauwvlak' in 49 steps.
+Found `ordelievend' in 32 steps.
+Found `telefoonbehandeling' in 33 steps.
+Found `V' in 35 steps.
+Found `videokunstenares' in 32 steps.
+Found `evenwichtig' in 38 steps.
+Found `ratingbureau' in 40 steps.
+Found `instructiedag' in 67 steps.
+Found `prijsregeling' in 41 steps.
+Found `overwinteraar' in 53 steps.
+Found `verzamelterm' in 44 steps.
+Found `Costa Ricaans' in 64 steps.
+Found `paardenvolk' in 49 steps.
+Found `vulkanoloog' in 48 steps.
+164263 more results not shown here.
+Total search depth:          7364004
+Number of matches:           164313
+Number of misses:            0
+Average search depth (hits): 44
+Searched the haystack in 525ms
+
