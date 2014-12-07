@@ -90,9 +90,10 @@ void findAll( std::vector<string> &list, BinarySearchTree<string>* tree ) {
         else
             std::cout << "Didn't find `" << needle << '\'' << std::endl;
     }
-    cout << "Total search depth:   " << steps << endl
-         << "Number of matches:    " << found << endl
-         << "Average search depth: " << steps/found << endl;
+    if( found )    
+        cout << "Total search depth:   " << steps << endl
+             << "Number of matches:    " << found << endl
+             << "Average search depth: " << steps/found << endl;
 } 
 
 int main ( int argc, char **argv ) {

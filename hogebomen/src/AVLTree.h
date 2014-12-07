@@ -46,10 +46,10 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
                         TreeNode<INFO_T>* parent =0, // Ignored
                         bool preferRight =false,     // Ignored
                         int replaceBehavior =0 ) { // Ignored
-            node_t* node =new node_t;
             if( S::find( this->root( ), info ) )
-                return node;
-            node =static_cast<node_t* >( S::insert( info ) );
+                return 0;
+            node_t *node =new node_t( );
+            S::insertInto( info, node );            
             rebalance( node );
             return node;
         }

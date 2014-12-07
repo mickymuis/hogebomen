@@ -27,7 +27,7 @@ template <class INFO_T> class TreapNode : public BSTNode<INFO_T>
         * @post         A node has been created.
         **/   
       	TreapNode( const INFO_T& info, TreapNode<INFO_T>* parent =0 ) 
-      	    : S( info, parent ) {
+      	    : S( info, parent ), priority( 0 ) {
         }
       	
        /**
@@ -37,7 +37,7 @@ template <class INFO_T> class TreapNode : public BSTNode<INFO_T>
         * @post         A node has been created.
         **/
       	TreapNode( TreapNode<INFO_T>* parent =0 )
-            : S( (S)parent ) {
+            : S( (S)parent ), priority( 0 ) {
         }
 
         /**

@@ -41,12 +41,14 @@ template <class INFO_T> class Treap : public SelfOrganizingTree<INFO_T> {
                         TreeNode<INFO_T>* parent =0, // Ignored
                         bool preferRight =false,     // Ignored
                         int replaceBehavior =0 ) { // Ignored
-            node_t* node =new node_t;
+            // Prevent duplicates
             if( S::find( this->root( ), info ) )
-                return node;
-            node =static_cast<node_t* >( S::insert( info ) );            
+                return 0;
+            node_t *node =new node_t( );
+            S::insertInto( info, node );            
             node->priority =rand( ) % 100 + 1;
             rebalance( node );
+
             return node;
         }
 
@@ -79,6 +81,8 @@ template <class INFO_T> class Treap : public SelfOrganizingTree<INFO_T> {
     private:
 
         void rebalance( node_t* node ) {
+            if( !node )
+                return;
             node_t* temp =node;
             int myPriority =node->priority;
             while( temp->parent( ) && 

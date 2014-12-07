@@ -49,30 +49,7 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
                             bool preferRight =false,     // Ignored
                             int replaceBehavior =S::ABORT_ON_EXISTING ) { // Ignored
             node_t *n =new node_t( );
-            n->info() =info;
-            
-            if( !S::m_root )
-                S::m_root =n;
-            else {
-                node_t *parent =0;
-                node_t *sub =static_cast<node_t*>( S::m_root );
-                do {
-                    if( *n < *sub ) {
-                        parent =sub;
-                        sub =static_cast<node_t*>( parent->leftChild( ) );
-                    }
-                    else {
-                        parent =sub;
-                        sub =static_cast<node_t*>( parent->rightChild( ) );
-                    }
-                } while( sub );
-                if( *n < *parent )
-                    parent->setLeftChild( n );
-                else
-                    parent->setRightChild( n );
-                n->setParent( parent );
-            }       
-            return n;
+            return insertInto( info, n );
         }
         
        /**
@@ -266,6 +243,44 @@ template <class INFO_T> class BinarySearchTree : public Tree<INFO_T> {
         }
 
     protected:
+        /**
+        * @function  insertInto( )
+        * @abstract  Inserts new node into the tree following BST rules
+        *            Assumes that the memory for the node is already allocated
+        *            This function exists mainly because of derived classes
+        *            want to insert nodes of a derived type.
+        * @param     info, the contents of the new node
+        * @param     n, node pointer, should be already allocated
+        * @return    returns a pointer to the inserted node
+        **/
+        virtual node_t* insertInto( const INFO_T& info,
+                            node_t* n ) { // Preallocated
+            n->info() =info;
+            
+            if( !S::m_root )
+                S::m_root =n;
+            else {
+                node_t *parent =0;
+                node_t *sub =static_cast<node_t*>( S::m_root );
+                do {
+                    if( *n < *sub ) {
+                        parent =sub;
+                        sub =static_cast<node_t*>( parent->leftChild( ) );
+                    }
+                    else {
+                        parent =sub;
+                        sub =static_cast<node_t*>( parent->rightChild( ) );
+                    }
+                } while( sub );
+                if( *n < *parent )
+                    parent->setLeftChild( n );
+                else
+                    parent->setRightChild( n );
+                n->setParent( parent );
+            }       
+            return n;
+        }
+        
         int m_searchStepCounter;
 };
 
