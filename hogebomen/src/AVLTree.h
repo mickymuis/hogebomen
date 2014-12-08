@@ -70,7 +70,9 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
             // internal node with kids
             else {
                 if( node->rightChild( ) ) {
-                    node =static_cast<node_t*>( S::replace( S::min(  static_cast<node_t*>( node->rightChild( ) ) )->info( ), node ) );
+                    node =static_cast<node_t*>( S::replace( 
+                          S::min(  static_cast<node_t*>( 
+                          node->rightChild( ) ) )->info( ), node ) );
                     removeMin( static_cast<node_t*>( node->rightChild( ) ) );
                     node->setRightChild( node->rightChild( ));
                 }
@@ -175,8 +177,6 @@ template <class INFO_T> class AVLTree : public SelfOrganizingTree<INFO_T> {
         * @post         The tree is now perfectly balanced.
         **/
         void rebalance( node_t* node ) {
-            // this is only necessary because the node that we just made isn't 
-            // an AVLNODE and doesn't have a height yet :(.
             node->updateHeight( );
 
             node_t* temp =node;

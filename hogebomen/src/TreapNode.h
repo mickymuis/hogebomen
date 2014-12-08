@@ -47,8 +47,9 @@ template <class INFO_T> class TreapNode : public BSTNode<INFO_T>
         * @pre       both this node and n must be in the same parent tree
         * @post      The node will be replaced and n will be deleted.
         **/
-        void copyPriority( TreapNode<INFO_T>* n ) {
+        void replace( TreapNode<INFO_T>* n ) {
             priority = n->priority;
+            this->S::replace( n );
         }
 
         bool operator <( const TreapNode<INFO_T> &rhs ) {

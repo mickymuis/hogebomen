@@ -114,25 +114,25 @@ int main ( int argc, char **argv ) {
     
     // Test AVLTree //
 
-    AVLTree<int> test;
-    test.insert(2);
-    auto d =test.insert(4);
-    test.insert(8);
-    test.insert(7);
-    test.insert(6);
-    test.insert(1);
-    test.insert(0);
+    AVLTree<char> test;
+    test.insert('a');
+    auto d =test.insert('b');
+    test.insert('c');
+    test.insert('d');
+    test.insert('e');
+    test.insert('f');
+    test.insert('g');
     cout << "AVL Boompje:" << endl;
-    printTree<int>( test, 5 );
+    printTree<char>( test, 5 );
     cout << d->info( ) << " verwijderen: " << endl; 
     test.remove( d );
-    printTree<int>( test, 5 );
+    printTree<char>( test, 5 );
 
     // Test Treap //
 
     cout << "Treap" << endl;
 
-    Treap<int> testTreap;
+    Treap<int> testTreap(5);
     testTreap.insert(2);
     testTreap.insert(3);
     auto e =testTreap.insert(4);
@@ -140,7 +140,6 @@ int main ( int argc, char **argv ) {
     printTree<int>( testTreap, 5 );
     testTreap.remove(e);
     printTree<int>( testTreap, 5 );
-
 
     return 0;
 }
