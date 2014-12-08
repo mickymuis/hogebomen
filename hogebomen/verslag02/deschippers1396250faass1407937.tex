@@ -40,6 +40,7 @@ worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mog
 \item Voor verwijderen of vervangen moet afhankelijk van de plaats van de knoop wel worden verwisseld.
 \end{itemize}
 \emph{Nu ben ik moe}
+
 \subsection{Implementatie AVL-bomen}
 Knopen van een AVL-boom hebben een \emph{balansfactor}, die altijd -1, 0 of 1 moet zijn. In deze implementatie is de balansfactor de hoogte van de rechtersubboom min de hoogte van de linkersubboom. Dit houdt dus in dat de hoogte van de linkersubboom van de wortel met maar 1 knoop kan verschillen van de hoogte van de rechtersubboom van de wortel. Het moment dat de balansfactor van een knoop minder dan -1 of meer dan 1 wordt, moet de boom geherstructureerd worden, om deze eigenschap te herstellen. \\
 
@@ -77,7 +78,30 @@ In deze implementatie van een AVL-boom bedraagt het toevoegen van een knoop in h
 
 De complexiteitsgraad van het verwijderen van een knoop is gelijk aan die van het toevoegen van een knoop. In deze implementatie zoeken we in de rechtersubboom het kleinste kind en vervangen we de te verwijderen knoop met deze knoop. Dit heeft een duur van O($logn$). Als hij geen rechtersubboom heeft, wordt de node weggegooid en wordt zijn linkersubboom de nieuwe boom.
 \subsection{Implementatie Splay-bomen}
-TO DO
+
+De Splay-boom is een simpele binaire zoekboom die zichzelf herorganiseerd na elke operatie, ook na operaties die alleen lezen, zoals \texttt{find()}. Deze herorganisatiestap heet ``splay'' (vandaar de naam) en heeft ten doel de laatst aangesproken knoop bovenaan te zetten. Dit wordt dus de wortel. Hieronder is het gedrag kort samengevat:
+\begin{itemize}
+\item Bij zoeken wordt de gevonden knoop de wortel, mits er een zoekresultaat is.
+\item Bij toevoegen wordt de toegevoegde knoop de wortel
+\item Bij vervangen wordt de vervangen knoop de wortel
+\item Bij verwijderen wordt de te verwijderen knoop eerst de wortel, dan wordt deze verwijderd.
+\end{itemize}
+Het idee achter dit gedrag is, dat vaak gebruikte knopen hoger in de boom terechtkomen en daarom sneller toegankelijk zijn voor volgende operaties. De splay-operatie zorgt er bovendien voor dat knoop die dicht in de buurt van de \emph{gesplayde} knoop zitten, ook hoger in
+de boom worden geplaatst. Dit effect ontstaat doordat \emph{splay} eigenlijk een serie boom rotaties is. Als men deze rotaties
+consequent uitvoerd blijft bovendien de binairy-zoekboom-eigenschap behouden.
+
+\subsubsection{Splay}
+
+De splay-operatie bestaat uit drie operaties en hun spiegelbeelden. We gaan uit van een knoop $n$, zijn ouderknoop $p$ en diens ouderknoop $g$. Welke operatie wordt uitgevoerd is afhankelijk van het feit of $n$ en $p$ linker- of rechterkind zijn. We definieren:
+\begin{itemize}
+\item De \emph{Zig} stap. Als $n$ linkerkind is van $p$ en $p$ de wortel is, doen we een rotate-right op $p$.
+\item Het spiegelbeeld van \emph{Zig} is \emph{Zag}.
+\item De \emph{Zig-Zig} stap. Als $n$ linkerkind is van $p$ en $p$ linkerkind is van $g$, doen we eerst een rotate-right op $g$ en dan een rotate-right op $p$.
+\item Het spiegelbeeld van \emph{Zig-Zig} is \emph{Zag-Zag}
+\item De \emph{Zig-Zag} stap. Als $n$ rechterkind is van $p$ en $p$ linkerkind is van $g$, doen we eerst een rotate-left op $p$ en dan een rotate-right op $g$.
+\item De omgekeerde versie heet \emph{Zag-Zig}
+\end{itemize}
+Onze implementatie splayt op \texttt{insert(), replace(), remove()} en \texttt{find()}. De gebruiker kan eventueel zelf de splay-operatie aanroepen na andere operaties dmv de functie \texttt{splay()}.
 \subsection{Implementatie Treaps}
 Treap lijkt in veel opzichten op een AVL-boom. De balansfactor per knoop heeft echter plaats gemaakt voor een prioriteit per knoop. Deze prioriteit wordt bij het toevoegen van een knoop willekeurig bepaald. De complexiteit voor het toevoegen en verwijderen van een knoop is hetzelfde als bij de AVL-boom. \\
 
