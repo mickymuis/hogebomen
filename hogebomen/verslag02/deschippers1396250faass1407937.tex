@@ -71,10 +71,68 @@ TO DO
 
 \section{Onderzoek}
 
+Een praktisch voorbeeld van binair zoeken in een grote boom is de spellingscontrole. Een spellingscontrole moet zeer snel voor een groot aantal strings kunnen bepalen of deze wel of niet tot de taal behoren. Aangezien er honderduizenden woorden in een taal zitten, is
+lineair zoeken geen optie. Voor onze experimenten hebben wij dit als uitgangspunt genomen en hieronder zullen we kort de experimenten toelichten die wij hebben uitgevoerd. In het volgende hoofdstuk staan vervolgens de resultaten beschreven.
+
+\subsection{Hooiberg}
+
+``Hooiberg'' is de naam van het testprogramma dat we hebben geschreven speciaal ten behoeven van onze experimenten.
+Het is een klein console programma dat woorden uit een bestand omzet tot een boom in het geheugen. 
+Deze boom kan vervolgens worden doorzocht met de input uit een ander bestand: de ``naalden''.
+De syntax is alsvolgt:
+\begin{verbatim}
+hooiberg type hooiberg.txt naalden.txt [treap-random-range]
+\end{verbatim}
+Hierbij is \texttt{type} \'e\'en van \texttt{bst, avl, splay, treap}, het eerste bestand bevat de invoer voor de boom, het tweede bestand een verzameling strings als zoekopdracht en de vierde parameters is voorbehouden voor het type \texttt{treap}.
+De bestanden kunnen woorden of zinnen bevatten, gescheiden door regeleinden. De binaire bomen gebruiken lexicografische sortering 
+die wordt geleverd door de operatoren \texttt{<} en \texttt{>} van de klasse \texttt{std::string}. Tijdens het zoeken wordt een
+exacte match gebruikt (case-sensitive, non-locale-aware).
+
+\subsection{Onderzoeks(deel)vragen}
+
+Met onze experimenten hebben we gepoogd een aantal eenvoudige vragen te beantwoorden over het gebruik van de verschillende
+binaire en zelf-organiserende bomen, te weten:
+
+\begin{itemize}
+\item Hoeveel meer rekenkracht kost het om grote datasets in te voegen in zelf-organiserende bomen tov binaire bomen?
+\item Levert een zelf-organiserende boom betere zoekprestaties en onder welke opstandigheden?
+\item Hoeveel extra geheugen kost een SOT?
+\item Wat is de invloed van de random-factor bij de Treap?
+\end{itemize}
+
+\subsection{Meetmethoden}
+
+Om de bovenstaande vragen te toetsen, hebben we een aantal meetmethoden bedacht.
+
+\begin{itemize}
+\item Rekenkracht hebben we gemeten in milliseconden tussen aanvang en termineren van een berekening. We hebben de delta's berekend rond de relevante code blokken dmv de C++11 \texttt{chrono} klassen in de Standard Template Library. Alle test zijn volledig sequentieel en single-threaded uitgevoerd. Deze resultaten zijn representatie voor \'e\'en bepaald systeem, vandaar dat we aantal \% `meer rekenkracht' als eenheid gebruiken.
+\item Zoekprestatie hebben we zowel met rekenkracht als zoekdiepte gemeten. De zoekdiepte is het aantal stappen dat vanaf de wortel moet worden gemaakt om bij de gewenste knoop te komen. We hebben hierbij naar het totaal aantal stappen gekeken en naar de gemiddelde zoekdiepte.
+\item Geheugen hebben we gemeten met de \texttt{valgrind} memory profiler. Dit programma wordt gebruikt voor het opsporen van geheugen lekken en houdt het aantal allocaties op de heap bij. Dit is representatie voor het aantal gealloceerde nodes. Aangezien hooiberg nauwelijks een eigen geheugen-voetafdruk heeft, zijn deze waarden representatief.
+\end{itemize}
+
+\subsection{Input data}
+
+Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer dan 164.000 woorden. Dit is een relatief klein taalbestand, maar voldoede om verschillen te kunnen zien. We hebben een aantal testcondities gebruikt:
+\begin{itemize}
+\item Voor het inladen een wel of niet alfabetisch gesoorteerd taalbestand gebruiken.
+\item Als zoekdocument hebben we een gedicht met 62 woorden gebruikt. Er zitten een aantal dubbele woorden in alsook een aantal woorden die niet in de woordenlijst voorkomen (werkwoordsvervoegingen).
+\item We hebben ook een conditie waarbij we alle woorden gezocht hebben, zowel in dezelfde, als in een andere volgorde dan dat ze zijn ingevoerd.
+\item We hebben \'e\'en conditie waarbij we de random-range van de Treap hebben gevari\"eerd.
+\end{itemize}
+
+\subsection{Hypothesen}
+
+\begin{itemize}
+\item De binairy search tree zal vermoedelijk het snelst nieuwe data toevoegen. De splay tree heeft veel ingewikkelde rotatie bij een insert, dus deze zal het traagst zijn.
+\item Bij het gedicht zal de splay boom waarschijnlijk het snelst zijn omdat deze optimaliseert voor herhalingen.
+\item ...
+\item De bomen die een aparte node-klasse gebruiken (avl en treap) gebruiken het meeste geheugen.
+\item Items over Treap
+\end{itemize}
+
 \section{Resultaten}
 
 \section{Conclusies}
-
 
 \section{Appendix}
 
