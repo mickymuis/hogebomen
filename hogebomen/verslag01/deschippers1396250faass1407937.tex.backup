@@ -1,0 +1,201 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+% Er zijn talloze parameters ...
+\lstset{language=C++, showstringspaces=false, basicstyle=\small,
+  numbers=left, numberstyle=\tiny, numberfirstline=false,
+  stepnumber=1, tabsize=8, 
+  commentstyle=\ttfamily, identifierstyle=\ttfamily,
+  stringstyle=\itshape}
+\usepackage{amsmath}
+  
+%opening
+\title{ Hogebomen }
+\author{ Lisette de Schipper (s1396250) en Micky Faas (s1407937) }
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Inleiding}
+Al vanaf de middelbare school moeten we afgeleides nemen van functies met een of meerdere onbekenden.
+Nu hebben wij een progrmma geschreven die dit werk van de gebruiker overneemt.
+De gebruiker vult simpelweg een expressie in prefix notatie en het programma doet vervolgens al het werk door middel van een expressieboom.
+
+\section*{Werkwijze}
+De broncode van het programma bestaat uit de volgende bestanden:
+\begin{itemize}
+ \item ExpressionAtom.cc
+ \item ExoressionAtom.h
+ \item ExpressionTree.cc
+ \item ExpressionTree.h
+ \item main.cc
+ \item Tree.h
+ \item TreeNode.h
+ \item TreeNodeIterator.h
+\end{itemize}
+
+\subsection*{TreeNode}
+Hier staan alle knopen gedefinieerd.
+Van elke knoop leggen we het volgende vast:
+\begin{itemize}
+ \item inhoud
+ \item wie de ouder is
+\end{itemize}
+Daarnaast zijn er nog een aantal functies gedefinieerd, die allemaal voor zich spreken.
+
+\subsection*{Tree}
+Dit bestand spreekt vrijwel voor zichzelf.
+
+\subsection*{TreeNodeIterator}
+Dit bestand coordineert de drie mogelijke wandelingen door de boom: in-order wandeling, pre-order wandeling en post-order wandeling.
+In onze implementatie kun je erdoorheen lopen door gebruik te maken van een iterator.
+Een voorbeeld van het gebruik van zo'n iterator is als volgt:
+\begin{verbatim}
+Tree<char> tree;
+
+//wat waardes om de boom te vullen
+    tree.pushBack( 'a' );
+    tree.pushBack( 'b' );
+    tree.pushBack( 'c' );
+    tree.pushBack( 'd' );
+
+Tree<char>::iterator_in it( tree.begin_in( ) );
+
+for( ; it !=tree.end_in( ); ++it ) {
+    cout << *it << " ";
+}
+\end{verbatim}
+De eerste klasse is een klasse die gebruikt wordt door alle klasses die erna volgen.
+Deze klasse bevat dus een aantal algemene functies.
+Zo wordt hier de '++it' uit het voorbeeld hierboven gedefineerd.
+Deze operatie kunnen we dus ook gebruiken bij de andere 2 wandelingen.
+
+De volgende 3 klasses TreeNodeIterator\_pre, TreeNodeIterator\_post en TreeNodeIterator\_in bevatten
+allemaal de logica voor de bijbehorende wandelingen.
+
+\subsection*{ExpressionAtom}
+In ExpressionAtom staan alle inhouden van knopen gedefinieerd die er gebruikt kunnen worden en ook een aantal operaties die we op ze kunnen uitvoeren.
+Zo worden $==$, $+$, $-$, $*$, $/$, $<$,$>$,$<=$ en $>=$ overschreven zodat ze door deze atomen gebruikt kunnen worden.
+
+\subsection*{ExpressionTree}
+Ook deze bestanden spreken erg voor zichzelf.
+Om strings te ontleden naar bomen maken we gebruik van een tokenizer en een parser.
+De tokenizer zet elk element om in een token.
+Al die tokens zijn de input van de parser die ze verder verwerkt.
+De \emph{differentiate}, \emph{generateInOrder} en \emph{simplify}-functies pakken hun problemen recursief aan.
+
+\subsection*{main}
+Simpele interface voor de gebruiker om te differentiëren, evalueren, simplificeren en converteren naar dot-notatie.
+
+\section*{Voorbeelden}
+\subsection*{Differentiëren}
+Differentieerbare functies:
+\begin{itemize}
+ \item $tan(f(x))$
+ \item $sin(f(x))$
+ \item $cos(f(x))$
+ \item $ln(f(x))$
+ \item $sqrt(f(x))$
+ \item $log(f(x))$
+ \item $abs(f(x))$
+ \item $f(x) + g(x)$
+ \item $f(x) - g(x)$
+ \item $f(x) / g(x)$
+ \item $f(x) * g(x)$
+ \item $f(x) ^{g(x)}$
+  \begin{itemize}
+  \item $x ^{n}$
+  \item $x ^{f(x)}$
+  \item $e ^{f(x)}$
+  \item $n ^{f(x)}$
+  \end{itemize}
+\end{itemize}
+en combinaties hiervan. \\
+
+\noindent Nu een aantal voorbeelden. De expressies zijn gegeven in de infix notatie en hun afgeleides ook.
+Alle afgeleides zijn correct.
+
+\subsubsection*{tan(ax)}
+Oorspronkelijke expressie: $tan(x ^ -7)$ \\
+Uitkomst: $((cos(x^{-7})*((-7/(x^8))*cos(x^{-7})))-(sin(x^{-7})*((-(-7/(x^8)))*sin(x^{-7}))))/(cos(x^{-7})^2)$
+
+\subsubsection*{sin(ax)}
+Oorspronkelijke expressie: $sin(x * 4)$ \\
+Uitkomst: $4cos(x*4)$
+
+\subsubsection*{cos(ax)}
+Oorspronkelijke expressie: $cos(x / * t ^ 3 x)$ \\
+Uitkomst: $(-((((t^3)*x)-(x*((x*)+(t^3))))/(((t^3)*x)^2)))*sin(x/((t^3)*x))$
+
+\subsubsection*{ln(ax)}
+Oorspronkelijke expressie: $ln(4 * x + x)$ \\
+Uitkomst: $5/((4x)+x)$
+
+\subsubsection*{sqrt(ax)}
+Oorspronkelijke expressie: $sqrt(ln(12.3 * x ^ 2))$ \\
+Uitkomst: $((12.3(2x))/(12.3(x^2)))/(2sqrtln(12.3(x^2)))$
+
+\subsubsection*{log(ax)}
+Oorspronkelijke expressie: $^{4}log(5x)$ \\
+Uitkomst: $(1/ln(4))*(5/(5x))$
+
+\subsubsection*{abs(ax)}
+Oorspronkelijke expressie: $abs(cos( 3 * x))$ \\
+Uitkomst: $(cos(3x)*(-3sin(3x)))/abscos(3x)$
+
+\subsubsection*{f(x) + g(x)}
+Oorspronkelijke expressie: $ln(4x) + (4/( x^2))$ \\
+Uitkomst: $(4/(4x))+((0-(4(2x)))/((x^2)^2))$
+
+\subsubsection*{f(x) / g(x)}
+Oorspronkelijke expressie: $3x/(2^x)$ \\
+Uitkomst: $(((2^x)*3)-((3x)*(ln(2)*(2^x))))/((2^x)^2)$
+
+\subsubsection*{f(x) * g(x)}
+Oorspronkelijke expressie: $x * 3$ \\
+Uitkomst: $3$
+
+\subsubsection*{f(x) \^\ g(x)}
+Oorspronkelijke expressie: $x ^ x$ \\
+Uitkomst: $((x*(1/x))+ln(x))*(e^{(ln(x)*x)})$
+
+\subsection*{Evaluaties}
+
+\subsection*{Wandelingen}
+main2.cc bevat de volgende boom:
+\begin{verbatim}
+           =
+    *              /
++     -        :      %
+1 2   3 4      5 6    7 8
+\end{verbatim}
+
+
+\noindent Output van main2.cc: \\
+
+\noindent in-order traversal: 1 + 2 * 3 - 4 = 5 : 6 / 7 \% 8 \\ 
+post-order traversal: 1 2 + 3 4 - * 5 6 : 7 8 \% / = \\
+pre-order traversal: = * + 1 2 - 3 4 / : 5 6 \% 7 8
+
+\section*{Appendix}
+
+\subsection*{ExpressionAtom.h}
+\lstinputlisting{../src/ExpressionAtom.h}
+\subsection*{ExpressionAtom.cc}
+\lstinputlisting{../src/ExpressionAtom.cc}
+\subsection*{ExpressionTree.h}
+\lstinputlisting{../src/ExpressionTree.h}
+\subsection*{ExpressionTree.cc}
+\lstinputlisting{../src/ExpressionTree.cc}
+\subsection*{main.cc}
+\lstinputlisting{../src/main.cc}
+\subsection*{Tree.h}
+\lstinputlisting{../src/Tree.h}
+\subsection*{TreeNode.h}
+\lstinputlisting{../src/TreeNode.h}
+\subsection*{TreeNodeIterator.h}
+\lstinputlisting{../src/TreeNodeIterator.h}
+
+\end{document}
