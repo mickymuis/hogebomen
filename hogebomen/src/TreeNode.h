@@ -177,8 +177,6 @@ template <class INFO_T> class TreeNode
             }
             delete n;
         }
-
-
         
         /**
         * @function  sibling( )

@@ -5,7 +5,7 @@ CXX = g++
 CC = gcc
 #STATIC =-static
 
-OUTPUT = bin/hogebomen 
+OUTPUT = bin/hogebomen
 
 all: $(OUTPUT) bin/hooiberg
 
@@ -35,5 +35,5 @@ bin/hooiberg: lib/hooiberg.o lib/ExpressionTree.o lib/ExpressionAtom.o
 
 clean: 
 	rm -f lib/*.o
-	rm -f $(OUTPUT)
+	rm -f $(OUTPUT) bin/hooiberg bin/hogebomen2
 

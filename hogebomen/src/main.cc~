@@ -14,6 +14,7 @@
 #include "SplayTree.h"
 #include "Treap.h"
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -40,63 +41,106 @@ template<class T> void printTree( Tree<T> tree, int rows ) {
 }
 
 int main ( int argc, char **argv ) {
+
+    /* BST hieronder */
+
+    cout << "BST:" << endl;
+    BinarySearchTree<int> bst;
     
-    SplayTree<int> bst;
-    
-    auto root =bst.pushBack( 10 );
-    auto a =bst.pushBack( 5 );
+   /* auto root =bst.pushBack( 10 );
+    bst.pushBack( 5 );
     bst.pushBack( 15 );
     
     bst.pushBack( 25 );
-    auto b =bst.pushBack( 1 );
+    bst.pushBack( 1 );
     bst.pushBack( -1 );
-    auto c =bst.pushBack( 11 );
-    bst.pushBack( 12 );
+    bst.pushBack( 11 );
+    bst.pushBack( 12 );*/
+    
+    Tree<int>* bstP =&bst; // Dit werkt gewoon :-)
+    
+    auto root =bstP->pushBack( 10 );
+    bstP->pushBack( 5 );
+    bstP->pushBack( 15 );
+    
+    bstP->pushBack( 25 );
+    bstP->pushBack( 1 );
+    bstP->pushBack( -1 );
+    bstP->pushBack( 11 );
+    bstP->pushBack( 12 );
     
     //printTree<int>( bst, 5 );
     
-    //a->swapWith( b );
+    
     //bst.remove( bst.find( 0, 15 ) );
     //bst.replace( -2, bst.find( 0, 5 ) );
     
     
     printTree<int>( bst, 5 );
     
-    //bst.remove( root );
-    
-    bst.splay( c );
+    bst.remove( root );
+
     
     printTree<int>( bst, 5 );
+
+    /* Splay Trees hieronder */
+    
+    cout << "Splay Boom:" << endl;
+    SplayTree<int> splay;
+    
+    splay.pushBack( 10 );
+    auto a =splay.pushBack( 5 );
+    splay.pushBack( 15 );
+    
+    splay.pushBack( 25 );
+    auto b =splay.pushBack( 1 );
+    splay.pushBack( -1 );
+    auto c =splay.pushBack( 11 );
+    splay.pushBack( 12 );
+    
+    //printTree<int>( splay, 5 );
+    
+    //a->swapWith( b );
+    //splay.remove( splay.find( 0, 15 ) );
+    //splay.replace( -2, splay.find( 0, 5 ) );
+    
+    
+    printTree<int>( splay, 5 );
+    
+    //splay.remove( root );
+    
+    splay.splay( c );
+    
+    printTree<int>( splay, 5 );
     
     // Test AVLTree //
 
-    AVLTree<int> test;
-    test.insert(2);
-    auto d =test.insert(4);
-    test.insert(8);
-    test.insert(7);
-    test.insert(6);
-    test.insert(1);
-    test.insert(0);
+    AVLTree<char> test;
+    test.insert('a');
+    auto d =test.insert('b');
+    test.insert('c');
+    test.insert('d');
+    test.insert('e');
+    test.insert('f');
+    test.insert('g');
     cout << "AVL Boompje:" << endl;
-    printTree<int>( test, 5 );
+    printTree<char>( test, 5 );
     cout << d->info( ) << " verwijderen: " << endl; 
     test.remove( d );
-    printTree<int>( test, 5 );
+    printTree<char>( test, 5 );
 
     // Test Treap //
 
     cout << "Treap" << endl;
 
-    Treap<int> testTreap;
+    Treap<int> testTreap(5);
     testTreap.insert(2);
-    auto e =testTreap.insert(3);
-    testTreap.insert(4);
+    testTreap.insert(3);
+    auto e =testTreap.insert(4);
     testTreap.insert(5);
     printTree<int>( testTreap, 5 );
     testTreap.remove(e);
     printTree<int>( testTreap, 5 );
-
 
     return 0;
 }

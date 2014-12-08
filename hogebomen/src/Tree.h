@@ -424,7 +424,7 @@ template <class INFO_T> class Tree
         void toDot( ostream& out, const string & graphName ) {
             if( isEmpty( ) )
                 return;
-            map< node_t *, int> adresses;
+            map<node_t *, int> adresses;
             typename map< node_t *, int >::iterator adrIt;
             int i =1;
             int p;
@@ -443,7 +443,7 @@ template <class INFO_T> class Tree
                   out << ';' << endl << '"' 
                       << adresses.find( (&(*it))->parent( ))->second << '"';
                 if( (&(*it)) != m_root )
-                    out << " ->  \"" << p << '"';
+                    out << " -> \"" << p << '"';
                 tempit =it;
             }
             out << ';' << endl;

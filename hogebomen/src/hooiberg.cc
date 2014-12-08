@@ -54,6 +54,7 @@ int printUsage( const char* prog ) {
          << "\t[type]\t\tTree type to use. One of `splay', `avl', `treap', `bst'\n"
          << "\t[haystack]\tInput file, delimited by newlines\n"
          << "\t[needles]\tFile containing sets of strings to search for, delimited by newlines\n"
+         << "\t[random]\tOptimal customization of Treap\n"
          << std::endl;
     return 0;
 }
@@ -131,7 +132,17 @@ int main ( int argc, char **argv ) {
         std::cerr << "Could not open " << argv[3] << std::endl;
         return -1;          
     }
-    
+
+    if( argv[4] && mode != TREAP ) {
+        std::cerr << "This variable should only be set for Treaps." << std::endl;
+        return -1;
+    }
+    else if( atoi(argv[4]) <= 0 ) {
+        std::cerr << "This variable should only be an integer " 
+                  << " greater than 0." << std::endl;
+        return -1;
+    }
+
     std::vector<string> needles;
     if( !extractNeedles( needles, fneedles ) ) {
         cerr << "Could not read a set of strings to search for." << endl;
@@ -150,7 +161,7 @@ int main ( int argc, char **argv ) {
             tree = new SplayTree<string>();
             break;
         case TREAP:
-            tree = new Treap<string>();
+            tree = new Treap<string>(atoi(argv[4]));
             break;
     }
     
