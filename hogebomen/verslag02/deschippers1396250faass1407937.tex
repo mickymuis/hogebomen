@@ -29,7 +29,6 @@ AVL-bomen, splay-bomen en treaps zijn klassieke datastructuren die ingezet worde
 \section{Werkwijze}
 De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren. Voor alle vier de bomen wordt dezelfde zoekmethode gebruikt. Deze is in het slechtste geval O($logn$).
 \subsection{Implementatie binaire zoekboom}
-
 De binairy zoekboom (BST) vormt de basis voor alle zogeheten \emph{zelf-organiserende bomen}, zoals de AVL- of SplayTree.
 Aan de grondslag van de BST ligt de \emph{binaire-zoekboom-eigenschap}, die zorgt dat de boom op de ``gretige'' manier kan
 worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mogelijk om een knoop in hooguit O($\log(n)$) stappen te vinden. Kort samengevat houdt de bst-eigenschap het volgende in:
@@ -39,6 +38,7 @@ worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mog
 \item Toevoegen kan zonder verwisselen worden uitgevoerd (in tegenstelling tot bijv. een heap).
 \item Voor verwijderen of vervangen moet afhankelijk van de plaats van de knoop wel worden verwisseld.
 \end{itemize}
+
 \emph{Nu ben ik moe}
 
 \subsection{Implementatie AVL-bomen}
@@ -172,14 +172,6 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 
 \section{Resultaten}
 
-\subsection{Experiment 1}
-Hoeveel meer rekenkracht kost het om grote datasets in te voegen in zelf-organiserende bomen tov binaire bomen?
-\subsection{Experiment 2}
-Levert een zelf-organiserende boom betere zoekprestaties en onder welke opstandigheden?
-\subsection{Experiment 3}
-Hoeveel extra geheugen kost een SOT?
-\subsection{Experiment 4}
-Wat is de invloed van de random-factor bij de Treap?
 \section{Conclusies}
 
 \section{Appendix}

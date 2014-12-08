@@ -1,28 +1,14 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.18)  8 DEC 2014 20:50
-=======
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/TeX Live for SUSE Linux) (format=pdflatex 2013.9.12)  8 DEC 2014 19:58
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.18)  8 DEC 2014 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **deschippers1396250faass1407937.tex
 (./deschippers1396250faass1407937.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nyn
-orsk, polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbia
-nc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorb
-ian, welsh, loaded.
-(/usr/share/texmf/tex/latex/base/article.cls
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf/tex/latex/base/size10.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -46,7 +32,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box26
 
-(/usr/share/texmf/tex/latex/ms/everyshi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -55,31 +41,31 @@ Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
 Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/share/texmf/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -135,7 +121,7 @@ File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/share/texmf/tex/latex/latexconfig/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -308,19 +294,19 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-))) (/usr/share/texmf/tex/latex/base/inputenc.sty
+))) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks24
 \inpenc@posthook=\toks25
 
-(/usr/share/texmf/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texmf/tex/latex/base/t1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -470,7 +456,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texmf/tex/latex/base/ot1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -501,7 +487,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texmf/tex/latex/base/omsenc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -525,7 +511,7 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texmf/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count107
 \lst@gtempboxa=\box35
 \lst@token=\toks26
@@ -539,61 +525,61 @@ Now handling font encoding U ...
 \lst@lineno=\count112
 \lst@maxwidth=\dimen151
 
-(/usr/share/texmf/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 \c@lstnumber=\count113
 \lst@skipnumbers=\count114
 \lst@framebox=\box36
 )
-(/usr/share/texmf/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
-(/usr/share/texmf/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(/usr/share/texmf/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(/usr/share/texmf/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks27
 \ex@=\dimen152
 ))
-(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen153
 )
-(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count115
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count116
 \leftroot@=\count117
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count118
 \DOTSCASE@=\count119
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box37
 \strutbox@=\box38
 \big@size=\dimen154
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count120
 \c@MaxMatrixCols=\count121
 \dotsspace@=\muskip10
@@ -614,10 +600,23 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks31
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(./deschippers1396250faass1407937.aux)
+(./deschippers1396250faass1407937.aux
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 <
+     <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
 \openout1 = `deschippers1396250faass1407937.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -633,7 +632,7 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
  ABD: EveryShipout initializing macros
-(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
 \scratchdimen=\dimen161
@@ -646,15 +645,15 @@ LaTeX Font Info:    ... okay on input line 18.
 \MPnumerator=\count131
 \makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks33
-) (/usr/share/texmf/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texmf/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -663,22 +662,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texmf/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texmf/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texmf/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -690,105 +689,59 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count133
 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (1.8895pt too wide) in paragraph at lines 30--31
 \OT1/cmr/m/n/10 De vier bomen zijn con-ceptueel een-voudig en re-latief makke-l
 ijk te im-ple-menteren.
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (3.18217pt too wide) in paragraph at lines 33--36
-=======
 Overfull \hbox (3.18217pt too wide) in paragraph at lines 32--35
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 \OT1/cmr/m/n/10 De bi-nairy zoek-boom (BST) vormt de ba-sis voor alle zo-ge-het
 en \OT1/cmr/m/it/10 zelf-organiserende
  []
 
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
-
-Overfull \hbox (8.86172pt too wide) in paragraph at lines 37--38
-=======
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
-(/usr/share/texmf/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
 
 Overfull \hbox (8.86172pt too wide) in paragraph at lines 36--37
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 []\OT1/cmr/m/n/10 Linker-kindknopen hebben al-tijd een kleinere waarde dan hun 
 ouder, rechter-
  []
 
 
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 45--46
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
-[3] [4] (../src/main.cc [5]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 10.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-=======
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-[2]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
@@ -798,18 +751,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-[3] [4] [5] (../src/main.cc
+[4] [5] [6] (../src/main.cc
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 10.
- (/usr/share/texmf/tex/latex/base/omlcmr.fd
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 10.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
-
-[6]
+ [7]
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 30--31
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -819,11 +771,7 @@ Overfull \hbox (15.75119pt too wide) in paragraph at lines 32--33
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[6] [7]) (../src/hooiberg.cc [8]
-=======
-[7] [8]) (../src/hooiberg.cc
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+[8] [9]) (../src/hooiberg.cc
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 38--39
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -833,7 +781,7 @@ Overfull \hbox (15.75119pt too wide) in paragraph at lines 40--41
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[9]
+[10]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
 
@@ -868,7 +816,7 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 62--63
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[9]
+
 Overfull \hbox (43.50128pt too wide) in paragraph at lines 72--73
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -888,7 +836,7 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 93--94
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[10]
+[11]
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 96--97
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -913,11 +861,7 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 101--102
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[10]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 126--127
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -937,17 +881,13 @@ Overfull \hbox (26.85123pt too wide) in paragraph at lines 142--143
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[12]
 Overfull \hbox (60.15134pt too wide) in paragraph at lines 150--151
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[11]
-<<<<<<< HEAD
+
 Overfull \hbox (54.60132pt too wide) in paragraph at lines 181--182
-=======
-Overfull \hbox (54.60132pt too wide) in paragraph at lines 179--180
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -977,11 +917,7 @@ Overfull \hbox (76.80139pt too wide) in paragraph at lines 191--193
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-) (../src/Tree.h [12]
-=======
-) [12] (../src/Tree.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+) [13] (../src/Tree.h
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 47--48
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -991,7 +927,7 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 48--49
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[13]
+[14]
 Overfull \hbox (65.70135pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1001,7 +937,7 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 78--79
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[13]
+
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 96--97
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1011,7 +947,7 @@ Overfull \hbox (60.15134pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[14]
+[15]
 Overfull \hbox (76.80139pt too wide) in paragraph at lines 120--121
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1021,7 +957,7 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 129--130
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[14]
+
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 144--145
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1051,16 +987,12 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 158--159
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[15]
+[16]
 Overfull \hbox (21.30121pt too wide) in paragraph at lines 167--168
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[15]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (93.45145pt too wide) in paragraph at lines 188--189
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1135,16 +1067,12 @@ Overfull \hbox (82.35141pt too wide) in paragraph at lines 212--213
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[16]
+[17]
 Overfull \hbox (21.30121pt too wide) in paragraph at lines 218--219
 [][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[16]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 242--243
 [][][][][][][][][][][][][][][][][] 
  []
@@ -1154,12 +1082,12 @@ Overfull \hbox (4.65115pt too wide) in paragraph at lines 246--247
 [][][][][][][][][][][][][][][][][] 
  []
 
-
+[18]
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 269--270
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[17]
+
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 270--271
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1209,11 +1137,7 @@ Overfull \hbox (15.75119pt too wide) in paragraph at lines 291--292
 [][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[17]
-=======
-[18]
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+[19]
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 326--327
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1223,11 +1147,7 @@ Overfull \hbox (26.85123pt too wide) in paragraph at lines 327--328
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[18]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (26.85123pt too wide) in paragraph at lines 364--365
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1242,7 +1162,7 @@ Overfull \hbox (32.40125pt too wide) in paragraph at lines 375--376
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[19]
+[20]
 Overfull \hbox (93.45145pt too wide) in paragraph at lines 387--388
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1277,11 +1197,7 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 395--396
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[19]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (43.50128pt too wide) in paragraph at lines 407--408
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1306,7 +1222,7 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 422--423
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[20]
+[21]
 Overfull \hbox (82.35141pt too wide) in paragraph at lines 434--435
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][] 
@@ -1324,11 +1240,7 @@ Overfull \hbox (93.45145pt too wide) in paragraph at lines 450--451
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[20]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (76.80139pt too wide) in paragraph at lines 458--459
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1358,7 +1270,7 @@ Overfull \hbox (43.50128pt too wide) in paragraph at lines 467--468
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[21]
+[22]
 Overfull \hbox (93.45145pt too wide) in paragraph at lines 497--498
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1373,12 +1285,12 @@ Overfull \hbox (4.65115pt too wide) in paragraph at lines 511--512
 [][][][][][][][][][][][][][][][][] 
  []
 
-[21]
+
 Overfull \hbox (49.0513pt too wide) in paragraph at lines 531--532
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[22]
+[23]
 Overfull \hbox (54.60132pt too wide) in paragraph at lines 540--541
 [][][][][][][][][][][][][][][][][][] 
  []
@@ -1408,7 +1320,7 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 562--564
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-[22]
+
 Overfull \hbox (60.15134pt too wide) in paragraph at lines 568--569
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1433,7 +1345,7 @@ Overfull \hbox (32.40125pt too wide) in paragraph at lines 588--589
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-[23]
+[24]
 Overfull \hbox (65.70135pt too wide) in paragraph at lines 600--601
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1458,25 +1370,17 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 611--612
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[23]) (../src/TreeNode.h
-=======
-) (../src/TreeNode.h [24]
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+) (../src/TreeNode.h [25]
 Overfull \hbox (26.85123pt too wide) in paragraph at lines 28--29
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[24]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 63--64
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[25]
+[26]
 Overfull \hbox (71.25137pt too wide) in paragraph at lines 78--79
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1526,7 +1430,7 @@ Overfull \hbox (15.75119pt too wide) in paragraph at lines 98--99
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[25]
+
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1546,7 +1450,7 @@ Overfull \hbox (65.70135pt too wide) in paragraph at lines 111--113
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[26]
+[27]
 Overfull \hbox (32.40125pt too wide) in paragraph at lines 142--143
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1571,7 +1475,7 @@ Overfull \hbox (15.75119pt too wide) in paragraph at lines 150--151
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[26]
+
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 157--158
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1581,7 +1485,7 @@ Overfull \hbox (32.40125pt too wide) in paragraph at lines 159--161
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[27]
+[28]
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 184--185
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1616,7 +1520,7 @@ Overfull \hbox (21.30121pt too wide) in paragraph at lines 208--209
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[27]
+
 Overfull \hbox (32.40125pt too wide) in paragraph at lines 217--218
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1646,7 +1550,7 @@ Overfull \hbox (21.30121pt too wide) in paragraph at lines 227--229
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[28]
+[29]
 Overfull \hbox (160.05167pt too wide) in paragraph at lines 243--244
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1656,11 +1560,7 @@ Overfull \hbox (82.35141pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[28]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (60.15134pt too wide) in paragraph at lines 14--15
 [][][][][][][][][][][][][][][][] 
  []
@@ -1705,7 +1605,7 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 35--37
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[29]
+[30]
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 48--49
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1725,11 +1625,7 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 57--58
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[29]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (21.30121pt too wide) in paragraph at lines 70--71
 [][][][][][][][][][][][][][][][][] 
  []
@@ -1754,7 +1650,7 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 91--92
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[30]
+[31]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 94--95
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1769,11 +1665,7 @@ Overfull \hbox (49.0513pt too wide) in paragraph at lines 104--105
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[30]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 125--126
 [][][][][][][][][][][][][][][][][] 
  []
@@ -1788,7 +1680,7 @@ Overfull \hbox (76.80139pt too wide) in paragraph at lines 132--134
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[31]
+[32]
 Overfull \hbox (54.60132pt too wide) in paragraph at lines 148--149
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1803,11 +1695,7 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 153--154
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[31]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (26.85123pt too wide) in paragraph at lines 176--177
 [][][][][][][][][][][][][][][][][] 
  []
@@ -1827,7 +1715,7 @@ Overfull \hbox (87.90143pt too wide) in paragraph at lines 183--185
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[32]) (../src/SelfOrganizingTree.h
+[33]) (../src/SelfOrganizingTree.h
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1837,7 +1725,7 @@ Overfull \hbox (121.20154pt too wide) in paragraph at lines 15--16
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[32]
+
 Overfull \hbox (71.25137pt too wide) in paragraph at lines 28--29
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1862,16 +1750,12 @@ Overfull \hbox (99.00146pt too wide) in paragraph at lines 39--40
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[33]
+[34]
 Overfull \hbox (104.55148pt too wide) in paragraph at lines 46--47
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-) (../src/BinarySearchTree.h [33]
-=======
 ) (../src/BinarySearchTree.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (43.50128pt too wide) in paragraph at lines 16--17
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1891,12 +1775,12 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 29--30
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[35]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 38--39
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-[34]
+
 Overfull \hbox (37.95126pt too wide) in paragraph at lines 39--40
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1931,7 +1815,7 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 60--61
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[34]
+
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 68--69
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1956,7 +1840,7 @@ Overfull \hbox (10.20117pt too wide) in paragraph at lines 90--91
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[35]
+[36]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 109--110
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1966,11 +1850,7 @@ Overfull \hbox (43.50128pt too wide) in paragraph at lines 110--111
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[35]
-=======
-[36]
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+[37]
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 147--148
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2015,11 +1895,7 @@ Overfull \hbox (10.20117pt too wide) in paragraph at lines 165--166
 [][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[36]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (65.70135pt too wide) in paragraph at lines 184--185
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2049,7 +1925,7 @@ Overfull \hbox (87.90143pt too wide) in paragraph at lines 198--199
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[38]
 Overfull \hbox (26.85123pt too wide) in paragraph at lines 199--200
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2059,7 +1935,7 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 200--201
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[37]
+
 Overfull \hbox (71.25137pt too wide) in paragraph at lines 204--205
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2119,7 +1995,7 @@ Overfull \hbox (32.40125pt too wide) in paragraph at lines 226--227
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[37]
+
 Overfull \hbox (76.80139pt too wide) in paragraph at lines 230--231
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2164,12 +2040,12 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 250--251
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[39]
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 253--254
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[38]
+
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 264--265
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2184,16 +2060,12 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 272--273
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[38]) (../src/BSTNode.h
-=======
-) (../src/BSTNode.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+) (../src/BSTNode.h [40]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 17--18
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[39]
+
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 29--30
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2203,7 +2075,7 @@ Overfull \hbox (110.1015pt too wide) in paragraph at lines 41--42
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[39]
+
 Overfull \hbox (137.8516pt too wide) in paragraph at lines 47--49
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2233,7 +2105,7 @@ Overfull \hbox (21.30121pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[40]
+[41]
 Overfull \hbox (115.65152pt too wide) in paragraph at lines 75--76
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2263,16 +2135,12 @@ Overfull \hbox (54.60132pt too wide) in paragraph at lines 87--89
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[40]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (21.30121pt too wide) in paragraph at lines 100--101
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[41]) (../src/AVLTree.h
+[42]) (../src/AVLTree.h
 Overfull \hbox (60.15134pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2282,7 +2150,7 @@ Overfull \hbox (71.25137pt too wide) in paragraph at lines 16--17
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[41]
+
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 38--39
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2307,7 +2175,7 @@ Overfull \hbox (4.65115pt too wide) in paragraph at lines 47--48
 [][][][][][][][][][][][][][][][][] 
  []
 
-[42]
+[43]
 Overfull \hbox (87.90143pt too wide) in paragraph at lines 59--60
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2332,7 +2200,7 @@ Overfull \hbox (82.35141pt too wide) in paragraph at lines 76--77
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[42]
+
 Overfull \hbox (82.35141pt too wide) in paragraph at lines 80--81
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2387,7 +2255,7 @@ Overfull \hbox (87.90143pt too wide) in paragraph at lines 102--103
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[43]
+[44]
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 113--114
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2437,7 +2305,7 @@ Overfull \hbox (93.45145pt too wide) in paragraph at lines 126--127
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[43]
+
 Overfull \hbox (76.80139pt too wide) in paragraph at lines 137--138
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2472,7 +2340,7 @@ Overfull \hbox (82.35141pt too wide) in paragraph at lines 155--156
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[45]
 Overfull \hbox (26.85123pt too wide) in paragraph at lines 157--158
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2482,7 +2350,7 @@ Overfull \hbox (60.15134pt too wide) in paragraph at lines 158--159
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[44]
+
 Overfull \hbox (93.45145pt too wide) in paragraph at lines 160--161
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2512,11 +2380,7 @@ Overfull \hbox (10.20117pt too wide) in paragraph at lines 176--177
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[44]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (49.0513pt too wide) in paragraph at lines 189--190
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2536,11 +2400,7 @@ Overfull \hbox (60.15134pt too wide) in paragraph at lines 202--203
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-) (../src/AVLNode.h [45]
-=======
-) [45] (../src/AVLNode.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+) [46] (../src/AVLNode.h
 Overfull \hbox (15.75119pt too wide) in paragraph at lines 29--30
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2570,7 +2430,7 @@ Overfull \hbox (93.45145pt too wide) in paragraph at lines 51--52
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[46]
+[47]
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 54--55
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2610,20 +2470,12 @@ Overfull \hbox (26.85123pt too wide) in paragraph at lines 77--78
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[46]) (../src/SplayTree.h
-=======
-) [47] (../src/SplayTree.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+[48]) (../src/SplayTree.h
 Overfull \hbox (82.35141pt too wide) in paragraph at lines 15--16
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[47]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (71.25137pt too wide) in paragraph at lines 27--28
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2663,7 +2515,7 @@ Overfull \hbox (110.1015pt too wide) in paragraph at lines 46--47
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[48]
+[49]
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 54--55
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2688,11 +2540,7 @@ Overfull \hbox (65.70135pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-[48]
-=======
 
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 79--80
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2752,7 +2600,7 @@ Overfull \hbox (32.40125pt too wide) in paragraph at lines 102--103
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[49]
+[50]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 115--116
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2762,26 +2610,22 @@ Overfull \hbox (10.20117pt too wide) in paragraph at lines 127--129
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[49]
+
 Overfull \hbox (32.40125pt too wide) in paragraph at lines 134--135
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[50]
+[51]
 Overfull \hbox (4.65115pt too wide) in paragraph at lines 168--169
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-) (../src/Treap.h [50]
-=======
 ) (../src/Treap.h
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
 Overfull \hbox (60.15134pt too wide) in paragraph at lines 16--17
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[51]
+[52]
 Overfull \hbox (32.40125pt too wide) in paragraph at lines 37--38
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2811,7 +2655,7 @@ Overfull \hbox (4.65115pt too wide) in paragraph at lines 53--54
 [][][][][][][][][][][][][][][][][] 
  []
 
-[51]
+
 Overfull \hbox (99.00146pt too wide) in paragraph at lines 69--70
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2841,12 +2685,12 @@ Overfull \hbox (43.50128pt too wide) in paragraph at lines 79--80
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[53]
 Overfull \hbox (71.25137pt too wide) in paragraph at lines 82--83
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[52]
+
 Overfull \hbox (65.70135pt too wide) in paragraph at lines 83--84
 [][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2871,12 +2715,12 @@ Overfull \hbox (99.00146pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[52]
+
 Overfull \hbox (54.60132pt too wide) in paragraph at lines 118--119
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) (../src/TreapNode.h [53]
+) (../src/TreapNode.h [54]
 Overfull \hbox (10.20117pt too wide) in paragraph at lines 17--18
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2886,7 +2730,7 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 29--30
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[53]
+
 Overfull \hbox (32.40125pt too wide) in paragraph at lines 45--46
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -2906,60 +2750,35 @@ Overfull \hbox (37.95126pt too wide) in paragraph at lines 48--49
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<<<<<<< HEAD
-) [54] (./deschippers1396250faass1407937.aux) ) 
+[55]) [56] (./deschippers1396250faass1407937.aux) ) 
 Here is how much of TeX's memory you used:
- 12985 strings out of 494985
- 226525 string characters out of 6180355
- 312209 words of memory out of 5000000
- 15910 multiletter control sequences out of 15000+600000
- 11186 words of font info for 41 fonts, out of 8000000 for 9000
+ 12987 strings out of 494985
+ 226546 string characters out of 6180355
+ 315209 words of memory out of 5000000
+ 15911 multiletter control sequences out of 15000+600000
+ 11494 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,6n,68p,583b,1711s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmtt9.pfb>
-Output written on deschippers1396250faass1407937.pdf (54 pages, 337378 bytes).
-=======
-[54]) [55] (./deschippers1396250faass1407937.aux) ) 
-Here is how much of TeX's memory you used:
- 12984 strings out of 493607
- 225357 string characters out of 3149945
- 316031 words of memory out of 3500000
- 16002 multiletter control sequences out of 15000+200000
- 11494 words of font info for 42 fonts, out of 3000000 for 9000
- 831 hyphenation exceptions out of 8191
- 56i,6n,68p,583b,1681s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/s
-hare/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/ty
-pe1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
-hare/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm
-/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm
-/cmti9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
-are/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on deschippers1396250faass1407937.pdf (55 pages, 351946 bytes).
->>>>>>> d795feb6625577e42c080e911fbf2815a82c6857
+ 56i,6n,68p,583b,1681s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt9.pfb>
+Output written on deschippers1396250faass1407937.pdf (56 pages, 352413 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
+ 253 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
