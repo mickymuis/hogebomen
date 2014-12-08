@@ -29,7 +29,17 @@ AVL-bomen, splay-bomen en treaps zijn klassieke datastructuren die ingezet worde
 \section{Werkwijze}
 De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren. Voor alle vier de bomen wordt dezelfde zoekmethode gebruikt. Deze is in het slechtste geval O($logn$).
 \subsection{Implementatie binaire zoekboom}
-TO DO
+
+De binairy zoekboom (BST) vormt de basis voor alle zogeheten \emph{zelf-organiserende bomen}, zoals de AVL- of SplayTree.
+Aan de grondslag van de BST ligt de \emph{binaire-zoekboom-eigenschap}, die zorgt dat de boom op de ``gretige'' manier kan
+worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mogelijk om een knoop in hooguit O($\log(n)$) stappen te vinden. Kort samengevat houdt de bst-eigenschap het volgende in:
+\begin{itemize}
+\item Linker-kindknopen hebben altijd een kleinere waarde dan hun ouder, rechter-kindknopen altijd een grotere.
+\item Bij een MIN-boom is dit omgekeerd. Onze implementatie is enkel een MAX-boom.
+\item Toevoegen kan zonder verwisselen worden uitgevoerd (in tegenstelling tot bijv. een heap).
+\item Voor verwijderen of vervangen moet afhankelijk van de plaats van de knoop wel worden verwisseld.
+\end{itemize}
+\emph{Nu ben ik moe}
 \subsection{Implementatie AVL-bomen}
 Knopen van een AVL-boom hebben een \emph{balansfactor}, die altijd -1, 0 of 1 moet zijn. In deze implementatie is de balansfactor de hoogte van de rechtersubboom min de hoogte van de linkersubboom. Dit houdt dus in dat de hoogte van de linkersubboom van de wortel met maar 1 knoop kan verschillen van de hoogte van de rechtersubboom van de wortel. Het moment dat de balansfactor van een knoop minder dan -1 of meer dan 1 wordt, moet de boom geherstructureerd worden, om deze eigenschap te herstellen. \\
 
@@ -138,6 +148,14 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 
 \section{Resultaten}
 
+\subsection{Experiment 1}
+Hoeveel meer rekenkracht kost het om grote datasets in te voegen in zelf-organiserende bomen tov binaire bomen?
+\subsection{Experiment 2}
+Levert een zelf-organiserende boom betere zoekprestaties en onder welke opstandigheden?
+\subsection{Experiment 3}
+Hoeveel extra geheugen kost een SOT?
+\subsection{Experiment 4}
+Wat is de invloed van de random-factor bij de Treap?
 \section{Conclusies}
 
 \section{Appendix}

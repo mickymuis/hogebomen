@@ -130,17 +130,19 @@ int main ( int argc, char **argv ) {
     std::ifstream fneedles( argv[3] );
     if( !fneedles.good( ) ) {
         std::cerr << "Could not open " << argv[3] << std::endl;
-        return -1;          
+        return -1;
     }
 
-    if( argv[4] && mode != TREAP ) {
-        std::cerr << "This variable should only be set for Treaps." << std::endl;
-        return -1;
-    }
-    else if( atoi(argv[4]) <= 0 ) {
-        std::cerr << "This variable should only be an integer " 
-                  << " greater than 0." << std::endl;
-        return -1;
+    if( argc == 5 ) {
+        if( argv[4] && mode != TREAP ) {
+            std::cerr << "This variable should only be set for Treaps." << std::endl;
+            return -1;
+        }
+        else if( atoi(argv[4]) <= 0 ) {
+            std::cerr << "This variable should only be an integer " 
+                      << " greater than 0." << std::endl;
+            return -1;
+        }
     }
 
     std::vector<string> needles;
