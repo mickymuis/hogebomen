@@ -24,10 +24,10 @@ Blablabla
 \end{abstract}
 
 \section{Inleiding}
-AVL-bomen, splay-bomen en treaps zijn klassieke datastructuren die ingezet worden om een verzameling gegevens te faciliteren. Het zijn zelfbalancerende binaire zoekbomen die elk een vorm van ruimte en/of tijd-effici\"entie aanbieden. Er worden experimenten verricht om de prestatie van deze zelf-balancerende zoekbomen te vergelijken, aan de hand van ophaaltijd van data, mate van herstructurering en het verwijderen van knopen. Ook wordt de prestatie van deze zoekbomen uitgezet tegen de ongebalanceerde tegenhanger, de binaire zoekboom.
+AVL-bomen, splay-bomen en treaps zijn klassieke datastructuren die ingezet worden om een verzameling gegevens te faciliteren. Het zijn zelfbalancerende binaire zoekbomen die elk een vorm van ruimte en/of tijd-effici\"entie aanbieden. Er worden experimenten verricht om de prestatie van deze zelf-balancerende zoekbomen te vergelijken aan de hand van ophaaltijd van data, mate van herstructurering en het verwijderen van knopen. Ook wordt de prestatie van deze zoekbomen uitgezet tegen de ongebalanceerde tegenhanger, de binaire zoekboom.
 
 \section{Werkwijze}
-De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren.
+De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren. Voor alle vier de bomen wordt dezelfde zoekmethode gebruikt. Deze is in het slechtste geval O($logn$).
 \subsection{Implementatie binaire zoekboom}
 TO DO
 \subsection{Implementatie AVL-bomen}
@@ -64,11 +64,17 @@ Om de balansfactor voor elke knoop te berekenen, houdt elke knoop zijn eigen hoo
 In het eerste geval moet de wortel naar rechts worden geroteerd. In het tweede geval moeten we eerst naar de staat van de eerste subboom komen, door b naar links te roteren. Voor de spiegelbeelden van deze twee vormen geldt hetzelfde alleen in spiegelbeeld. \\
 
 In deze implementatie van een AVL-boom bedraagt het toevoegen van een knoop in het ergste geval O($logn$) tijd, waarbij \emph{n} staat voor de hoogte van de boom. Eerst moet er gekeken worden of de data niet al in de boom voorkomt (O($logn$)) en vervolgens moet de boom op basis van de toevoeging geherstructureerd worden. Dit laatste is in het ergste geval O($logn$), omdat dan de gehele boom tot de wortel moeten worden nagelopen. \\
-De complexiteitsgraad van het verwijderen van een knoop is gelijk aan die van het toevoegen van een knoop, omdat dezelfde operaties uitgevoerd moeten worden.
+
+De complexiteitsgraad van het verwijderen van een knoop is gelijk aan die van het toevoegen van een knoop. In deze implementatie zoeken we in de rechtersubboom het kleinste kind en vervangen we de te verwijderen knoop met deze knoop. Dit heeft een duur van O($logn$). Als hij geen rechtersubboom heeft, wordt de node weggegooid en wordt zijn linkersubboom de nieuwe boom.
 \subsection{Implementatie Splay-bomen}
 TO DO
 \subsection{Implementatie Treaps}
+Treap lijkt in veel opzichten op een AVL-boom. De balansfactor per knoop heeft echter plaats gemaakt voor een prioriteit per knoop. Deze prioriteit wordt bij het toevoegen van een knoop willekeurig bepaald. De complexiteit voor het toevoegen en verwijderen van een knoop is hetzelfde als bij de AVL-boom. \\
 
+Bij het toevoegen van een knoop moet er nog steeds omhoog gelopen worden in de boom, totdat de prioriteit van de toegevoegde knoop kleiner is dan de prioriteit van de ouder. Als dit niet het geval is, blijft de toegevoegde knoop omhoog roteren. In het ergste geval kan het dus weer zo zijn dat we tot de wortel door moeten blijven lopen. \\
+
+Bij het verwijderen van een knoop blijven we de betreffende knoop roteren naar het kind met de grootste prioriteit. Uiteindelijk belanden we dan in de situatie dat de knoop maar een of geen kinderen heeft.
+In het eerste geval verwijderen we de knoop en plakken zijn subboom terug aan de boom op zijn plek en in het tweede geval verwijderen we de knoop. In het slechtste geval duurt dit dus ook O($logn$) tijd.
 \section{Onderzoek}
 
 Een praktisch voorbeeld van binair zoeken in een grote boom is de spellingscontrole. Een spellingscontrole moet zeer snel voor een groot aantal strings kunnen bepalen of deze wel of niet tot de taal behoren. Aangezien er honderduizenden woorden in een taal zitten, is
@@ -127,7 +133,7 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \item Bij het gedicht zal de splay boom waarschijnlijk het snelst zijn omdat deze optimaliseert voor herhalingen.
 \item ...
 \item De bomen die een aparte node-klasse gebruiken (avl en treap) gebruiken het meeste geheugen.
-\item Items over Treap
+\item De meest effici\"ente randomfactor is afhankelijk van de grootte van de boom die geïmplementeerd gaat worden. Bij een kleine boom volstaat een kleine randomfactor, bij een grote boom volstaat een grote randomfactor.
 \end{itemize}
 
 \section{Resultaten}
@@ -136,21 +142,30 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 
 \section{Appendix}
 
-\subsection{ExpressionAtom.h}
-\lstinputlisting{../src/ExpressionAtom.h}
-\subsection{ExpressionAtom.cc}
-\lstinputlisting{../src/ExpressionAtom.cc}
-\subsection{ExpressionTree.h}
-\lstinputlisting{../src/ExpressionTree.h}
-\subsection{ExpressionTree.cc}
-\lstinputlisting{../src/ExpressionTree.cc}
 \subsection{main.cc}
 \lstinputlisting{../src/main.cc}
+\subsection{hooiberg.cc}
+\lstinputlisting{../src/hooiberg.cc}
 \subsection{Tree.h}
 \lstinputlisting{../src/Tree.h}
 \subsection{TreeNode.h}
 \lstinputlisting{../src/TreeNode.h}
 \subsection{TreeNodeIterator.h}
 \lstinputlisting{../src/TreeNodeIterator.h}
-
+\subsection{SelfOrganizingTree.h}
+\lstinputlisting{../src/SelfOrganizingTree.h}
+\subsection{BinarySearchTree.h}
+\lstinputlisting{../src/BinarySearchTree.h}
+\subsection{BSTNode.h}
+\lstinputlisting{../src/BSTNode.h}
+\subsection{AVLTree.h}
+\lstinputlisting{../src/AVLTree.h}
+\subsection{AVLNode.h}
+\lstinputlisting{../src/AVLNode.h}
+\subsection{SplayTree.h}
+\lstinputlisting{../src/SplayTree.h}
+\subsection{Treap.h}
+\lstinputlisting{../src/Treap.h}
+\subsection{TreapNode.h}
+\lstinputlisting{../src/TreapNode.h}
 \end{document}
