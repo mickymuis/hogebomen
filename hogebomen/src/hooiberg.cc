@@ -169,7 +169,7 @@ int main ( int argc, char **argv ) {
     
 
     // Define a start point to time measurement
-    auto start = std::chrono::system_clock::now();
+    auto start = std::chrono::high_resolution_clock::now();
 
     
     if( !fillTree( tree, fhaystack ) ) {
@@ -179,16 +179,16 @@ int main ( int argc, char **argv ) {
     
     // Determine the duration of the code block
     auto duration =std::chrono::duration_cast<std::chrono::milliseconds> 
-                            (std::chrono::system_clock::now() - start);
+                            (std::chrono::high_resolution_clock::now() - start);
     
     cout << "Filled the binary search tree in " << duration.count() << "ms" << endl;
     
-    start = std::chrono::system_clock::now();  
+    start = std::chrono::high_resolution_clock::now();  
     findAll( needles, tree );
-    duration =std::chrono::duration_cast<std::chrono::milliseconds> 
-                            (std::chrono::system_clock::now() - start);
+    auto durationNs =std::chrono::duration_cast<std::chrono::nanoseconds> 
+                            (std::chrono::high_resolution_clock::now() - start);
                             
-    cout << "Searched the haystack in " << duration.count() << "ms" << endl;
+    cout << "Searched the haystack in " << durationNs.count() << "ns, ~" << (float)durationNs.count() / 1000000.0f << "ms" << endl;
     
     // Test pre-order
     //for( auto word : *tree ) {
