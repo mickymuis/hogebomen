@@ -266,6 +266,7 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \section{Resultaten}
 
 \subsection{Experiment 1}
+\subsubsection{Deelexperiment 1}
 In dit experiment hebben we voor elke soort boom gemeten hoe lang het duurt de boom op te bouwen met het bestand  \texttt{Nederlands\_unsorted.txt} om deze tijden te kunnen vergelijken. Dit hebben we gemeten in miliseconden. De volgende gegevens kwamen eruit. Deze hebben we vervolgens verwerkt in een grafiek. \\
 
 \resizebox{\linewidth}{!}{
@@ -290,7 +291,12 @@ GEM & 542,7 & 1300,1 & 1449 & 1461,4 & 1398,8 & 1472,1 & 1156,6 & 1099,6
 figuur 1. Grafiek over het aantal ms voor het construeren van een graaf.
 \end{center}
 
+\subsubsection{Deelexperiment 2}
+Het vullen van de boom met de alfabetische woordenlijst levert, zoals eerder beschreven, een diagonale lijn van data in de binaire zoekboom op, waar we niet efficiënt in kunnen zoeken. Treap doet het ook niet veel beter in dit gebied, waar de gemiddelde zoektijd met \texttt{gedicht.txt} bij binaire zoekbomen rond de 167,5 miliseconden ligt, ligt hij bij treap rond de 253,5 miliseconden. De gemiddelde zoektijd voor zowel AVL-bomen als splaybomen is echter nooit meer dan 1 miliseconde. \\
+Dit verschil is overigens ook opvallend bij het vullen van de boom, waar splay en AVL gelijk presteren als in experiment 1, duurt het bij zowel de binaire zoekboom als de treap bijna een factor van 100 langer.
+
 \subsection{Experiment 2}
+\subsubsection{Deelexperiment 1}
 Om de zoekprestaties van de verschillende soorten bomen te vergelijken kijken we naar zowel de totale zoekdiepte van de boom, de gemiddelde zoekdiepte van een woord in \texttt{gedicht.txt} en naar het aantal miliseconden die de gemiddelde zoekoperatie nodig had. Onze boom is opgebouwd uit \texttt{nederlands\_unsorted.txt}.
 De gehele hoogte van de boom die dit opleverd en de gemiddelde zoekdiepte van een woord uit \texttt{gedicht.txt} staan in onderstaande tabel weergegeven. Het gemiddelde aantal miliseconden dat nodig was voor de zoekoperaties van elk woord bedroeg nooit meer dan 1 miliseconden en dook zelfs vaak onder de halve miliseconde.
 
@@ -308,6 +314,7 @@ splay & 997 & 17 \\
 \end{tabular}
 \end{center}
 
+\subsubsection{Deelexperiment 2}
 Ditzelfde experiment voerden we uit op dezelfde boom met als zoekopdrachten elk element in die boom. Daar kwamen de volgende resultaten uit. \\
 
 \begin{center}
@@ -338,6 +345,7 @@ splay & 493260 & 15389922 (14,7 Mb)\\
 \end{tabular}
 \end{center}
 \subsection{Experiment 4}
+\subsubsection{Deelexperiment 1}
 Wat is de invloed van de random-factor bij de Treap?
 
 Hooiberg:
@@ -380,6 +388,7 @@ GEM & 1843,5 & 2256,9 & 2275,2 & 2268,7 & 2205,8 \\
 \end{tabular}
 \end{center}
 
+\subsubsection{Deelexperiment 2}
 De volgende tabel geeft de uitersten aan van de resultaten die we tegenkwamen in deelexperiment 2 van experiment 2. \\
 
 \begin{center}
