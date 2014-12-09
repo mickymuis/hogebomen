@@ -266,36 +266,75 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \section{Resultaten}
 
 \subsection{Experiment 1}
-Hoeveel meer rekenkracht kost het om grote datasets in te voegen in zelf-organiserende bomen tov binaire bomen?
+In dit experiment hebben we voor elke soort boom gemeten hoe lang het duurt de boom op te bouwen met het bestand  \texttt{Nederlands\_unsorted.txt} om deze tijden te kunnen vergelijken. Dit hebben we gemeten in miliseconden. De volgende gegevens kwamen eruit. Deze hebben we vervolgens verwerkt in een grafiek. \\
 
-Hooiberg:
-Nederlands\_unsorted
-Naalden:
-gedicht
-
-misschien beter om hier weer gemiddelden te pakken??
+\resizebox{\linewidth}{!}{
+\begin{tabular}{c c c c c c c c c}
+ & BST & Treap(10) & Treap(100) & Treap(1000) & Treap(10000) & Treap(100000) & AVL & Splay \\
+ & 525 & 1160 & 1526 & 1307 & 1272 & 1368 & 1063 & 1065 \\
+ & 527 & 1162 & 1409 & 1332 & 1202 & 1736 & 1207 & 1059 \\
+ & 511 & 1173 & 1215 & 1181 & 1846 & 1669 & 1102 & 1053 \\
+ & 585 & 1141 & 1298 & 1547 &  	1246 & 1688 & 1150 & 1202 \\
+ & 589 & 1319 & 1427 & 1190 & 1538 & 1221 & 1146 & 1067 \\
+ & 588 & 1265 & 1560 & 1472 & 1271 & 1238 & 1251 & 1063 \\
+ & 592 & 1464 & 1428 & 1338 & 1286 & 1543 & 1136 & 1050 \\
+ & 492 & 1501 & 1704 & 2594 & 1316 & 1206 & 1155 & 1092 \\
+ & 506 & 1425 & 1449 & 1269 & 1571 & 1389 & 1153 & 1183 \\
+ & 512 & 1391 & 1474 & 1384 & 1440 & 1663 & 1203 & 1162 \\
+GEM & 542,7 & 1300,1 & 1449 & 1461,4 & 1398,8 & 1472,1 & 1156,6 & 1099,6 
+\end{tabular}
+}
 
 \begin{center}
 \includegraphics[scale=0.75]{fill.png}
 figuur 1. Grafiek over het aantal ms voor het construeren van een graaf.
 \end{center}
 
-
 \subsection{Experiment 2}
-Levert een zelf-organiserende boom betere zoekprestaties en onder welke opstandigheden?
+Om de zoekprestaties van de verschillende soorten bomen te vergelijken kijken we naar zowel de totale zoekdiepte van de boom, de gemiddelde zoekdiepte van een woord in \texttt{gedicht.txt} en naar het aantal miliseconden die de gemiddelde zoekoperatie nodig had. Onze boom is opgebouwd uit \texttt{nederlands\_unsorted.txt}.
+De gehele hoogte van de boom die dit opleverd en de gemiddelde zoekdiepte van een woord uit \texttt{gedicht.txt} staan in onderstaande tabel weergegeven. Het gemiddelde aantal miliseconden dat nodig was voor de zoekoperaties van elk woord bedroeg nooit meer dan 1 miliseconden en dook zelfs vaak onder de halve miliseconde.
 
-??? deze test geeft altijd 0/1 ms bij mij??
+\begin{center}
+\begin{tabular}{c c c}
+Type & totale zoekdiepte & gemiddelde zoekdiepte \\
+Treap(10) & 1843,5 & 32,5 \\
+Treap(100) & 2256,9 & 39,9 \\
+Treap(1000) & 2275,2 & 40,2 \\
+Treap(10000) & 2268,7 & 39,9 \\
+Treap(100000) & 2205,8 & 39 \\
+BST & 1106 & 19 \\
+AVL & 880 & 15 \\
+splay & 997 & 17 \\
+\end{tabular}
+\end{center}
+
+Ditzelfde experiment voerden we uit op dezelfde boom met als zoekopdrachten elk element in die boom. Daar kwamen de volgende resultaten uit. \\
+
+\begin{center}
+\begin{tabular}{c c c c}
+Type & totale zoekdiepte & gemiddelde zoekdiepte & tijd (ms) \\
+Treap(10) & 5783309 & 34,67 & 882.005 \\
+Treap(100) & 7034043 & 42,22 & 956.880 \\
+Treap(1000) & 7162473 & 44.11 & 1067.861 \\
+Treap(10000) & 7253419 & 44,67 & 1053.257 \\
+BST & 3369405 & 20 & 557.934 \\
+AVL & 2576171 & 15 & 450.390 \\
+splay & 3922834 & 23 & 1378,197  \\
+\end{tabular}
+\end{center}
 
 \subsection{Experiment 3}
-Hoeveel extra geheugen kost een SOT?
+Hieronder staan de hoeveelheden geheugen en het aantal allocaties weergegeven voor elke boom. De metingen zijn van heap dynamisch gealloceerd geheugen alleen en zijn uitgevoerd met Valgrind. De onderlinge verschillen zijn, zelfs met een wat grotere data set, verwaarloosbaar. Niet geheel verassend nemen de nodes van Treap en AVL iets meer ruimte in omdat deze een prioriteit resp. balansfactor bijhouden.\\
+Het feit dat het invoer bestand slechts 2,1 Mb groot is, zegt wel iets over de effici\"entie van het geheugengebruik in het algemeen,
+zowel van onze implementatie als van dit soort boom datatypen in het algemeen. Ontwerpkeuzen spelen hier een grote rol: als we bijvoorbeeld ervoor hadden gekozen om geen 'ouder-pointers' te gebruiken, hadden we tussen 0,6 en 1,2 Mb op deze cijfers kunnen besparen. 
 
 \begin{center}
 \begin{tabular}{c c c}
 Type & allocs & bytes \\
-Treap & 493280 & 16704426 \\
-BST & 493278 & 15389858 \\
-AVL & 493279 & 16704390 \\
-splay & 43260 & 15389922 \\
+Treap & 493280 & 16704426 (15,9 Mb) \\
+BST & 493278 & 15389858 (14,7 Mb) \\
+AVL & 493279 & 16704390 (15,9 Mb)\\
+splay & 493260 & 15389922 (14,7 Mb)\\
 \end{tabular}
 \end{center}
 \subsection{Experiment 4}
@@ -341,6 +380,18 @@ GEM & 1843,5 & 2256,9 & 2275,2 & 2268,7 & 2205,8 \\
 \end{tabular}
 \end{center}
 
+De volgende tabel geeft de uitersten aan van de resultaten die we tegenkwamen in deelexperiment 2 van experiment 2. \\
+
+\begin{center}
+\begin{tabular}{c c c c c c c}
+ & \multicolumn{2}{c}{Totale zoekdiepte} & \multicolumn{2}{c}{Gemiddelde zoekdiepte} & \multicolumn{2}{c}{Tijd}\\ 
+bereik & minimum & maximum & minimum & maximum & minimum & maximum \\
+10 & 5194145 & 6826579 & 31 &  41 & 778.449 & 992.709 \\
+100 & 5321940 & 10137343 & 32 & 61 & 823.003 & 1379.380 \\
+1000 & 592787 2& 9952377 & 32 & 60 & 873.975 & 1300.820 \\
+10000 & 5841811 & 10283676 & 35 & 62 & 940.451 & 1270.090 \\
+\end{tabular}
+\end{center}
 \section{Conclusies}
 
 \section{Appendix}
