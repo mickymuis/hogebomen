@@ -9,6 +9,7 @@
   commentstyle=\ttfamily, identifierstyle=\ttfamily,
   stringstyle=\itshape}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 %opening
 \title{ Hogebomen }
@@ -29,6 +30,7 @@ AVL-bomen, splay-bomen en treaps zijn klassieke datastructuren die ingezet worde
 \section{Werkwijze}
 De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren. Voor alle vier de bomen wordt dezelfde zoekmethode gebruikt. Deze is in het slechtste geval O($logn$).
 \subsection{Implementatie binaire zoekboom}
+
 De binairy zoekboom (BST) vormt de basis voor alle zogeheten \emph{zelf-organiserende bomen}, zoals de AVL- of SplayTree.
 Aan de grondslag van de BST ligt de \emph{binaire-zoekboom-eigenschap}, die zorgt dat de boom op de ``gretige'' manier kan
 worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mogelijk om een knoop in hooguit O($\log(n)$) stappen te vinden. Kort samengevat houdt de bst-eigenschap het volgende in:
@@ -38,9 +40,7 @@ worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mog
 \item Toevoegen kan zonder verwisselen worden uitgevoerd (in tegenstelling tot bijv. een heap).
 \item Voor verwijderen of vervangen moet afhankelijk van de plaats van de knoop wel worden verwisseld.
 \end{itemize}
-
 \emph{Nu ben ik moe}
-
 \subsection{Implementatie AVL-bomen}
 Knopen van een AVL-boom hebben een \emph{balansfactor}, die altijd -1, 0 of 1 moet zijn. In deze implementatie is de balansfactor de hoogte van de rechtersubboom min de hoogte van de linkersubboom. Dit houdt dus in dat de hoogte van de linkersubboom van de wortel met maar 1 knoop kan verschillen van de hoogte van de rechtersubboom van de wortel. Het moment dat de balansfactor van een knoop minder dan -1 of meer dan 1 wordt, moet de boom geherstructureerd worden, om deze eigenschap te herstellen. \\
 
@@ -78,30 +78,7 @@ In deze implementatie van een AVL-boom bedraagt het toevoegen van een knoop in h
 
 De complexiteitsgraad van het verwijderen van een knoop is gelijk aan die van het toevoegen van een knoop. In deze implementatie zoeken we in de rechtersubboom het kleinste kind en vervangen we de te verwijderen knoop met deze knoop. Dit heeft een duur van O($logn$). Als hij geen rechtersubboom heeft, wordt de node weggegooid en wordt zijn linkersubboom de nieuwe boom.
 \subsection{Implementatie Splay-bomen}
-
-De Splay-boom is een simpele binaire zoekboom die zichzelf herorganiseerd na elke operatie, ook na operaties die alleen lezen, zoals \texttt{find()}. Deze herorganisatiestap heet ``splay'' (vandaar de naam) en heeft ten doel de laatst aangesproken knoop bovenaan te zetten. Dit wordt dus de wortel. Hieronder is het gedrag kort samengevat:
-\begin{itemize}
-\item Bij zoeken wordt de gevonden knoop de wortel, mits er een zoekresultaat is.
-\item Bij toevoegen wordt de toegevoegde knoop de wortel
-\item Bij vervangen wordt de vervangen knoop de wortel
-\item Bij verwijderen wordt de te verwijderen knoop eerst de wortel, dan wordt deze verwijderd.
-\end{itemize}
-Het idee achter dit gedrag is, dat vaak gebruikte knopen hoger in de boom terechtkomen en daarom sneller toegankelijk zijn voor volgende operaties. De splay-operatie zorgt er bovendien voor dat knoop die dicht in de buurt van de \emph{gesplayde} knoop zitten, ook hoger in
-de boom worden geplaatst. Dit effect ontstaat doordat \emph{splay} eigenlijk een serie boom rotaties is. Als men deze rotaties
-consequent uitvoerd blijft bovendien de binairy-zoekboom-eigenschap behouden.
-
-\subsubsection{Splay}
-
-De splay-operatie bestaat uit drie operaties en hun spiegelbeelden. We gaan uit van een knoop $n$, zijn ouderknoop $p$ en diens ouderknoop $g$. Welke operatie wordt uitgevoerd is afhankelijk van het feit of $n$ en $p$ linker- of rechterkind zijn. We definieren:
-\begin{itemize}
-\item De \emph{Zig} stap. Als $n$ linkerkind is van $p$ en $p$ de wortel is, doen we een rotate-right op $p$.
-\item Het spiegelbeeld van \emph{Zig} is \emph{Zag}.
-\item De \emph{Zig-Zig} stap. Als $n$ linkerkind is van $p$ en $p$ linkerkind is van $g$, doen we eerst een rotate-right op $g$ en dan een rotate-right op $p$.
-\item Het spiegelbeeld van \emph{Zig-Zig} is \emph{Zag-Zag}
-\item De \emph{Zig-Zag} stap. Als $n$ rechterkind is van $p$ en $p$ linkerkind is van $g$, doen we eerst een rotate-left op $p$ en dan een rotate-right op $g$.
-\item De omgekeerde versie heet \emph{Zag-Zig}
-\end{itemize}
-Onze implementatie splayt op \texttt{insert(), replace(), remove()} en \texttt{find()}. De gebruiker kan eventueel zelf de splay-operatie aanroepen na andere operaties dmv de functie \texttt{splay()}.
+TO DO
 \subsection{Implementatie Treaps}
 Treap lijkt in veel opzichten op een AVL-boom. De balansfactor per knoop heeft echter plaats gemaakt voor een prioriteit per knoop. Deze prioriteit wordt bij het toevoegen van een knoop willekeurig bepaald. De complexiteit voor het toevoegen en verwijderen van een knoop is hetzelfde als bij de AVL-boom. \\
 
@@ -171,6 +148,82 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \end{itemize}
 
 \section{Resultaten}
+
+\subsection{Experiment 1}
+Hoeveel meer rekenkracht kost het om grote datasets in te voegen in zelf-organiserende bomen tov binaire bomen?
+
+Hooiberg:
+Nederlands\_unsorted
+Naalden:
+gedicht
+
+misschien beter om hier weer gemiddelden te pakken??
+
+\begin{center}
+\includegraphics[scale=0.75]{fill.png}
+figuur 1. Grafiek over het aantal ms voor het construeren van een graaf.
+\end{center}
+
+
+\subsection{Experiment 2}
+Levert een zelf-organiserende boom betere zoekprestaties en onder welke opstandigheden?
+
+??? deze test geeft altijd 0/1 ms bij mij??
+
+\subsection{Experiment 3}
+Hoeveel extra geheugen kost een SOT?
+
+\begin{center}
+\begin{tabular}{c c c}
+Type & allocs & bytes \\
+Treap & 493280 & 16704426 \\
+BST & 493278 & 15389858 \\
+AVL & 493279 & 16704390 \\
+splay & 43260 & 15389922 \\
+\end{tabular}
+\end{center}
+\subsection{Experiment 4}
+Wat is de invloed van de random-factor bij de Treap?
+
+Hooiberg:
+Nederlands\_unsorted
+Naalden:
+gedicht
+
+Average search depth \\
+\begin{center}
+\begin{tabular}{c c c c c c}
+ & 10 & 100 & 1000 & 10000 & 10000 \\
+ & 34 & 36 & 36 & 45 & 38 \\
+ & 31 & 40 & 49 & 34 & 47 \\
+ & 29 & 	35 & 26 & 70 & 41 \\
+ & 32 & 	40 & 35 & 41 & 42 \\
+ & 33 & 	44 & 32 & 38 & 36 \\
+ & 34 & 	40 & 49 & 33 & 37 \\
+ & 35 & 	47 & 29 & 37 & 35 \\
+ & 36 & 	47 & 66 & 36 & 29 \\
+ & 32 & 	34 & 36 & 35 & 39 \\
+ & 29 & 	36 & 44 & 30 & 46 \\
+GEM & 32,5 & 39,9 & 40,2 & 39,9 & 39 \\
+\end{tabular}
+\end{center}
+Total search depth \\
+\begin{center}
+\begin{tabular}{c c c c c c}
+ & 10 & 100 & 1000 & 10000 & 10000 \\
+ & 1914 & 2041 & 2017 & 2549 & 2173 \\
+ & 1745 & 2254 & 2752 & 1957 & 2657 \\
+ & 1652 & 1982 & 1511 & 3954 & 2312 \\
+ & 1836 & 2261 & 1983 & 2310 & 2366 \\
+ & 1861 & 2482 & 1819 & 2169 & 2033 \\
+ & 1925 & 2253 & 2783 & 1852 & 2092 \\
+ & 2002 & 2656 & 1643 & 2126 & 1947 \\
+ & 2032 & 2672 & 3732 & 2059 & 1658 \\
+ & 1798 & 1917 & 2021 & 1999 & 2211 \\
+ & 1670 & 2051 & 2491 & 1712 & 2609 \\
+GEM & 1843,5 & 2256,9 & 2275,2 & 2268,7 & 2205,8 \\
+\end{tabular}
+\end{center}
 
 \section{Conclusies}
 

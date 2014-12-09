@@ -50,11 +50,11 @@ template<class T> void printTree( Tree<T> tree, int rows ) {
 int printUsage( const char* prog ) {
 
     std::cout << "Reads an input file and searches it for a set of strings\n\n"
-         << "Usage: " << prog << " [type] [haystack] [needles]\n"
+         << "Usage: " << prog << " [type] [haystack] [needles] [treap-random]\n"
          << "\t[type]\t\tTree type to use. One of `splay', `avl', `treap', `bst'\n"
          << "\t[haystack]\tInput file, delimited by newlines\n"
          << "\t[needles]\tFile containing sets of strings to search for, delimited by newlines\n"
-         << "\t[random]\tOptimal customization of Treap\n"
+         << "\t[treap-random]\tOptimal customization of the random factor of Treap\n"
          << std::endl;
     return 0;
 }
