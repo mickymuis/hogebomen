@@ -1,9 +1,9 @@
 /**
- * main.cc: Dit is een testbestand voor eigen gebruik
+ * test.cc: Dit is een testbestand voor eigen gebruik
  *
  * @author  Micky Faas (s1407937)
  * @author  Lisette de Schipper (s1396250)
- * @file    main.cc
+ * @file    test.cc
  * @date    26-10-2014
  **/
 

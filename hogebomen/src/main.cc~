@@ -1,5 +1,5 @@
 /**
- * main.cc: 
+ * main.cc: Dit is een testbestand voor eigen gebruik
  *
  * @author  Micky Faas (s1407937)
  * @author  Lisette de Schipper (s1396250)
