@@ -133,7 +133,7 @@ int main ( int argc, char **argv ) {
         return -1;
     }
 
-    if( argc == 5 ) {
+    if( argc > 4 ) {
         if( argv[4] && mode != TREAP ) {
             std::cerr << "This variable should only be set for Treaps." << std::endl;
             return -1;
@@ -163,7 +163,7 @@ int main ( int argc, char **argv ) {
             tree = new SplayTree<string>();
             break;
         case TREAP:
-            tree = new Treap<string>(atoi(argv[4]));
+            tree = new Treap<string>( argc > 4 ? atoi(argv[4]) : 100 ); // Default waarde 100
             break;
     }
     

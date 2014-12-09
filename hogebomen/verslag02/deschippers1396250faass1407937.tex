@@ -33,16 +33,108 @@ De vier bomen zijn conceptueel eenvoudig en relatief makkelijk te implementeren.
 
 De binairy zoekboom (BST) vormt de basis voor alle zogeheten \emph{zelf-organiserende bomen}, zoals de AVL- of SplayTree.
 Aan de grondslag van de BST ligt de \emph{binaire-zoekboom-eigenschap}, die zorgt dat de boom op de ``gretige'' manier kan
-worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mogelijk om een knoop in hooguit O($\log(n)$) stappen te vinden. Kort samengevat houdt de bst-eigenschap het volgende in:
+worden doorzocht in plaats van een \emph{exhaustive search}. Hierdoor is het mogelijk om een knoop in een boom met hoogte $n$ in hooguit $n$ stappen te vinden, maar gemiddeld genomen sneller, namelijk $\log(n)$. Kort samengevat houdt de bst-eigenschap het volgende in:
 \begin{itemize}
-\item Linker-kindknopen hebben altijd een kleinere waarde dan hun ouder, rechter-kindknopen altijd een grotere.
+\item Linker-kindknopen en hun kinderen hebben altijd een kleinere waarde dan hun ouder, rechter-kindknopen en al hun kinderen altijd een grotere waarde dan hun ouder.
 \item Bij een MIN-boom is dit omgekeerd. Onze implementatie is enkel een MAX-boom.
 \item Toevoegen kan zonder verwisselen worden uitgevoerd (in tegenstelling tot bijv. een heap).
 \item Voor verwijderen of vervangen moet afhankelijk van de plaats van de knoop wel worden verwisseld.
 \end{itemize}
-\emph{Nu ben ik moe}
+%:-+-+-+- Engendré par : http://math.et.info.free.fr/TikZ/Arbre/
+\begin{center}
+% Racine en Haut, développement vers le bas
+\begin{tikzpicture}[xscale=1,yscale=1]
+% Styles (MODIFIABLES)
+\tikzstyle{fleche}=[->,>=latex,thick]
+\tikzstyle{noeud}=[fill=white,circle,draw]
+\tikzstyle{feuille}=[fill=white,circle,draw]
+\tikzstyle{select}=[fill=yellow,circle,draw]
+% Dimensions (MODIFIABLES)
+\def\DistanceInterNiveaux{1}
+\def\DistanceInterFeuilles{1}
+% Dimensions calculées (NON MODIFIABLES)
+\def\NiveauA{(-0)*\DistanceInterNiveaux}
+\def\NiveauB{(-1.5)*\DistanceInterNiveaux}
+\def\NiveauC{(-2.5)*\DistanceInterNiveaux}
+\def\InterFeuilles{(1)*\DistanceInterFeuilles}
+% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+\node[select] (R) at ({(1.5)*\InterFeuilles},{\NiveauA}) {$20$};
+\node[select] (Ra) at ({(0.5)*\InterFeuilles},{\NiveauB}) {$15$};
+\node[feuille] (Raa) at ({(0)*\InterFeuilles},{\NiveauC}) {$10$};
+\node[select] (Rab) at ({(1)*\InterFeuilles},{\NiveauC}) {$19$};
+\node[noeud] (Rb) at ({(2.5)*\InterFeuilles},{\NiveauB}) {$25$};
+\node[feuille] (Rba) at ({(2)*\InterFeuilles},{\NiveauC}) {$22$};
+\node[feuille] (Rbb) at ({(3)*\InterFeuilles},{\NiveauC}) {$30$};
+% Arcs (MODIFIABLES : Styles)
+\draw[fleche] (R)--(Ra);
+\draw[fleche] (Ra)--(Raa);
+\draw[fleche] (Ra)--(Rab);
+\draw[fleche] (R)--(Rb);
+\draw[fleche] (Rb)--(Rba);
+\draw[fleche] (Rb)--(Rbb);
+\end{tikzpicture}
+\end{center}
+%:-+-+-+-+- Fin
+
+In het voorbeeld is het zoekpad naar de knoop met waarde 19 weergegeven. Dit zoekpad heeft precies complexiteit O($n$), namelijk drie stappen/vergelijkingen voordat de gezochte knoop wordt bereikt, dat is dus gelijk aan de hoogte van de boom. 
+\begin{itemize}
+\item Het zoekdomein bestaat aanvankelijk uit $2^n-1 = 7$ knopen, want de voorbeeldboom is een \emph{volle binaire boom}
+\item Aan het begin van de zoekopdracht is er alleen een pointer naar de wortel (20). We weten dat 19 kleiner is dan de wortel, dus bezoeken we zijn linkerkind. Van de complete rechtersubboom is dus van te voren bekend dat deze niet doorzocht hoeft te worden.
+\item Het zoekdomein wordt dus ineens van 7 naar $2^n-1-(2^{n-1}-1)=4$ verkleind. Voor een grote boom zijn dat veel knopen die nooit bezocht hoeven te worden.
+\item De nieuwe knoop heeft waarde 15. We hebben dus nog geen resultaat, maar er is nu wel bekend dat alleen de rechtersubboom van 15 hoeft te worden doorzocht
+\item Het zoekdomein is nu precies $n$ geworden, de ``worst case'' bij de binair zoeken.
+\item Het rechterkind van 15 is vervolgens 19, de knoop is gevonden.
+\end{itemize}
+Binaire bomen zijn dus sneller dan gewone bomen tijdens het zoeken en correct mits de binaire-zoekboom-eigenschap wordt gehandhaafd. Tijdens een insert operatie kost dat inprinciepe geen extra rekenkracht, maar bij bijvoorbeeld het verwijderen moet de boom soms worden verschoven om de eigenschap te herstellen. \\
+Een ander probleem is dat de binaire zoekboom eigenlijk alleen optimaal presteert als de hoogte zo gering mogelijk is voor het aantal knopen. De hoogte bepaalt namelijk de zoekcomplexiteit, niet het aantal knopen. Een binaire zoekboom met een goede balans tussen de hoogten van de subbomen is \emph{geballanceerd}. Als er tijdens het toevoegen niets bijzonders wordt gedaan, kan een binaire zoekboom heel snel ongebalanceerd raken, afhankelijk van de volgorde waarin knopen worden toegevoegd. Neem bijvoorbeeld de bovenstaande boom. Als men de knopen in de volgorde 10, 15, 19, 20, 25, 22, 30 toegevoegd ontstaat er \'e\'en lange tak naar rechts. De worst-case zoekdiepte is nu van 3 naar 7 gegaan.
+
+%:-+-+-+- Engendré par : http://math.et.info.free.fr/TikZ/Arbre/
+\begin{center}
+% Racine en Haut, développement vers le bas
+\begin{tikzpicture}[xscale=1,yscale=1]
+% Styles (MODIFIABLES)
+\tikzstyle{fleche}=[->,>=latex,thick]
+\tikzstyle{noeud}=[fill=white,circle,draw]
+\tikzstyle{feuille}=[fill=white,circle,draw]
+% Dimensions (MODIFIABLES)
+\def\DistanceInterNiveaux{0.5}
+\def\DistanceInterFeuilles{2}
+% Dimensions calculées (NON MODIFIABLES)
+\def\NiveauA{(-0)*\DistanceInterNiveaux}
+\def\NiveauB{(-1.8333333333333333)*\DistanceInterNiveaux}
+\def\NiveauC{(-3.5)*\DistanceInterNiveaux}
+\def\NiveauD{(-5)*\DistanceInterNiveaux}
+\def\NiveauE{(-6.333333333333333)*\DistanceInterNiveaux}
+\def\NiveauF{(-7.5)*\DistanceInterNiveaux}
+\def\NiveauG{(-8.5)*\DistanceInterNiveaux}
+\def\InterFeuilles{(1)*\DistanceInterFeuilles}
+% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+\node[noeud] (R) at ({(0)*\InterFeuilles},{\NiveauA}) {$30$};
+\node[noeud] (Ra) at ({(0.5)*\InterFeuilles},{\NiveauB}) {$25$};
+\node[noeud] (Raa) at ({(1)*\InterFeuilles},{\NiveauC}) {$22$};
+\node[noeud] (Raaa) at ({(1.5)*\InterFeuilles},{\NiveauD}) {$20$};
+\node[noeud] (Raaaa) at ({(2)*\InterFeuilles},{\NiveauE}) {$19$};
+\node[noeud] (Raaaaa) at ({(2.5)*\InterFeuilles},{\NiveauF}) {$15$};
+\node[feuille] (Raaaaaa) at ({(3)*\InterFeuilles},{\NiveauG}) {$10$};
+% Arcs (MODIFIABLES : Styles)
+\draw[fleche] (R)--(Ra);
+\draw[fleche] (Ra)--(Raa);
+\draw[fleche] (Raa)--(Raaa);
+\draw[fleche] (Raaa)--(Raaaa);
+\draw[fleche] (Raaaa)--(Raaaaa);
+\draw[fleche] (Raaaaa)--(Raaaaaa);
+\end{tikzpicture}
+\end{center}
+%:-+-+-+-+- Fin
+
+De \emph{zelf-organiserende boom} is een speciaal soort binaire zoekboom die tijdens verschillende operaties probeert om de boom zo
+goed mogelijk te (her)belanceren. Uiteraard kosten deze extra operaties ook meer rekenkracht en of dit zich terugbetaald in zoeksnelheid is \'e\'en van de dingen die wij zullen onderzoeken tijdens deze experimenten.
+
 \subsection{Implementatie AVL-bomen}
-Knopen van een AVL-boom hebben een \emph{balansfactor}, die altijd -1, 0 of 1 moet zijn. In deze implementatie is de balansfactor de hoogte van de rechtersubboom min de hoogte van de linkersubboom. Dit houdt dus in dat de hoogte van de linkersubboom van de wortel met maar 1 knoop kan verschillen van de hoogte van de rechtersubboom van de wortel. Het moment dat de balansfactor van een knoop minder dan -1 of meer dan 1 wordt, moet de boom geherstructureerd worden, om deze eigenschap te herstellen. \\
+Knopen van een AVL-boom hebben een \emph{balansfactor}, die altijd -1, 0 of 1 moet zijn. 
+In deze implementatie is de balansfactor de hoogte van de rechtersubboom min de hoogte van de linkersubboom. 
+Dit houdt dus in dat de hoogte van de linkersubboom van de wortel met maar 1 knoop kan verschillen van de hoogte van de rechtersubboom van de wortel. 
+Het moment dat de balansfactor van een knoop minder dan -1 of meer dan 1 wordt, moet de boom geherstructureerd worden, om deze eigenschap te herstellen. \\
 
 Om de balansfactor voor elke knoop te berekenen, houdt elke knoop zijn eigen hoogte bij. De balansfactor van een knoop wordt hersteld door rotaties. De richting en de hoeveelheid van de rotaties hangt af van de vorm van de betreffende (sub)boom. De volgende twee vormen en hun spiegelbeelden kunnen voorkomen bij het verwijderen of toevoegen van een knoop: \\
 
