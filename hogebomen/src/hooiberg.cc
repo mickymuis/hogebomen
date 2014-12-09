@@ -87,13 +87,15 @@ void findAll( std::vector<string> &list, BinarySearchTree<string>* tree ) {
             steps +=tree->lastSearchStepCount( );
             if( found < 51 )
                 std::cout << "Found `" << needle << '\'' 
-                << " in " << tree->lastSearchStepCount( ) << " steps." << std::endl;
+                << " in " << tree->lastSearchStepCount( ) << " steps." 
+                << std::endl;
         }
         else if( ++notfound < 51 )
             std::cout << "Didn't find `" << needle << '\'' << std::endl;
     }
     if( found > 50 )
-        std::cout << found - 50 << " more results not shown here." << std::endl;
+        std::cout << found - 50 << " more results not shown here." 
+                  << std::endl;
     if( found )    
         cout << "Total search depth:          " << steps << endl
              << "Number of matches:           " << found << endl
@@ -135,7 +137,8 @@ int main ( int argc, char **argv ) {
 
     if( argc > 4 ) {
         if( argv[4] && mode != TREAP ) {
-            std::cerr << "This variable should only be set for Treaps." << std::endl;
+            std::cerr << "This variable should only be set for Treaps."
+                      << std::endl;
             return -1;
         }
         else if( atoi(argv[4]) <= 0 ) {
@@ -163,7 +166,8 @@ int main ( int argc, char **argv ) {
             tree = new SplayTree<string>();
             break;
         case TREAP:
-            tree = new Treap<string>( argc > 4 ? atoi(argv[4]) : 100 ); // Default waarde 100
+            // Default waarde 100
+            tree = new Treap<string>( argc > 4 ? atoi(argv[4]) : 100 ); 
             break;
     }
     
@@ -188,13 +192,9 @@ int main ( int argc, char **argv ) {
     auto durationNs =std::chrono::duration_cast<std::chrono::nanoseconds> 
                             (std::chrono::high_resolution_clock::now() - start);
                             
-    cout << "Searched the haystack in " << durationNs.count() << "ns, ~" << (float)durationNs.count() / 1000000.0f << "ms" << endl;
+    cout << "Searched the haystack in " << durationNs.count() << "ns, ~" 
+         << (float)durationNs.count() / 1000000.0f << "ms" << endl;
     
-    // Test pre-order
-    //for( auto word : *tree ) {
-    //    cout << word << '\n';
-    //}
-          
     fhaystack.close( );
     fneedles.close( );
     delete tree;

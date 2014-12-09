@@ -12,7 +12,8 @@
 
 #include "BinarySearchTree.h"
 
-template <class INFO_T> class SelfOrganizingTree : public BinarySearchTree<INFO_T> {
+template <class INFO_T> class SelfOrganizingTree 
+                     : public BinarySearchTree<INFO_T> {
     public:
         typedef BSTNode<INFO_T> node_t;
         typedef BinarySearchTree<INFO_T> S; // super class

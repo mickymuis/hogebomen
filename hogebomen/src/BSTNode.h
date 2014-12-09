@@ -44,7 +44,8 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
             if( !this->rightChild( ) ) // Cannot rotate
                 return this;
   
-            bool isLeftChild =this->parent( ) && this == this->parent( )->leftChild( );
+            bool isLeftChild =this->parent( ) 
+                              && this == this->parent( )->leftChild( );
             
             // new root of tree
             BSTNode *newTop =static_cast<BSTNode *>(this->rightChild( ));
@@ -77,7 +78,8 @@ template <class INFO_T> class BSTNode : public TreeNode<INFO_T>
             if( !this->leftChild( ) ) // Cannot rotate
                 return this;
   
-            bool isRightChild =this->parent( ) && this == this->parent( )->rightChild( );
+            bool isRightChild =this->parent( ) 
+                               && this == this->parent( )->rightChild( );
             
             // new root of tree
             BSTNode *newTop =static_cast<BSTNode *>(this->leftChild( ));
