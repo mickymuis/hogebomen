@@ -249,7 +249,6 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \begin{itemize}
 \item Voor het inladen een wel of niet alfabetisch gesoorteerd taalbestand gebruiken.
 \item Als zoekdocument hebben we een gedicht met 62 woorden gebruikt. Er zitten een aantal dubbele woorden in alsook een aantal woorden die niet in de woordenlijst voorkomen (werkwoordsvervoegingen).
-\item We hebben ook een conditie waarbij we alle woorden gezocht hebben, zowel in dezelfde, als in een andere volgorde dan dat ze zijn ingevoerd.
 \item We hebben \'e\'en conditie waarbij we de random-range van de Treap hebben gevari\"eerd.
 \end{itemize}
 
@@ -258,12 +257,12 @@ Voor ons experiment hebben we een taalbestand gebruikt van OpenTaal.org met meer
 \begin{itemize}
 \item De binairy search tree zal vermoedelijk het snelst nieuwe data toevoegen. De splay tree heeft veel ingewikkelde rotatie bij een insert, dus deze zal het traagst zijn.
 \item Bij het gedicht zal de splay boom waarschijnlijk het snelst zijn omdat deze optimaliseert voor herhalingen.
-\item ...
 \item De bomen die een aparte node-klasse gebruiken (avl en treap) gebruiken het meeste geheugen.
 \item De meest effici\"ente randomfactor is afhankelijk van de grootte van de boom die geïmplementeerd gaat worden. Bij een kleine boom volstaat een kleine randomfactor, bij een grote boom volstaat een grote randomfactor.
 \end{itemize}
 
 \section{Resultaten}
+Voor elke soort boom hebben we elk experiment tien keer uitgevoerd.
 
 \subsection{Experiment 1}
 \subsubsection{Deelexperiment 1}
@@ -331,10 +330,7 @@ splay & 3922834 & 23 & 1378,197  \\
 \end{center}
 
 \subsection{Experiment 3}
-Hieronder staan de hoeveelheden geheugen en het aantal allocaties weergegeven voor elke boom. De metingen zijn van heap dynamisch gealloceerd geheugen alleen en zijn uitgevoerd met Valgrind. De onderlinge verschillen zijn, zelfs met een wat grotere data set, verwaarloosbaar. Niet geheel verassend nemen de nodes van Treap en AVL iets meer ruimte in omdat deze een prioriteit resp. balansfactor bijhouden.\\
-Het feit dat het invoer bestand slechts 2,1 Mb groot is, zegt wel iets over de effici\"entie van het geheugengebruik in het algemeen,
-zowel van onze implementatie als van dit soort boom datatypen in het algemeen. Ontwerpkeuzen spelen hier een grote rol: als we bijvoorbeeld ervoor hadden gekozen om geen 'ouder-pointers' te gebruiken, hadden we tussen 0,6 en 1,2 Mb op deze cijfers kunnen besparen. 
-
+Hieronder staan de hoeveelheden geheugen en het aantal allocaties weergegeven voor elke boom. De metingen zijn van heap dynamisch gealloceerd geheugen alleen en zijn uitgevoerd met Valgrind. \\
 \begin{center}
 \begin{tabular}{c c c}
 Type & allocs & bytes \\
@@ -346,14 +342,9 @@ splay & 493260 & 15389922 (14,7 Mb)\\
 \end{center}
 \subsection{Experiment 4}
 \subsubsection{Deelexperiment 1}
-Wat is de invloed van de random-factor bij de Treap?
+Bij dit experiment zijn we gaan zoeken naar de sleutelwoorden van \texttt{gedicht.txt} in \texttt{Nederlands\_unsorted.txt}. De resultaten hiervan staan in onderstaande tabelen weergegeven, waarbij de eerste rij staat voor de mate van willekeurigheid van de prioriteit (hoe hoger, hoe willekeuriger). \\
 
-Hooiberg:
-Nederlands\_unsorted
-Naalden:
-gedicht
-
-Average search depth \\
+Gemiddelde zoekdiepte voor zoekopdrachten \\
 \begin{center}
 \begin{tabular}{c c c c c c}
  & 10 & 100 & 1000 & 10000 & 10000 \\
@@ -370,7 +361,8 @@ Average search depth \\
 GEM & 32,5 & 39,9 & 40,2 & 39,9 & 39 \\
 \end{tabular}
 \end{center}
-Total search depth \\
+
+Totale zoekdiepte\\
 \begin{center}
 \begin{tabular}{c c c c c c}
  & 10 & 100 & 1000 & 10000 & 10000 \\
@@ -402,7 +394,17 @@ bereik & minimum & maximum & minimum & maximum & minimum & maximum \\
 \end{tabular}
 \end{center}
 \section{Conclusies}
-
+\begin{itemize}
+\item Het vullen van een niet-zelf-balanceerdende binaire zoekboom met een niet-gesorteerde verzameling is meer dan twee keer zo effici\"ent als het vullen van een variant die wel zelf-balancerend is. Dat is eigenlijk ook wat men mag verwachten gezien het feit dat de zelf-balancerende bomen met operaties moeten uitvoeren om de balans te herstellen.
+\item De binaire zoekboom en de treap laten presteren erg slecht zodra we een boom moeten vullen met een gesorteerde verzameling. Dit is zichtbaar in de resultaten van experiment 1. Zie ook de uitgebreide uitleg hierover in sectie 2, \emph{Implementatie Binaire zoekboom}.
+\item Een AVL-boom voert een zoekopdracht gemiddeld het snelste uit. Dit is anders dan voorspelt bij onze hypothese dat de splay boom sneller zou moeten presteren bij zoekacties met herhalende patronen. Dit zou mogelijk veroorzaakt kunnen worden door het feit dat van alle bomen de AVL-boom het beste gebalanceerd blijft, omdat hier de prioriteit ligt van het algoritme. Het algoritme achter de splay-boom prioriteert juist op meest recente toegang, maar niet per se op de balans in de boom vanaf de wortel. 
+\item Treaps en AVL-bomen nemen het meeste geheugen in het gebruik. Zie experiment 3. Dit is in overeenstemming met onze hypothese.
+\item De onderlinge verschillen wat betreft geheugenverbruik zijn, zelfs met een wat grotere data set, verwaarloosbaar. Niet geheel verassend nemen de nodes van Treap en AVL iets meer ruimte in omdat deze een prioriteit resp. balansfactor bijhouden.\\
+Het feit dat het invoerbestand \texttt{Nederlands\_unsorted.txt} slechts 2,1 Mb groot is, zegt wel iets over de effici\"entie van het geheugengebruik in het algemeen, zowel van onze implementatie als van dit soort boom datatypen in het algemeen.
+\item Ontwerpkeuzen spelen bij bovenstaande een grote rol: als we bijvoorbeeld ervoor hadden gekozen om geen 'ouder-pointers' te gebruiken, hadden we tussen 0,6 en 1,2 Mb op deze cijfers kunnen besparen. 
+\item Des te minder willekeurig de prioriteit van een Treap, des te effici\"enter het uitvoeren van een zoekopdracht.
+\item Treap presteert niet consistent, dit blijkt uit deelexperiment 2 van experiment 4. Dit is vooral merkbaar bij een prioriteit met een grote mate van willekeurigheid, waar in het experiment de best-case testcase een minimum gemiddelde zoekdiepte van 35 heeft en de worst-case testcase een maximum gemiddelde zoekdiepte van 62 heeft.
+\end{itemize}
 \section{Appendix}
 
 \subsection{main.cc}
